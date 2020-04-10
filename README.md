@@ -1,6 +1,13 @@
 # Listé – Productivity Made Easy
 
 ## Table of Contents
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Support](#support)
+- [What's Ahead](#whats-ahead)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ## Introduction
 Welcome to **Listé**, the simplified and open-sourced productive to-do list app for everyone.

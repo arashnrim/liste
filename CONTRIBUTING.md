@@ -1,4 +1,21 @@
 # Contributing to Listé
+
+## Table of Contents ##
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Bugs, Crashes and Errors](#bugs-crashes-and-errors)
+	- [Before Submitting A Report](#before-submitting-a-report)
+	- [Submitting A Report](#submitting-a-report)
+	- [After Submitting A Report](#after-submitting-a-report)
+- [Enhancements and Additions](#enhancements-and-additions)
+	- [Before Submitting A Feature](#before-submitting-a-feature)
+	- [Submitting A Feature](#submitting-a-feature)
+	- [After Submitting A Feature](#after-submitting-a-feature)
+- [Your First Code](#your-first-code)
+- [Pull Requests](#pull-requests)
+- [Swift Styleguide](#swift-styleguide)
+- [Additional Notes](#additional-notes)
+
 ## Introduction
 Thank you for your interest in contributing to the project! We'd love to have you on board and suggest changes. Whether you're here to make a minor change like a misspelling in the documentation to significant changes like implementing new features, we'd love to have you here.
 
