@@ -2,7 +2,9 @@ platform :ios, '12.0'
 
 target 'Liste' do
   use_frameworks!
+  inhibit_all_warnings!
 
+  pod 'Hero'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'  
 

@@ -80,21 +80,21 @@
 			path = Liste;
 			sourceTree = "<group>";
 		};
-		497911B82423A4EB001432F5 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				4927522D23432F4200FCFA6E /* Main.storyboard */,
-				497911B92423A4F6001432F5 /* View Controller */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		497911B92423A4F6001432F5 /* View Controller */ = {
+		493DFDE5249CA64000844A7A /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				4927522B23432F4200FCFA6E /* ViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		497911B82423A4EB001432F5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4927522D23432F4200FCFA6E /* Main.storyboard */,
+				493DFDE5249CA64000844A7A /* View Controller */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		497911BA2423A50E001432F5 /* Resources */ = {
