@@ -25,14 +25,14 @@ We're glad that you'd like to contribute to our project. To begin, check out our
 If you need help with anything related to the project, we recommend opening a new issue in the Issue Tracker page. Following GitHub's [Open Source Guide](https://www.opensource.guide), we strongly advise against privately communicating.
 
 ## What's Ahead
-Listé is an existing project, and henceforth a version 1.0 exists. While the App Store contains the app, the app is currently unusable at this point as we're rewriting the code. Here's what we plan for the next few versions, starting from version 2.0:
+Listé is an existing project, and henceforth a version 1.0 (latest 1.0.3) exists. While the App Store contains the app, the app is currently unusable at this point as we're rewriting the code. Here's what we plan for the next few versions, starting from version 1.1.0:
 
-Listé 2.0
+Listé 1.1.0
 - Reintroduced user interface. We've taken the design of version 1.0 and redesigned the interface completely, making the app more usable and available to more features.
-- Local storage. Version 1.0 emphasizes a mostly online structure, unnecessarily using data to sync with the online database (Firebase). In the new version, we're only making Collaborative Lists (a new feature) store data online; everything else uses UserDefaults or other forms of local storage.
 
-Listé 2.1
+Listé 1.2.0
 - Collaborative Lists. A simple, innovative way to share a List with people.
+- Local storage. Version 1.0 emphasizes a mostly online structure, unnecessarily using data to sync with the online database (Firebase). In the new version, we're only making Collaborative Lists (a new feature) store data online; everything else uses UserDefaults or other forms of local storage.
 
 ## Contributing
 Please review our [Contributing Guide](CONTRIBUTING.md) for detailed elaborations of the how and what to contribute.
