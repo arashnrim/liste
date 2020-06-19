@@ -1,0 +1,9 @@
+platform :ios, '12.0'
+
+target 'Liste' do
+  use_frameworks!
+
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'  
+
+end
