@@ -5,3 +5,7 @@
 /Liste/Liste.xcodeproj/project.xcworkspace/xcshareddata/
 /Liste/Liste.xcodeproj/project.xcworkspace/xcuserdata/
 /Liste/Liste.xcodeproj/xcuserdata/
+/Liste/Liste.xcworkspace/xcuserdata/
+
+## Firebase configuration file ##
+GoogleService-Info.plist
