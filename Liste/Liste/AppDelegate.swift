@@ -23,12 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let user = Auth.auth().currentUser
         if user != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let rootViewController = storyboard.instantiateViewController(identifier: "View")
+            let rootViewController: UIViewController
+            if #available(iOS 13.0, *) {
+                rootViewController = storyboard.instantiateViewController(identifier: "View")
+            } else {
+                rootViewController = storyboard.instantiateViewController(withIdentifier: "View")
+            }
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-            let rootViewController = storyboard.instantiateViewController(identifier: "Welcome")
+            let rootViewController: UIViewController
+            if #available(iOS 13.0, *) {
+                rootViewController = storyboard.instantiateViewController(identifier: "Welcome")
+            } else {
+                rootViewController = storyboard.instantiateViewController(withIdentifier: "Welcome")
+            }
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
         }
