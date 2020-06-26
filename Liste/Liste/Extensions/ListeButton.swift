@@ -14,7 +14,6 @@ class ListeButton: UIButton {
         super.init(coder: coder)
         
         self.layer.cornerRadius = 10.0
-        self.titleLabel?.font = UIFont(name: "Avenir Next", size: 20.0)
         self.backgroundColor = UIColor.init(named: "Liste Orange")!
     }
     
