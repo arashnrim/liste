@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TasksViewController.swift
 //  Liste
 //
 //  Created by Arash Nur Iman on 01/10/19.
@@ -9,13 +9,11 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class TasksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-    }
 
 
 }

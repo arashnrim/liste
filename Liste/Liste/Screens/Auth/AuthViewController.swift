@@ -143,6 +143,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                     self.authButton.changeState(state: true, text: "Sign In")
                 } else {
                     print("Auth: Auth appears to be OK.")
+                    self.performSegue(withIdentifier: "complete", sender: nil)
                 }
             }
         } else {
@@ -154,6 +155,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                     self.authButton.changeState(state: true, text: "Sign Up")
                 } else {
                     print("Auth: Auth appears to be OK.")
+                    self.performSegue(withIdentifier: "complete", sender: nil)
                 }
             }
         }
