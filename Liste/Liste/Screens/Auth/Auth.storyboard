@@ -165,11 +165,22 @@
                         <outlet property="authButton" destination="FvY-qV-MO2" id="aWj-Qg-BlY"/>
                         <outlet property="emailTextField" destination="cKW-lb-EPS" id="bIL-RV-pzd"/>
                         <outlet property="passwordTextField" destination="xcF-ER-7ya" id="I7z-sp-RpW"/>
+                        <segue destination="voF-p2-5uj" kind="show" identifier="complete" id="Uvt-eA-Tyl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv1-o9-lN5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="851" y="138"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="QZg-r7-aJD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="voF-p2-5uj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zFe-TJ-rkN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KrB-Im-DCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444" y="138"/>
         </scene>
     </scenes>
     <resources>

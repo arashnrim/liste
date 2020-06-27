@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let user = Auth.auth().currentUser
         if user != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let rootViewController = storyboard.instantiateViewController(identifier: "View")
+            let rootViewController = storyboard.instantiateViewController(identifier: "Tasks")
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
         } else {
