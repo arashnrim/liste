@@ -19,7 +19,25 @@ For designers, stay tuned for details coming soon!
 ## Getting Started
 We're glad that you'd like to contribute to our project. To begin, check out our [Contributing Guide](CONTRIBUTING.md) to see what you have to do, including structuring your commit message and general rules-of-thumb that we recommended you to follow.
 
-```print("We're working on installation instructions now; check back later!")```
+If you'd like to try out this project on your end, let's get started!
+
+### Setting Up
+1. Clone or download this project and save it somewhere accessible. If downloaded, unzip the file before you continue.
+2. Head over to the [Firebase console](https://console.firebase.google.com) and create a Firebase project. Follow all onboarding instructions.
+3. Add an iOS app to your project and follow all instructions. Download the `GoogleService-Info.plist` file and place it in `Liste/Liste/`.
+
+*Optional, but just in case:*
+
+4. Install Cocoapods on your device by using `sudo gem install cocoapods` in Terminal.
+5. Navigate to the Xcode folder of Liste (`Liste/Liste/`).
+6. Enter `pod install` in Terminal.
+
+### Using the Xcode Project
+- Always use `Liste.xcworkspace` instead of `Liste.xcproj`. The `xcworkspace` files has all the Cocoapods libraries installed.
+
+### Contributing After
+
+- Ensure that your `GoogleService-Info.plist` is not part of your commits/pull requests to ensure the security of your Firebase project.
 
 ## Support
 If you need help with anything related to the project, we recommend opening a new issue in the Issue Tracker page. Following GitHub's [Open Source Guide](https://www.opensource.guide), we strongly advise against privately communicating.
