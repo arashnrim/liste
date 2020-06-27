@@ -19,7 +19,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Sets the delegate of the text fields as AuthViewController.
         emailTextField.delegate = self
         passwordTextField.delegate = self

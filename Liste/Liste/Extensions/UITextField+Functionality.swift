@@ -16,7 +16,7 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
         completion?()
     }
-
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -28,7 +28,7 @@ extension UIViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
