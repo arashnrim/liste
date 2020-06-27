@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let rootViewController: UIViewController
             if #available(iOS 13.0, *) {
-                rootViewController = storyboard.instantiateViewController(identifier: "View")
+                rootViewController = storyboard.instantiateViewController(identifier: "Tasks")
             } else {
-                rootViewController = storyboard.instantiateViewController(withIdentifier: "View")
+                rootViewController = storyboard.instantiateViewController(withIdentifier: "Tasks")
             }
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
