@@ -57,6 +57,13 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Functions
+    /**
+     * Checks if the user input in the `emailTextField` and `passwordTextField` fields are valid.
+     *
+     * This function checks if the value in `emailTextField` is not empty and if it contains the "@" symbol. It also checks if the value in `passwordTextField` is not empty and has a character count of more than five; if both of these statements hold true, then the result is successful. Else, the result is failure.
+     *
+     * - Returns: A boolean value of the outcome of the check.
+     */
     func validate() -> Bool {
         guard let email = emailTextField.text else {
             print("Warning: Email String value appears to be empty; assuming the check result to be false.")
@@ -72,6 +79,11 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         return emailValid && passwordValid
     }
     
+    /**
+     * Checks if the entered user credentials are linked to an existing account or otherwise.
+     *
+     * This function calls Firebase's `fetchSignInMethods` method and checks if the sign in methods of the user is `nil`; in other words, it checks if there is an existing user account with the entered credentials. If the sign in methods return `nil`, then `authButton`'s title will be amended to "Sign Up"; otherwise, if the sign in methods return a non-optional value, then `authButton`'s title will be amended to "Sign In".
+     */
     func checkUserStatus() {
         guard let email = emailTextField.text else {
             print("Warning: Email String value appears to be empty; assuming the check result to be false.")
@@ -95,6 +107,14 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+     * Signs the user into the app.
+     *
+     * This function calls Firebase's `signIn` method to sign the user into the app. Once authentication is successful, the function's `completion` parameter picks up a potential `Error` and allows for greater flexibility following the execution of authentication.
+     *
+     * - Parameters:
+     *      - completion: A closure to run after authentication. An `Error?` is the only parameter for this closure; it is recommended to verify if the error is `nil` before proceeding.
+     */
     func signIn(completion: @escaping ((Error?) -> Void)) {
         guard let email = emailTextField.text else {
             print("Warning: Email String value appears to be empty; sign in procedure may fail.")
@@ -111,6 +131,14 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+     * Creates a user account and signs the user into the app.
+     *
+     * This function calls Firebase's `createUser` method which handles user account creation and user authentication. Once authentication is successful, the function's `completion` parameter picks up a potential `Error` and allows for greater flexibility following the execution of authentication.
+     *
+     * - Parameters:
+     *      - completion: A closure to run after authentication. An `Error?` is the only parameter for this closure; it is recommended to verify if the error is `nil` before proceeding.
+     */
     func signUp(completion: @escaping ((Error?) -> Void)) {
         guard let email = emailTextField.text else {
             print("Warning: Email String value appears to be empty; sign up procedure may fail.")
