@@ -10,6 +10,15 @@ import UIKit
 
 extension UIButton {
     
+    /**
+     * Changes the state and, if given, changes the title of the `UIButton`.
+     *
+     * This function uses `state`, a `Bool` value, and `text`, a `String?` value; based on the value of `state`, the button is either disabled or enabled - this change also includes an animation of the reduction or increase in `UIButton` alpha for a more visually-appealing design. If a `text` value is given, the title of the `UIButton` will also be changed.
+     *
+     * - Parameters:
+     *      - state: A boolean value that describes the state the `UIButton` should be in.
+     *      - text: (Optional) A string value to change the title of the `UIButton`.
+     */
     func changeState(state: Bool, text: String?) {
         self.isEnabled = state
         
