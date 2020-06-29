@@ -33,7 +33,7 @@ If you'd like to try out this project on your end, let's get started!
 6. Enter `pod install` in Terminal.
 
 ### Using the Xcode Project
-- Always use `Liste.xcworkspace` instead of `Liste.xcproj`. The `xcworkspace` files has all the Cocoapods libraries installed.
+- Always use `Liste.xcworkspace` instead of `Liste.xcodeproj`. The `xcworkspace` files has all the Cocoapods libraries installed.
 - It is recommended that you **change the bundle ID and development team** of your project to avoid conflicts with the original project.
 
 ### Contributing After
