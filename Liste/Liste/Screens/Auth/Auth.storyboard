@@ -185,7 +185,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lock" width="9" height="13"/>
+        <image name="lock" width="21" height="24"/>
         <namedColor name="Liste Orange">
             <color red="1" green="0.15294117647058825" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
