@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,9 +33,11 @@
                                             <constraint firstAttribute="width" constant="40" id="sUA-ML-pY8"/>
                                             <constraint firstAttribute="height" constant="40" id="yWz-A0-tJs"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="menu">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="tintColor" name="Liste Orange"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="menu" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -47,20 +52,49 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-MP-7a4">
                                 <rect key="frame" x="0.0" y="200" width="414" height="662"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="task" id="aXW-0m-w1y">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="task" rowHeight="120" id="aXW-0m-w1y" customClass="TaskTableViewCell" customModule="Liste" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aXW-0m-w1y" id="DQT-hd-y6y">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-Zj-OB0">
+                                                    <rect key="frame" x="10" y="10" width="394" height="100"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJj-bf-Ofg">
+                                                            <rect key="frame" x="10" y="5" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="GWj-Lz-ySV"/>
+                                                                <constraint firstAttribute="height" constant="40" id="RqY-09-pcg"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="lock"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="lJj-bf-Ofg" firstAttribute="leading" secondItem="4fe-Zj-OB0" secondAttribute="leading" constant="10" id="622-s5-MJt"/>
+                                                        <constraint firstItem="lJj-bf-Ofg" firstAttribute="top" secondItem="4fe-Zj-OB0" secondAttribute="top" constant="5" id="N1N-aQ-Nsf"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4fe-Zj-OB0" firstAttribute="leading" secondItem="DQT-hd-y6y" secondAttribute="leading" constant="10" id="FvQ-AK-K29"/>
+                                                <constraint firstAttribute="bottom" secondItem="4fe-Zj-OB0" secondAttribute="bottom" constant="10" id="GCI-Bc-CPy"/>
+                                                <constraint firstAttribute="trailing" secondItem="4fe-Zj-OB0" secondAttribute="trailing" constant="10" id="R0G-L3-AKf"/>
+                                                <constraint firstItem="4fe-Zj-OB0" firstAttribute="top" secondItem="DQT-hd-y6y" secondAttribute="top" constant="10" id="TdY-bq-CmP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskBackgroundView" destination="4fe-Zj-OB0" id="euZ-O1-gZV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cvq-MP-7a4" secondAttribute="bottom" id="IEB-hE-eRF"/>
                             <constraint firstItem="Eeo-Kw-ryf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LBl-6k-Duc"/>
@@ -70,19 +104,28 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cvq-MP-7a4" secondAttribute="trailing" id="Wi0-gX-5zd"/>
                             <constraint firstItem="cvq-MP-7a4" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" id="rac-h9-nGN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="zoom"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="tasksTableView" destination="cvq-MP-7a4" id="QRo-Vo-5er"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="128"/>
+            <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
         </scene>
     </scenes>
     <resources>
-        <image name="menu" width="28" height="26"/>
+        <image name="lock" width="21" height="24"/>
+        <image name="menu" width="24" height="24"/>
+        <namedColor name="Liste Orange">
+            <color red="1" green="0.15294117647058825" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
