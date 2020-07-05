@@ -10,13 +10,12 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
     
-    // MARK: Properties
-    @IBOutlet weak var taskStatusButton: UIButton!
-    @IBOutlet weak var taskBackgroundView: UIView!
-    @IBOutlet weak var shadowBackgroundView: UIView!
-    @IBOutlet weak var taskTitleLabel: UILabel!
-    @IBOutlet weak var taskDueLabel: UILabel!
-
+    // MARK: Outlets
+    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dueLabel: UILabel!
+    @IBOutlet weak var taskView: UIView!
+    
 }
 
 
