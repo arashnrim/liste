@@ -16,9 +16,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var listNameTextField: UITextField!
     @IBOutlet weak var tasksTableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var loadingView: UIView!
     
     // MARK: Properties
     var reference: DatabaseReference!
+    var tasks: [[String:String]]!
     
     // MARK: Overrides
     override func viewDidLoad() {
@@ -28,7 +31,20 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tasksTableView.dataSource = self
         
         retrieveDatabase { (data) in
-            print(data)
+            let tasks = data["tasks"] as? [[String:String]]
+            if let tasks = tasks {
+                self.tasks = tasks
+            }
+            
+            if tasks == nil {
+                print("Warning: No tasks found in user account.")
+                self.emptyView.isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.loadingView.alpha = 0.0
+                }) { (_) in
+                    self.loadingView.removeFromSuperview()
+                }
+            }
         }
         
     }
