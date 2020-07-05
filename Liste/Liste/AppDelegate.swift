@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configures the Firebase library.
         FirebaseApp.configure()
         
+        Database.database().isPersistenceEnabled = true
+        
         // Performs conditional navigation on the condition of currentUser's status.
         let user = Auth.auth().currentUser
         if user != nil {
