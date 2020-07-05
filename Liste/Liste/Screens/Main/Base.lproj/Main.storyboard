@@ -9,6 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Auth-->
+        <scene sceneID="utM-Nd-Aa4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Auth" referencedIdentifier="Auth" id="JKM-Zz-9PI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WI4-lf-55I"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qU-ou-VuJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="-276"/>
+        </scene>
         <!--Tasks View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -51,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="200" width="414" height="662"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="task" rowHeight="120" id="aXW-0m-w1y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="task" rowHeight="120" id="aXW-0m-w1y" customClass="TaskTableViewCell" customModule="Liste" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aXW-0m-w1y" id="DQT-hd-y6y">
@@ -64,35 +74,34 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJj-bf-Ofg">
                                                             <rect key="frame" x="10" y="5" width="40" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="40" id="GWj-Lz-ySV"/>
-                                                                <constraint firstAttribute="height" constant="40" id="RqY-09-pcg"/>
+                                                                <constraint firstAttribute="width" constant="40" id="79j-6T-MAd"/>
+                                                                <constraint firstAttribute="height" constant="40" id="hCs-tc-0P3"/>
                                                             </constraints>
                                                             <state key="normal" image="unchecked"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbD-Nw-4F3">
-                                                            <rect key="frame" x="58" y="5" width="326" height="40"/>
+                                                            <rect key="frame" x="58" y="5" width="326" height="27.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEk-Yw-oWm">
-                                                            <rect key="frame" x="58" y="45" width="326" height="25"/>
+                                                            <rect key="frame" x="58" y="32.5" width="326" height="25"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BEk-Yw-oWm" secondAttribute="trailing" constant="10" id="573-Rd-uSg"/>
-                                                        <constraint firstItem="lJj-bf-Ofg" firstAttribute="leading" secondItem="4fe-Zj-OB0" secondAttribute="leading" constant="10" id="622-s5-MJt"/>
-                                                        <constraint firstItem="BEk-Yw-oWm" firstAttribute="top" secondItem="LbD-Nw-4F3" secondAttribute="bottom" id="8PO-Dq-nF6"/>
-                                                        <constraint firstItem="LbD-Nw-4F3" firstAttribute="leading" secondItem="lJj-bf-Ofg" secondAttribute="trailing" constant="8" id="M4I-aK-QRI"/>
-                                                        <constraint firstItem="lJj-bf-Ofg" firstAttribute="top" secondItem="4fe-Zj-OB0" secondAttribute="top" constant="5" id="N1N-aQ-Nsf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="LbD-Nw-4F3" secondAttribute="trailing" constant="10" id="TSt-fx-z5u"/>
-                                                        <constraint firstItem="LbD-Nw-4F3" firstAttribute="height" secondItem="lJj-bf-Ofg" secondAttribute="height" id="XtY-wc-lxy"/>
-                                                        <constraint firstItem="LbD-Nw-4F3" firstAttribute="top" secondItem="4fe-Zj-OB0" secondAttribute="top" constant="5" id="ZDA-aN-jZ3"/>
-                                                        <constraint firstItem="BEk-Yw-oWm" firstAttribute="leading" secondItem="LbD-Nw-4F3" secondAttribute="leading" id="vs2-5x-5FD"/>
-                                                        <constraint firstItem="BEk-Yw-oWm" firstAttribute="width" secondItem="LbD-Nw-4F3" secondAttribute="height" multiplier="163:20" id="wDY-NL-frC"/>
+                                                        <constraint firstItem="LbD-Nw-4F3" firstAttribute="top" secondItem="4fe-Zj-OB0" secondAttribute="top" constant="5" id="1bU-Oe-kcR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="LbD-Nw-4F3" secondAttribute="trailing" constant="10" id="Sb0-Go-Ksm"/>
+                                                        <constraint firstItem="BEk-Yw-oWm" firstAttribute="top" secondItem="LbD-Nw-4F3" secondAttribute="bottom" id="YnX-WE-r3s"/>
+                                                        <constraint firstItem="lJj-bf-Ofg" firstAttribute="leading" secondItem="4fe-Zj-OB0" secondAttribute="leading" constant="10" id="eJd-EV-sCm"/>
+                                                        <constraint firstItem="LbD-Nw-4F3" firstAttribute="height" secondItem="lJj-bf-Ofg" secondAttribute="height" multiplier="0.6875" id="k2j-Uw-lje"/>
+                                                        <constraint firstItem="lJj-bf-Ofg" firstAttribute="top" secondItem="4fe-Zj-OB0" secondAttribute="top" constant="5" id="oAU-7D-MkX"/>
+                                                        <constraint firstItem="LbD-Nw-4F3" firstAttribute="leading" secondItem="lJj-bf-Ofg" secondAttribute="trailing" constant="8" id="pyi-dA-Shj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BEk-Yw-oWm" secondAttribute="trailing" constant="10" id="to2-Jz-8ed"/>
+                                                        <constraint firstItem="BEk-Yw-oWm" firstAttribute="leading" secondItem="lJj-bf-Ofg" secondAttribute="trailing" constant="8" id="yX8-bM-6GI"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -104,7 +113,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="taskBackgroundView" destination="4fe-Zj-OB0" id="euZ-O1-gZV"/>
+                                            <outlet property="dueLabel" destination="BEk-Yw-oWm" id="XZE-Gc-f7Q"/>
+                                            <outlet property="statusButton" destination="lJj-bf-Ofg" id="pvw-YU-MdH"/>
+                                            <outlet property="taskView" destination="4fe-Zj-OB0" id="Fs6-4n-J1e"/>
+                                            <outlet property="titleLabel" destination="LbD-Nw-4F3" id="iaN-lc-8DT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -126,6 +138,12 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="zoom"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="listNameTextField" destination="X5K-Oe-yZ8" id="l54-8z-5g5"/>
+                        <outlet property="menuButton" destination="APp-An-cl0" id="Noz-OP-MZA"/>
+                        <outlet property="tasksTableView" destination="cvq-MP-7a4" id="Q0K-6b-VWE"/>
+                        <segue destination="JKM-Zz-9PI" kind="show" identifier="auth" id="KLB-Lz-qyH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

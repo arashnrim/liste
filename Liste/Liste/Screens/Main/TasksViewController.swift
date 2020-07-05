@@ -9,8 +9,16 @@
 import UIKit
 import Firebase
 
-class TasksViewController: UIViewController {
     
+    // MARK: Outlets
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var listNameTextField: UITextField!
+    @IBOutlet weak var tasksTableView: UITableView!
+    
+    // MARK: Properties
+    var reference: DatabaseReference!
+    
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
     }
