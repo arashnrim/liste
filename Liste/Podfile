@@ -7,5 +7,6 @@ target 'Liste' do
   pod 'Hero'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'  
+  pod 'FirebaseFirestoreSwift'
 
 end
