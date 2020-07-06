@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+ * A custom `UIButton` class that adds a cornered radius and background color.
+ *
+ * `ListeButton` buttons will have a cornered radius of 10.0 and have Liste Orange as the background color.
+ */
 class ListeButton: UIButton {
     
     required init?(coder: NSCoder) {
