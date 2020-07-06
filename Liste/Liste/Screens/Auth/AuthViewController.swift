@@ -162,6 +162,9 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        // Checks the 'state' of authButton (from the text, whether it's "Sign In" or "Sign Up") and performs the respective actions.
+        // When the 'state' is "Sign In", Firebase's sign in function is invoked.
+        // Else, when the 'state' is "Sign Up", Firebase's create user function is invoked.
         if state == "Sign In" {
             self.authButton.changeState(state: false, text: "Signing In...")
             signIn { (error) in

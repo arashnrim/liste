@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        // Performs conditional navigation on the condition of currentUser's status.
+        // Performs conditional navigation on the status of currentUser.
+        // If currentUser is not nil, then the app will start in the Main Storyboard.
+        // Else, the app will start in the Auth Storyboard.
         let user = Auth.auth().currentUser
         if user != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
