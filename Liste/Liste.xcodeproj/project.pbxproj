@@ -115,11 +115,11 @@
 		497911BB2423A520001432F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49498E8224A897E400064238 /* GoogleService-Info.plist */,
 				4927522723432F4200FCFA6E /* AppDelegate.swift */,
 				4927522923432F4200FCFA6E /* SceneDelegate.swift */,
 				4927523223432F4300FCFA6E /* LaunchScreen.storyboard */,
 				4927523523432F4300FCFA6E /* Info.plist */,
+				49498E8224A897E400064238 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
