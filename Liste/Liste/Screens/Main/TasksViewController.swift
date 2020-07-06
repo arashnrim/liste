@@ -19,9 +19,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
-    // MARK: Properties
-    var tasks = NSDictionary()
-    
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +38,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: Table View Protocols
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         #warning("Placeholder value; change this when data is available.")
-        return tasks.count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,10 +52,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: Functions
-//    func retrieveDatabase(_ completion: @escaping (_) -> Void) {
-//
-//    }
-    
     func showReauthenticationAlert() {
         self.displayAlert(title: "Uh oh.", message: "An authentication error occured. You'll be redirected for authentication again.") { (alert) in
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
