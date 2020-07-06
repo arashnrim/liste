@@ -159,15 +159,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxH-oD-NKz">
                                 <rect key="frame" x="0.0" y="200" width="414" height="662"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="90W-84-M7b">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-8S-AAI">
                                         <rect key="frame" x="197" y="321" width="20" height="20"/>
-                                        <color key="color" name="Liste Orange"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="90W-84-M7b" firstAttribute="centerX" secondItem="JxH-oD-NKz" secondAttribute="centerX" id="B9I-Jz-9Om"/>
-                                    <constraint firstItem="90W-84-M7b" firstAttribute="centerY" secondItem="JxH-oD-NKz" secondAttribute="centerY" id="feB-wd-kjR"/>
+                                    <constraint firstItem="jKW-8S-AAI" firstAttribute="centerX" secondItem="JxH-oD-NKz" secondAttribute="centerX" id="Vjs-Nc-w9f"/>
+                                    <constraint firstItem="jKW-8S-AAI" firstAttribute="centerY" secondItem="JxH-oD-NKz" secondAttribute="centerY" id="XGb-Qs-Onk"/>
                                 </constraints>
                             </view>
                         </subviews>
