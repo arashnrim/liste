@@ -20,8 +20,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var loadingView: UIView!
     
     // MARK: Properties
-    var reference: DatabaseReference!
-    var tasks: [[String:String]]!
+    var tasks = NSDictionary()
     
     // MARK: Overrides
     override func viewDidLoad() {
@@ -29,23 +28,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tasksTableView.delegate = self
         tasksTableView.dataSource = self
-        
-        retrieveDatabase { (data) in
-            let tasks = data["tasks"] as? [[String:String]]
-            if let tasks = tasks {
-                self.tasks = tasks
-            }
-            
-            if tasks == nil {
-                print("Warning: No tasks found in user account.")
-                self.emptyView.isHidden = false
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.loadingView.alpha = 0.0
-                }) { (_) in
-                    self.loadingView.removeFromSuperview()
-                }
-            }
-        }
         
     }
     
@@ -58,11 +40,11 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: Table View Protocols
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        #warning("Placeholder value; change this when data is available.")
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        #warning("Placeholder value; change this when data is available.")
         return 120
     }
     
@@ -73,24 +55,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: Functions
-    func retrieveDatabase(_ completion: @escaping (NSDictionary) -> Void) {
-        reference = Database.database().reference()
-        guard let userID = Auth.auth().currentUser?.uid else {
-            print("Error: The current user resulted to be nil; prompting the user to authenticate again.")
-            showReauthenticationAlert()
-            return
-        }
-        
-        reference.child("users").child(userID).observeSingleEvent(of: .value) { (snapshot) in
-            let data = snapshot.value as? NSDictionary
-            if let data = data {
-                completion(data)
-            } else {
-                print("Error: The data doesn't exist.")
-            
-            }
-        }
-    }
+//    func retrieveDatabase(_ completion: @escaping (_) -> Void) {
+//
+//    }
     
     func showReauthenticationAlert() {
         self.displayAlert(title: "Uh oh.", message: "An authentication error occured. You'll be redirected for authentication again.") { (alert) in
