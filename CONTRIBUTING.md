@@ -38,7 +38,7 @@ Before submitting a report,
 GitHub Issues manage our bug, crashes and error reports. If you have noticed one existing, please create an issue with the **Error Report** template.
 
 Following the template:
-- **Give a concise and straightforward title.** Instead of "```[ERR] Some error```", consider describing the problem in short terms, like "```[ERR] Project failed to build```".
+- **Give a concise and straightforward title.** Instead of "```Some error```", consider describing the problem in short terms, like "```Project failed to build```".
 - **Describe the error in full detail.** If something you interacted with caused the mistake, like clicking on a button, describe where trigger (e.g., the button) is and where it is located. If possible, also include the error message that came together with the problem.
 - **Explain what you expected to see.** Your explanation allows us to understand how this problem affects the app in general.
 You may provide more context with the following, although not wholly needed:
@@ -59,7 +59,7 @@ Noticed something missing, or something you'd like to add, to the project? We'd 
 GitHub issues manage our enhancement and addition requests. If you have noticed one existing, please create an issue with the **Enhancement Request** template.
 
 Following the template:
-- **Give a concise and straightforward title.** Instead of "```[ENH] New feature```", consider describing the problem in short terms, like "```[ERR] Add more lists```".
+- **Give a concise and straightforward title.** Instead of "```New feature```", consider describing the problem in short terms, like "```Add more lists```".
 - **Describe how this enhancement can be useful.** You can choose to describe this from an end-user point of view.
 - **Explain why the current features are not satisfactory.** Explain why all the features in the current version of the app do not meet your expectations or perform as well as your enhancement.
 You may provide more context with the following, although not wholly needed:
@@ -73,7 +73,7 @@ While we can't guarantee there'll be ```for-beginners``` issues, Listé serves t
 
 **If you're a contributor**, make sure to document variables and functions with Swift's documentation comments (```///```) and comments (```//```) for everything else. Here's a piece of code that you can take as an example:
 
-```
+```swift
 /// Explain what this function does.
 ///
 /// - Parameters:
