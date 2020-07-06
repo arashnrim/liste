@@ -24,6 +24,9 @@ If you'd like to try out this project on your end, let's get started!
 ### Setting Up
 1. Clone or download this project and save it somewhere accessible. If downloaded, unzip the file before you continue.
 2. Head over to the [Firebase console](https://console.firebase.google.com) and create a Firebase project. Follow all onboarding instructions.
+> Note: Do also enable **Authentication** and **Database** (Cloud Firestore)!
+>
+> Subnote: This project uses Cloud Firestore. If you'd like to make it into a Realtime Database project, please do so at your own discretion!
 3. Add an iOS app to your project and follow all instructions. Download the `GoogleService-Info.plist` file and place it in `Liste/Liste/`.
 
 *Optional, but just in case:*
