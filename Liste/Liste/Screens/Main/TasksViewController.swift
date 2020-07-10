@@ -70,6 +70,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: Functions
+    /**
+     * Retrieves all user-related data in the Firestore database.
+     *
+     * - Parameters:
+     *      - completion: A closure with a `[String:Any]` parameter (i.e., data fetched from the database).
+     */
     func retrieveDatabase(_ completion: (([String:Any]) -> Void)?) {
         let database = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {
@@ -98,6 +104,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // TODO: Write function code to trigger onboarding
     }
     
+    /**
+     * Reads the user's `configured` status and performs actions based on the value.
+     *
+     * - Parameters:
+     *      - data: A `[String:Any]` parameter, preferably the data retrieved from the Firestore database.
+     */
     func readUserStatus(data: [String:Any]) {
         if let configured = data["configured"] as? Bool {
             if !(configured) {
@@ -106,6 +118,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    /**
+     * Reads the user's `tasks` and performs actions on them.
+     *
+     * - Parameters:
+     *      - data: A `[String:Any` parameter, preferably the data retrieved from the Firestore database.
+     */
     func readTasks(data: [String:Any]) {
         if let tasks = data["tasks"] as? [String:[String:Any]] {
             let convertedTasks = self.convertJSONToTask(tasks: tasks)
