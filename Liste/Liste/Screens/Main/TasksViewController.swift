@@ -82,6 +82,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.titleLabel.text = task.taskName
         cell.dueLabel.text = task.dueDate
         
+        let completed = task.completionStatus
+        if completed {
+            cell.statusButton.setImage(UIImage(named: "checked"), for: .normal)
+        } else {
+            cell.statusButton.setImage(UIImage(named: "unchecked"), for: .normal)
+        }
+        
         return cell
     }
     

@@ -11,6 +11,7 @@ import Foundation
 struct Task {
     var taskName: String
     var dueDate: String
+    var completionStatus: Bool
 }
 
 extension TasksViewController {
@@ -28,8 +29,12 @@ extension TasksViewController {
                 print("Error: dueDate in \(task.key) is not a String.")
                 return []
             }
+            guard let completionStatus = data["completionStatus"] as? Bool else {
+                print("Error: completionStatus in \(task.key) is not a Bool.")
+                return []
+            }
             
-            let convertedTask = Task(taskName: taskName, dueDate: dueDate)
+            let convertedTask = Task(taskName: taskName, dueDate: dueDate, completionStatus: completionStatus)
             output.append(convertedTask)
         }
         
