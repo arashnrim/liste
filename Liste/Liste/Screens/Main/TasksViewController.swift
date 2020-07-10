@@ -31,37 +31,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tasksTableView.dataSource = self
         
         retrieveDatabase { (data) in
-            if let configured = data["configured"] as? Bool {
-                if !(configured) {
-                    self.configureUser()
-                }
-            }
-            
-            if let tasks = data["tasks"] as? [String:[String:Any]] {
-                let convertedTasks = self.convertJSONToTask(tasks: tasks)
-                self.tasks += convertedTasks
-                self.tasksTableView.reloadData()
-                
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.loadingView.alpha = 0.0
-                    self.emptyView.alpha = 0.0
-                }) { (_) in
-                    self.loadingView.removeFromSuperview()
-                    self.emptyView.removeFromSuperview()
-                }
-            } else {
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.loadingView.alpha = 0.0
-                }) { (_) in
-                    self.loadingView.removeFromSuperview()
-                }
-            }
-        }
-        
-        retrieveUserStatus { (configured) in
-            if !(configured) {
-                // TODO: Perform onboarding segue here
-            }
+            self.readUserStatus(data: data)
+            self.readTasks(data: data)
         }
     }
     
@@ -123,34 +94,38 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func retrieveUserStatus(_ completion: @escaping (Bool) -> Void) {
-        let database = Firestore.firestore()
-        guard let userID = Auth.auth().currentUser?.uid else {
-            print("Warning: No authenticated user is found; attempting to recover by redirection.")
-            self.showReauthenticationAlert()
-            return
-        }
-        database.document("users/\(userID)").getDocument { (snapshot, error) in
-            if let error = error {
-                print("Error (fetching from Firebase database): \(error.localizedDescription)")
-                self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
-            } else {
-                if let snapshot = snapshot {
-                    let data = snapshot.data()
-                    if let data = data {
-                        guard let configured = data["configured"] as? Bool else {
-                            print("Error: configured in \(snapshot.documentID) is not a Bool.")
-                            return
-                        }
-                        completion(configured)
-                    }
-                }
+    func configureUser() {
+        // TODO: Write function code to trigger onboarding
+    }
+    
+    func readUserStatus(data: [String:Any]) {
+        if let configured = data["configured"] as? Bool {
+            if !(configured) {
+                self.configureUser()
             }
         }
     }
     
-    func configureUser() {
-        // TODO: Write function code to trigger onboarding
+    func readTasks(data: [String:Any]) {
+        if let tasks = data["tasks"] as? [String:[String:Any]] {
+            let convertedTasks = self.convertJSONToTask(tasks: tasks)
+            self.tasks += convertedTasks
+            self.tasksTableView.reloadData()
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.loadingView.alpha = 0.0
+                self.emptyView.alpha = 0.0
+            }) { (_) in
+                self.loadingView.removeFromSuperview()
+                self.emptyView.removeFromSuperview()
+            }
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.loadingView.alpha = 0.0
+            }) { (_) in
+                self.loadingView.removeFromSuperview()
+            }
+        }
     }
     
     /**
