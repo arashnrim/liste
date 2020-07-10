@@ -159,7 +159,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxH-oD-NKz">
                                 <rect key="frame" x="0.0" y="200" width="414" height="662"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-8S-AAI">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-8S-AAI">
                                         <rect key="frame" x="197" y="321" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>

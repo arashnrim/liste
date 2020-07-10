@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import FirebaseCore
-import FirebaseAuth
-import FirebaseFirestore
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Configures the Firebase library.
         FirebaseApp.configure()
-        
-        // Sets a global property linked to the Firestore database.
-        let database = Firestore.firestore()
         
         // Performs conditional navigation on the status of currentUser.
         // If currentUser is not nil, then the app will start in the Main Storyboard.
