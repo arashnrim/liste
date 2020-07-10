@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import Hero
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -19,12 +20,43 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
+    // MARK: Properties
+    var tasks = [Task]()
+    
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tasksTableView.delegate = self
         tasksTableView.dataSource = self
+        
+        retrieveDatabase { (data) in
+            if let configured = data["configured"] as? Bool {
+                if !(configured) {
+                    self.configureUser()
+                }
+            }
+            
+            if let tasks = data["tasks"] as? [String:[String:Any]] {
+                let convertedTasks = self.convertJSONToTask(tasks: tasks)
+                self.tasks += convertedTasks
+                self.tasksTableView.reloadData()
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.loadingView.alpha = 0.0
+                    self.emptyView.alpha = 0.0
+                }) { (_) in
+                    self.loadingView.removeFromSuperview()
+                    self.emptyView.removeFromSuperview()
+                }
+            } else {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.loadingView.alpha = 0.0
+                }) { (_) in
+                    self.loadingView.removeFromSuperview()
+                }
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,8 +68,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: Table View Protocols
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        #warning("Placeholder value; change this when data is available.")
-        return 5
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -47,10 +78,42 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! TaskTableViewCell
         
+        let task = tasks[indexPath.row]
+        cell.titleLabel.text = task.taskName
+        cell.dueLabel.text = task.dueDate
+        
         return cell
     }
     
     // MARK: Functions
+    func retrieveDatabase(_ completion: (([String:Any]) -> Void)?) {
+        let database = Firestore.firestore()
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("Warning: No authenticated user is found; attempting to recover by redirection.")
+            self.showReauthenticationAlert()
+            return
+        }
+        database.document("users/\(userID)").getDocument { (snapshot, error) in
+            if let error = error {
+                print("Error (fetching from Firebase database): \(error.localizedDescription)")
+                self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
+            } else {
+                if let snapshot = snapshot {
+                    let data = snapshot.data()
+                    if let data = data {
+                        completion?(data)
+                    } else {
+                        print("Warning: The snapshot data appears to be empty.")
+                    }
+                }
+            }
+        }
+    }
+    
+    func configureUser() {
+        // TODO: Write function code to trigger onboarding
+    }
+    
     /**
      * Presents a customized alert that prompts for user reauthentication.
      *
