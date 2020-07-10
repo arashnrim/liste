@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ * A struct that contains all data required and related to a task in-app.
+ *
+ * This struct contains `taskName`, `dueDate`, and `completionStatus` that defines more details of the user's task.
+ */
 struct Task {
     var taskName: String
     var dueDate: String
@@ -16,6 +21,14 @@ struct Task {
 
 extension TasksViewController {
     
+    /**
+     * Converts an input of tasks to the `Task` struct type.
+     *
+     * - Parameters:
+     *      - tasks: A `[String: [String:Any]]` parameter to convert from. This specific type is required as the Firestore database is structured to this.
+     *
+     * - Returns: A `[Tasks]` array with the converted tasks.
+     */
     func convertJSONToTask(tasks: [String: [String:Any]]) -> [Task] {
         var output = [Task]()
         
