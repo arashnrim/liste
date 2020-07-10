@@ -57,6 +57,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         }
+        
+        retrieveUserStatus { (configured) in
+            if !(configured) {
+                // TODO: Perform onboarding segue here
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -111,6 +117,32 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         completion?(data)
                     } else {
                         print("Warning: The snapshot data appears to be empty.")
+                    }
+                }
+            }
+        }
+    }
+    
+    func retrieveUserStatus(_ completion: @escaping (Bool) -> Void) {
+        let database = Firestore.firestore()
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("Warning: No authenticated user is found; attempting to recover by redirection.")
+            self.showReauthenticationAlert()
+            return
+        }
+        database.document("users/\(userID)").getDocument { (snapshot, error) in
+            if let error = error {
+                print("Error (fetching from Firebase database): \(error.localizedDescription)")
+                self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
+            } else {
+                if let snapshot = snapshot {
+                    let data = snapshot.data()
+                    if let data = data {
+                        guard let configured = data["configured"] as? Bool else {
+                            print("Error: configured in \(snapshot.documentID) is not a Bool.")
+                            return
+                        }
+                        completion(configured)
                     }
                 }
             }

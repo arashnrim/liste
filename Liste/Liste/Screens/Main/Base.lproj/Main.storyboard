@@ -201,11 +201,22 @@
                         <outlet property="menuButton" destination="APp-An-cl0" id="Noz-OP-MZA"/>
                         <outlet property="tasksTableView" destination="cvq-MP-7a4" id="Q0K-6b-VWE"/>
                         <segue destination="JKM-Zz-9PI" kind="show" identifier="auth" id="KLB-Lz-qyH"/>
+                        <segue destination="BJl-v8-Q3w" kind="show" identifier="configure" id="jDs-ce-Ttc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="1g8-z5-ZMP">
+            <objects>
+                <viewControllerPlaceholder id="BJl-v8-Q3w" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="meN-dV-Dqj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kx5-I5-Dfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="514"/>
         </scene>
     </scenes>
     <resources>
