@@ -22,6 +22,11 @@ We're glad that you'd like to contribute to our project. To begin, check out our
 If you'd like to try out this project on your end, let's get started!
 
 ### Setting Up
+
+- [Direct clone/download](#direct-clone/download)
+- [Cloning via Xcode](#cloning-via-xcode)
+
+## Direct clone/download
 1. Clone or download this project and save it somewhere accessible. If downloaded, unzip the file before you continue.
 2. Head over to the [Firebase console](https://console.firebase.google.com) and create a Firebase project. Follow all onboarding instructions.
 > Note: Do also enable **Authentication** and **Database** (Cloud Firestore)!
@@ -34,6 +39,23 @@ If you'd like to try out this project on your end, let's get started!
 4. Install Cocoapods on your device by using `sudo gem install cocoapods` in Terminal.
 5. Navigate to the Xcode folder of Liste (`Liste/Liste/`).
 6. Enter `pod install` in Terminal.
+
+## Cloning via Xcode
+1. Open Xcode and select "Clone an existing project".
+2. Enter `https://github.com/arashnrim/Liste.git` in the text field.
+3. Select Clone and choose the branch `dev` to checkout to.
+4. Save the project somewhere accessible.
+5. Head over to the [Firebase console](https://console.firebase.google.com) and create a Firebase project. Follow all onboarding instructions.
+> Note: Do also enable **Authentication** and **Database** (Cloud Firestore)!
+>
+> Subnote: This project uses Cloud Firestore. If you'd like to make it into a Realtime Database project, please do so at your own discretion!
+6. Add an iOS app to your project and follow all instructions. Download the `GoogleService-Info.plist` file and place it in `Liste/Liste/`.
+
+*Optional, but just in case:*
+
+7. Install Cocoapods on your device by using `sudo gem install cocoapods` in Terminal.
+8. Navigate to the Xcode folder of Liste (`Liste/Liste/`).
+9. Enter `pod install` in Terminal.
 
 ### Using the Xcode Project
 - Always use `Liste.xcworkspace` instead of `Liste.xcodeproj`. The `xcworkspace` file has all the Cocoapods libraries installed.
