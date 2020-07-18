@@ -155,6 +155,22 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func addUserDatabase(_ completion: @escaping () -> Void) {
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("Warning: No authenticated user is found; attempt to recover later on.")
+            return
+        }
+        
+        let database = Firestore.firestore()
+        let data = [
+            "configured": false,
+            "tasks": [],
+            "listName": "",
+        ] as [String : Any]
+        database.document("users/\(userID)").setData(data)
+        completion()
+    }
+    
     // MARK: Actions
     @IBAction func authButton(_ sender: UIButton) {
         guard let state = authButton.currentTitle else {
@@ -186,7 +202,12 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                     self.authButton.changeState(state: true, text: "Sign Up")
                 } else {
                     print("Auth: Auth appears to be OK.")
-                    self.performSegue(withIdentifier: "complete", sender: nil)
+                    print("Database: Setting up user database...")
+                    
+                    self.addUserDatabase {
+                        print("Database: Database creation appears to be OK.")
+                        self.performSegue(withIdentifier: "complete", sender: nil)
+                    }
                 }
             }
         }
