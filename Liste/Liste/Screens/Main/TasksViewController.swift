@@ -101,7 +101,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func configureUser() {
-        // TODO: Write function code to trigger onboarding
+        performSegue(withIdentifier: "configure", sender: nil)
     }
     
     /**
@@ -143,19 +143,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }) { (_) in
                 self.loadingView.removeFromSuperview()
             }
-        }
-    }
-    
-    /**
-     * Presents a customized alert that prompts for user reauthentication.
-     *
-     * This alert will include a `UIAlertAction` that redirects the user back to Auth storyboard.
-     */
-    func showReauthenticationAlert() {
-        self.displayAlert(title: "Uh oh.", message: "An authentication error occured. You'll be redirected for authentication again.") { (alert) in
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                self.performSegue(withIdentifier: "auth", sender: nil)
-            }))
         }
     }
     
