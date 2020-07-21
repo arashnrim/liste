@@ -10,14 +10,14 @@
 - [License](#license)
 
 ## Introduction
-Welcome to **Listé**, the simplified and open-sourced productive to-do list app for everyone.
+Welcome to **Listé**, the simplified and open-sourced to-do list app for everyone.
 
 Whether you're a beginner app developer or an innovator using the app, we'd love adding on the number of users in this project. We plan to cater to all; however, we're only focusing on developing the app in this current point in time. If you're a developer and wish to contribute, check out the [Getting Started](#getting-started) section below.
 
 For designers, stay tuned for details coming soon!
 
 ## Getting Started
-We're glad that you'd like to contribute to our project. To begin, check out our [Contributing Guide](CONTRIBUTING.md) to see what you have to do, including structuring your commit message and general rules-of-thumb that we recommended you to follow.
+We're glad that you'd like to contribute to our project. To begin, check out our [Contributing Guide](CONTRIBUTING.md) to see what you have to do, including structuring your commit message and general rules-of-thumb that we recommend you to follow.
 
 If you'd like to try out this project on your end, let's get started!
 
@@ -64,7 +64,8 @@ If you'd like to try out this project on your end, let's get started!
 
 ### Contributing After
 
-- Ensure that your `GoogleService-Info.plist` is not part of your commits/pull requests to ensure the security of your Firebase project.
+- Ensure that your `GoogleService-Info.plist` is not part of your commits/pull requests to ensure the security of your Firebase project and stability of the original project.
+    - The `.gitignore` file should've managed this for you, but do check manually as well before making changes.
 
 ## Support
 If you need help with anything related to the project, we recommend opening a new issue in the Issue Tracker page. Following GitHub's [Open Source Guide](https://www.opensource.guide), we strongly advise against privately communicating.
