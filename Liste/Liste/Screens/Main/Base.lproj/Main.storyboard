@@ -157,7 +157,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxH-oD-NKz">
-                                <rect key="frame" x="0.0" y="200" width="414" height="662"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-8S-AAI">
                                         <rect key="frame" x="197" y="321" width="20" height="20"/>
@@ -166,13 +166,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="jKW-8S-AAI" firstAttribute="centerX" secondItem="JxH-oD-NKz" secondAttribute="centerX" id="Vjs-Nc-w9f"/>
-                                    <constraint firstItem="jKW-8S-AAI" firstAttribute="centerY" secondItem="JxH-oD-NKz" secondAttribute="centerY" id="XGb-Qs-Onk"/>
+                                    <constraint firstItem="jKW-8S-AAI" firstAttribute="centerY" secondItem="JxH-oD-NKz" secondAttribute="centerY" constant="-54" id="XGb-Qs-Onk"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="JxH-oD-NKz" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" id="0z8-li-aBH"/>
+                            <constraint firstItem="JxH-oD-NKz" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" constant="-108" id="0z8-li-aBH"/>
                             <constraint firstItem="b29-YZ-1bI" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" id="4zH-zF-frL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cvq-MP-7a4" secondAttribute="bottom" id="IEB-hE-eRF"/>
                             <constraint firstItem="JxH-oD-NKz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KHK-Xj-a7C"/>

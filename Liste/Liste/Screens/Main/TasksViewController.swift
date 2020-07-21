@@ -11,7 +11,7 @@ import Firebase
 import FirebaseFirestore
 import Hero
 
-class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     // MARK: Outlets
     @IBOutlet weak var menuButton: UIButton!
@@ -30,9 +30,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tasksTableView.delegate = self
         tasksTableView.dataSource = self
         
+        listNameTextField.delegate = self
+        
         retrieveDatabase { (data) in
             self.readUserStatus(data: data)
             self.readTasks(data: data)
+            self.readListName(data: data)
         }
     }
     
@@ -67,6 +70,35 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         return cell
+    }
+    
+    // MARK: Text Field Protocols
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let newName = listNameTextField.text else {
+            print("Warning: newName appears to be empty; the execution of future functions may fail.")
+            return false
+        }
+        
+        if !(newName.isEmpty || newName == "") {
+            self.changeListName {
+                print("List name change appears to be OK.")
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.listNameTextField.alpha = 1.0
+                }) { (_) in
+                    self.listNameTextField.isEnabled = true
+                    textField.resignFirstResponder()
+                }
+            }
+        } else {
+            self.displayAlert(title: "Whoops.", message: "The name of your list cannot be empty.") { (alert) in
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                    textField.becomeFirstResponder()
+                }))
+            }
+        }
+        
+        return false
     }
     
     // MARK: Functions
@@ -144,6 +176,34 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.loadingView.removeFromSuperview()
             }
         }
+    }
+    
+    func readListName(data: [String:Any]) {
+        if let listName = data["listName"] as? String {
+            self.listNameTextField.text = listName
+        }
+    }
+    
+    func changeListName(_ completion: (() -> Void)?) {
+        guard let newName = listNameTextField.text else {
+            print("Warning: newName appears to be empty; the execution of this function may fail.")
+            return
+        }
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("Warning: No authenticated user is found; attempting to recover by redirection.")
+            self.showReauthenticationAlert()
+            return
+        }
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.listNameTextField.alpha = 0.5
+        }) { (_) in
+            self.listNameTextField.isEnabled = false
+        }
+        
+        let database = Firestore.firestore()
+        database.document("users/\(userID)").updateData(["listName": newName])
+        completion?()
     }
     
 }
