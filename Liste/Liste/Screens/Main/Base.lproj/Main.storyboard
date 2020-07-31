@@ -47,12 +47,29 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5I-vC-2Wf">
+                                        <rect key="frame" x="354" y="52" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="VzZ-Bl-ccS"/>
+                                            <constraint firstAttribute="height" constant="40" id="pny-Gb-Inq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="tintColor" name="Liste Orange"/>
+                                        <state key="normal" image="add">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="34k-8J-I0g" kind="show" id="g31-YG-L5l"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="0aw-1z-Qph"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z5I-vC-2Wf" secondAttribute="trailing" constant="20" id="3oO-go-zl3"/>
                                     <constraint firstItem="X5K-Oe-yZ8" firstAttribute="leading" secondItem="Eeo-Kw-ryf" secondAttribute="leading" constant="20" id="Lco-tA-UWq"/>
                                     <constraint firstItem="X5K-Oe-yZ8" firstAttribute="top" secondItem="APp-An-cl0" secondAttribute="bottom" constant="40" id="Sdn-Oe-yee"/>
                                     <constraint firstItem="APp-An-cl0" firstAttribute="leading" secondItem="Eeo-Kw-ryf" secondAttribute="leading" constant="20" id="WVp-YZ-NA8"/>
+                                    <constraint firstItem="X5K-Oe-yZ8" firstAttribute="top" secondItem="Z5I-vC-2Wf" secondAttribute="bottom" constant="38.5" id="bOC-fB-MHr"/>
                                     <constraint firstAttribute="bottom" secondItem="X5K-Oe-yZ8" secondAttribute="bottom" constant="20" id="iRD-q3-PTJ"/>
                                     <constraint firstAttribute="trailing" secondItem="X5K-Oe-yZ8" secondAttribute="trailing" constant="20" id="li8-0I-Pyg"/>
                                 </constraints>
@@ -218,8 +235,25 @@
             </objects>
             <point key="canvasLocation" x="138" y="514"/>
         </scene>
+        <!--Add View Controller-->
+        <scene sceneID="8iy-LX-qAt">
+            <objects>
+                <viewController id="34k-8J-I0g" customClass="AddViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TkU-9q-qjb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="blF-wg-L2q"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Aw6-Zn-9lb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MxL-bi-b1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="128"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="add" width="44" height="44"/>
         <image name="emptyList" width="1093" height="764"/>
         <image name="menu" width="24" height="24"/>
         <image name="unchecked" width="23" height="24"/>
