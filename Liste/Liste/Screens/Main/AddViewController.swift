@@ -89,7 +89,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
      *      - tasks: The user's tasks, in the Firestore JSON form of `[String: [String: Any]]`.
      *      - completion: A closure for code to run following a successful update.
      */
-    func updateDatabase(tasks: [String: [String: Any]], _ completion: @escaping (() -> Void)) {
+    func updateDatabase(tasks: [String: [String: Any]], completion: @escaping (() -> Void)) {
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticatd user is found; future functions may fail.")
             return
