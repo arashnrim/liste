@@ -60,7 +60,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let task = tasks[indexPath.row]
         cell.titleLabel.text = task.taskName
-        cell.dueLabel.text = task.dueDate
+        cell.dueLabel.text = self.convertDateToString(date: task.dueDate)
         
         let completed = task.completionStatus
         if completed {
