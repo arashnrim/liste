@@ -6,7 +6,8 @@
 //  Copyright © 2020 Apprendre. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Firebase
 
 /**
  * A struct that contains all data required and related to a task in-app.
@@ -15,11 +16,11 @@ import Foundation
  */
 struct Task {
     var taskName: String
-    var dueDate: String
+    var dueDate: Date
     var completionStatus: Bool
 }
 
-extension TasksViewController {
+extension UIViewController {
     
     /**
      * Converts an input of tasks to the `Task` struct type.
@@ -38,7 +39,7 @@ extension TasksViewController {
                 print("Error: taskName in \(task.key) is not a String.")
                 return []
             }
-            guard let dueDate = data["dueDate"] as? String else {
+            guard let dueDate = data["dueDate"] as? Timestamp else {
                 print("Error: dueDate in \(task.key) is not a String.")
                 return []
             }
@@ -47,11 +48,26 @@ extension TasksViewController {
                 return []
             }
             
-            let convertedTask = Task(taskName: taskName, dueDate: dueDate, completionStatus: completionStatus)
+            let convertedTask = Task(taskName: taskName, dueDate: dueDate.dateValue(), completionStatus: completionStatus)
             output.append(convertedTask)
         }
         
         return output
+    }
+    
+    
+    func convertDateToString(date: Date) -> String {
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .long
+        
+        return timeFormatter.string(from: date)
+    }
+    
+    func convertStringToDate(string: String) -> Date {
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzz"
+        
+        return timeFormatter.date(from: string)!
     }
     
 }
