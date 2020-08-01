@@ -155,7 +155,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func addUserDatabase(_ completion: @escaping () -> Void) {
+    func addUserDatabase(completion: @escaping () -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticated user is found; attempt to recover later on.")
             return
