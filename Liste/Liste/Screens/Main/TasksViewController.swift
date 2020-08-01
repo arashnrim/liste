@@ -43,6 +43,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if segue.identifier == "auth" {
             let destination = segue.destination
             destination.heroModalAnimationType = .zoomOut
+        } else if segue.identifier == "add" {
+            let destination = segue.destination as! AddViewController
+            destination.tasks = tasks
         }
     }
     
@@ -162,18 +165,22 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.tasks += convertedTasks
             self.tasksTableView.reloadData()
             
-            UIView.animate(withDuration: 0.5, animations: {
-                self.loadingView.alpha = 0.0
-                self.emptyView.alpha = 0.0
-            }) { (_) in
-                self.loadingView.removeFromSuperview()
-                self.emptyView.removeFromSuperview()
+            if self.loadingView != nil && self.emptyView != nil {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.loadingView.alpha = 0.0
+                    self.emptyView.alpha = 0.0
+                }) { (_) in
+                    self.loadingView.removeFromSuperview()
+                    self.emptyView.removeFromSuperview()
+                }
             }
         } else {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.loadingView.alpha = 0.0
-            }) { (_) in
-                self.loadingView.removeFromSuperview()
+            if self.loadingView != nil && self.emptyView != nil {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.loadingView.alpha = 0.0
+                }) { (_) in
+                    self.loadingView.removeFromSuperview()
+                }
             }
         }
     }
@@ -204,6 +211,16 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let database = Firestore.firestore()
         database.document("users/\(userID)").updateData(["listName": newName])
         completion?()
+    }
+    
+    @IBAction func unwindToTasks(_ unwindSegue: UIStoryboardSegue) {
+        tasks = []
+        retrieveDatabase { (data) in
+            self.readUserStatus(data: data)
+            self.readTasks(data: data)
+            self.readListName(data: data)
+        }
+        self.tasksTableView.reloadData()
     }
     
 }
