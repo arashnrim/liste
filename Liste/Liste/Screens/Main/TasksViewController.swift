@@ -82,6 +82,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return false
         }
         
+        textField.resignFirstResponder()
+        
         if !(newName.isEmpty || newName == "") {
             self.changeListName {
                 print("List name change appears to be OK.")
@@ -90,7 +92,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.listNameTextField.alpha = 1.0
                 }) { (_) in
                     self.listNameTextField.isEnabled = true
-                    textField.resignFirstResponder()
                 }
             }
         } else {
