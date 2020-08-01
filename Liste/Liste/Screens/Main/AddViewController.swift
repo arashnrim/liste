@@ -96,7 +96,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         }
         let database = Firestore.firestore()
         
-        database.document("users/\(userID)").setData(["tasks": tasks]) { (error) in
+        database.document("users/\(userID)").updateData(["tasks": tasks]) { (error) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
