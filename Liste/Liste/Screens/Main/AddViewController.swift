@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
     @IBOutlet weak var taskNameField: UITextField!
@@ -18,6 +18,30 @@ class AddViewController: UIViewController {
     
     // MARK: Properties
     var tasks: [Task] = []
+    
+    // MARK: Overrides
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Sets the delegate of the text field as AddViewController.
+        self.taskNameField.delegate = self
+        
+        // Allows editing to end when any part of the screen is tapped outside the keyboard area.
+        self.dismissKeyboardOnTap(completion: nil)
+        
+        // Adds management of on-screen content to move when the keyboard is called.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // MARK: Text Field Protocols
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == taskNameField {
+            self.taskNameField.resignFirstResponder()
+            self.taskDescriptionView.becomeFirstResponder()
+        }
+        return false
+    }
     
     // MARK: Functions
     /**
