@@ -59,7 +59,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
                                         </state>
                                         <connections>
-                                            <segue destination="34k-8J-I0g" kind="show" id="g31-YG-L5l"/>
+                                            <segue destination="34k-8J-I0g" kind="show" identifier="add" id="g31-YG-L5l"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -253,6 +253,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="26Q-2y-PyH">
                                             <color key="tintColor" name="Liste Orange"/>
+                                            <connections>
+                                                <action selector="saveButton:" destination="34k-8J-I0g" id="yt0-uV-NFj"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -287,7 +290,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="jow-a2-nPe">
-                                                <rect key="frame" x="0.0" y="433" width="414" height="216"/>
+                                                <rect key="frame" x="0.0" y="432.5" width="414" height="216"/>
                                             </datePicker>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heY-VE-yZG">
                                                 <rect key="frame" x="20" y="40" width="374" height="49.5"/>
@@ -338,8 +341,15 @@
                         <viewLayoutGuide key="safeArea" id="blF-wg-L2q"/>
                     </view>
                     <navigationItem key="navigationItem" id="Aw6-Zn-9lb"/>
+                    <connections>
+                        <outlet property="taskDescriptionView" destination="47s-ia-fiK" id="78Y-a7-uTl"/>
+                        <outlet property="taskDuePicker" destination="jow-a2-nPe" id="Dcb-T4-CqJ"/>
+                        <outlet property="taskNameField" destination="heY-VE-yZG" id="kku-l4-j9S"/>
+                        <segue destination="XNQ-4d-3zh" kind="unwind" identifier="dismiss" unwindAction="unwindToTasks:" id="joQ-ei-y43"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MxL-bi-b1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XNQ-4d-3zh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="127.90178571428571"/>
         </scene>

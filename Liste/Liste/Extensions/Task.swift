@@ -55,6 +55,28 @@ extension UIViewController {
         return output
     }
     
+    func convertTaskToJSON(tasks: [Task]) -> [String: [String: Any]] {
+        var output = [String: [String: Any]]()
+        
+        for task in tasks {
+            let taskName = task.taskName
+            let dueDate = task.dueDate
+            let completionStatus = task.completionStatus
+            
+            let convertedTask = [
+                "taskName": taskName,
+                "dueDate": Timestamp(date: dueDate),
+                "completionStatus": completionStatus
+                ] as [String : Any]
+            
+            let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            let randomTaskID = String((0..<8).map{ _ in letters.randomElement()! })
+            
+            output[randomTaskID] = convertedTask
+        }
+        
+        return output
+    }
     
     func convertDateToString(date: Date) -> String {
         let timeFormatter = DateFormatter()
