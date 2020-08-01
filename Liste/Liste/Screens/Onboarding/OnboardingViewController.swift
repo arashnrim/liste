@@ -27,7 +27,7 @@ class OnboardingViewController: UIViewController {
      * - Parameters:
      *      - completion: A closure to run after the update.
      */
-    func updateUserStatus(_ completion: @escaping () -> Void) {
+    func updateUserStatus(completion: @escaping () -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticated user is found; attempting to recover by redirection.")
             self.showReauthenticationAlert()
@@ -35,8 +35,14 @@ class OnboardingViewController: UIViewController {
         }
         
         let database = Firestore.firestore()
-        database.document("users/\(userID)").updateData(["configured": true])
-        completion()
+        database.document("users/\(userID)").updateData(["configured": true]) { (error) in
+            if let error = error {
+                print("Error (while changing user configuration status): \(error.localizedDescription)")
+                self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+            } else {
+                completion()
+            }
+        }
     }
     
     // MARK: Actions

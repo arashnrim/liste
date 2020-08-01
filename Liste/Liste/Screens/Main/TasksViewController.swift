@@ -111,7 +111,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
      * - Parameters:
      *      - completion: A closure with a `[String:Any]` parameter (i.e., data fetched from the database).
      */
-    func retrieveDatabase(_ completion: (([String:Any]) -> Void)?) {
+    func retrieveDatabase(completion: (([String:Any]) -> Void)?) {
         let database = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticated user is found; attempting to recover by redirection.")
@@ -203,7 +203,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
      * - Parameters:
      *      - completion: An optional closure to run after the update.
      */
-    func changeListName(_ completion: (() -> Void)?) {
+    func changeListName(completion: (() -> Void)?) {
         guard let newName = listNameTextField.text else {
             print("Warning: newName appears to be empty; the execution of this function may fail.")
             return
@@ -221,8 +221,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         let database = Firestore.firestore()
-        database.document("users/\(userID)").updateData(["listName": newName])
-        completion?()
+        database.document("users/\(userID)").updateData(["listName": newName]) { (error) in
+            if let error = error {
+                print("Error (while updating list name): \(error.localizedDescription)")
+                self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+            } else {
+                completion?()
+            }
+        }
     }
     
     @IBAction func unwindToTasks(_ unwindSegue: UIStoryboardSegue) {
