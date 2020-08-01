@@ -28,7 +28,7 @@ extension UIViewController {
      * - Parameters:
      *      - tasks: A `[String: [String:Any]]` parameter to convert from. This specific type is required as the Firestore database is structured to this.
      *
-     * - Returns: A `[Tasks]` array with the converted tasks.
+     * - Returns: A `[Task]` array with the converted tasks.
      */
     func convertJSONToTask(tasks: [String: [String:Any]]) -> [Task] {
         var output = [Task]()
@@ -55,6 +55,14 @@ extension UIViewController {
         return output
     }
     
+    /**
+     * Converts an input of tasks to the Firestore JSON `[String: [String: Any]` struct type.
+     *
+     * - Parameters:
+     *      - tasks: A `[Task]` parameter to convert from.
+     *
+     * - Returns: A `[String: [String: Any]]` array with the converted tasks.
+     */
     func convertTaskToJSON(tasks: [Task]) -> [String: [String: Any]] {
         var output = [String: [String: Any]]()
         
@@ -78,6 +86,16 @@ extension UIViewController {
         return output
     }
     
+    /**
+     * Converts a `Date` to a readable `String` format.
+     *
+     * This function specifically changes the `Date` to a String format of "dd MMMM, yyyy".
+     *
+     * - Parameters:
+     *      - date: The `Date` to convert from.
+     *
+     * - Returns: A `String` of the converted `Date`.
+     */
     func convertDateToString(date: Date) -> String {
         let timeFormatter = DateFormatter()
         timeFormatter.dateStyle = .long
@@ -85,6 +103,16 @@ extension UIViewController {
         return timeFormatter.string(from: date)
     }
     
+    /**
+     * Converts a `String` to a `Date` type.
+     *
+     * This function assumes that the `String` holds a format of "yyyy-MM-dd HH:mm:ss zzzz". At all costs, please ensure that the `String` is in this format before proceeding.
+     *
+     * - Parameters:
+     *      - string: The `String` to convert from.
+     *
+     * - Returns: A `Date` of the converted `String`.
+     */
     func convertStringToDate(string: String) -> Date {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzz"
