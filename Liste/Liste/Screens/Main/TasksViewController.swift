@@ -157,7 +157,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
      * Reads the user's `tasks` and performs actions on them.
      *
      * - Parameters:
-     *      - data: A `[String:Any` parameter, preferably the data retrieved from the Firestore database.
+     *      - data: A `[String:Any]` parameter, preferably the data retrieved from the Firestore database.
      */
     func readTasks(data: [String:Any]) {
         if let tasks = data["tasks"] as? [String:[String:Any]] {
@@ -185,12 +185,24 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    /**
+     * Reads the user's list name.
+     *
+     * - Parameters:
+     *      - data: A `[String:Any]` parameter, preferably the data retrieved from the Firestore database.
+     */
     func readListName(data: [String:Any]) {
         if let listName = data["listName"] as? String {
             self.listNameTextField.text = listName
         }
     }
     
+    /**
+     * Changes the user's list name.
+     *
+     * - Parameters:
+     *      - completion: An optional closure to run after the update.
+     */
     func changeListName(_ completion: (() -> Void)?) {
         guard let newName = listNameTextField.text else {
             print("Warning: newName appears to be empty; the execution of this function may fail.")

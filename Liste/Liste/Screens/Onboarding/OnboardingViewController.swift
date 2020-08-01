@@ -21,6 +21,12 @@ class OnboardingViewController: UIViewController {
     }
     
     // MARK: Functions
+    /**
+     * Updates the user's `configured` state to `true`.
+     *
+     * - Parameters:
+     *      - completion: A closure to run after the update.
+     */
     func updateUserStatus(_ completion: @escaping () -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticated user is found; attempting to recover by redirection.")
