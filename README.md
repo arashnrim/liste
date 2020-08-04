@@ -23,6 +23,10 @@ If you'd like to try out this project on your end, let's get started!
 
 ### Setting Up
 
+> **Warning!**
+>
+> Listé will take a long time to compile and build due to the number of libraries it depends on (more heavily, Firebase). You may notice that your computer may be abnormal while compiling for the first time.
+
 - [Direct clone/download](#direct-clone/download)
 - [Cloning via Xcode](#cloning-via-xcode)
 
