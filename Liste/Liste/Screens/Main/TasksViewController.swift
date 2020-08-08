@@ -55,7 +55,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 140
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,6 +64,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let task = tasks[indexPath.row]
         cell.titleLabel.text = task.taskName
         cell.dueLabel.text = self.convertDateToString(date: task.dueDate)
+        cell.mainView.layer.cornerRadius = 8
+        cell.mainView.layer.masksToBounds = true
+        
+        let clearView = UIView()
+        clearView.backgroundColor = UIColor.clear
+        cell.backgroundView = clearView
         
         let completed = task.completionStatus
         if completed {
@@ -73,6 +79,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Row \(indexPath.row) tapped!")
     }
     
     // MARK: Text Field Protocols
