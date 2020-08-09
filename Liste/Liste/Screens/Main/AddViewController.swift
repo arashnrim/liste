@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddViewController: UIViewController, UITextFieldDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     // MARK: Outlets
     @IBOutlet weak var taskNameField: UITextField!
@@ -23,8 +23,13 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sets the delegate of the text field as AddViewController.
+        // Sets the delegate of the text fields as AddViewController.
         self.taskNameField.delegate = self
+        self.taskDescriptionView.delegate = self
+        
+        // Manually sets a placeholder in taskDescriptionView.
+        taskDescriptionView.text = "Task description"
+        taskDescriptionView.textColor = UIColor.lightGray
         
         // Allows editing to end when any part of the screen is tapped outside the keyboard area.
         self.dismissKeyboardOnTap(completion: nil)
@@ -41,6 +46,21 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             self.taskDescriptionView.becomeFirstResponder()
         }
         return false
+    }
+    
+    // MARK: Text View Protocols
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Task description"
+            textView.textColor = UIColor.lightGray
+        }
     }
     
     // MARK: Functions
@@ -72,9 +92,15 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             print("Warning: Something happened when retrieving the value for taskName.")
             return Task(taskName: "", dueDate: Date(), completionStatus: false)
         }
+        let description = taskDescriptionView.text
         let dueDate = taskDuePicker.date
+        let task: Task
         
-        let task = Task(taskName: taskName, dueDate: dueDate, completionStatus: false)
+        if !(description == "Task description") {
+            task = Task(taskName: taskName, dueDate: dueDate, description: description!, completionStatus: false)
+        } else {
+            task = Task(taskName: taskName, dueDate: dueDate, completionStatus: false)
+        }
         return task
     }
     
