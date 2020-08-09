@@ -17,6 +17,7 @@ import Firebase
 struct Task {
     var taskName: String
     var dueDate: Date
+    var description: String?
     var completionStatus: Bool
 }
 
@@ -69,13 +70,24 @@ extension UIViewController {
         for task in tasks {
             let taskName = task.taskName
             let dueDate = task.dueDate
+            let description = task.description
             let completionStatus = task.completionStatus
+            let convertedTask: [String: Any]
             
-            let convertedTask = [
-                "taskName": taskName,
-                "dueDate": Timestamp(date: dueDate),
-                "completionStatus": completionStatus
-                ] as [String : Any]
+            if !(description == nil) {
+                convertedTask = [
+                    "taskName": taskName,
+                    "dueDate": Timestamp(date: dueDate),
+                    "description": description!,
+                    "completionStatus": completionStatus
+                    ] as [String : Any]
+            } else {
+                convertedTask = [
+                    "taskName": taskName,
+                    "dueDate": Timestamp(date: dueDate),
+                    "completionStatus": completionStatus
+                    ] as [String : Any]
+            }
             
             let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             let randomTaskID = String((0..<8).map{ _ in letters.randomElement()! })
