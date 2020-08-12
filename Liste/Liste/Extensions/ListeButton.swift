@@ -14,12 +14,12 @@ import UIKit
  * `ListeButton` buttons will have a cornered radius of 10.0 and have Liste Orange as the background color.
  */
 class ListeButton: UIButton {
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         self.layer.cornerRadius = 10.0
         self.backgroundColor = UIColor.init(named: "Liste Orange")!
     }
-    
+
 }

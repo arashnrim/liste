@@ -22,7 +22,7 @@ struct Task {
 }
 
 extension UIViewController {
-    
+
     /**
      * Converts an input of tasks to the `Task` struct type.
      *
@@ -31,9 +31,9 @@ extension UIViewController {
      *
      * - Returns: A `[Task]` array with the converted tasks.
      */
-    func convertJSONToTask(tasks: [String: [String:Any]]) -> [Task] {
+    func convertJSONToTask(tasks: [String: [String: Any]]) -> [Task] {
         var output = [Task]()
-        
+
         for task in tasks {
             let data = task.value
             guard let taskName = data["taskName"] as? String else {
@@ -48,14 +48,14 @@ extension UIViewController {
                 print("Error: completionStatus in \(task.key) is not a Bool.")
                 return []
             }
-            
+
             let convertedTask = Task(taskName: taskName, dueDate: dueDate.dateValue(), completionStatus: completionStatus)
             output.append(convertedTask)
         }
-        
+
         return output
     }
-    
+
     /**
      * Converts an input of tasks to the Firestore JSON `[String: [String: Any]` struct type.
      *
@@ -66,38 +66,38 @@ extension UIViewController {
      */
     func convertTaskToJSON(tasks: [Task]) -> [String: [String: Any]] {
         var output = [String: [String: Any]]()
-        
+
         for task in tasks {
             let taskName = task.taskName
             let dueDate = task.dueDate
             let description = task.description
             let completionStatus = task.completionStatus
             let convertedTask: [String: Any]
-            
+
             if !(description == nil) {
                 convertedTask = [
                     "taskName": taskName,
                     "dueDate": Timestamp(date: dueDate),
                     "description": description!,
                     "completionStatus": completionStatus
-                    ] as [String : Any]
+                    ] as [String: Any]
             } else {
                 convertedTask = [
                     "taskName": taskName,
                     "dueDate": Timestamp(date: dueDate),
                     "completionStatus": completionStatus
-                    ] as [String : Any]
+                    ] as [String: Any]
             }
-            
+
             let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            let randomTaskID = String((0..<8).map{ _ in letters.randomElement()! })
-            
+            let randomTaskID = String((0..<8).map { _ in letters.randomElement()! })
+
             output[randomTaskID] = convertedTask
         }
-        
+
         return output
     }
-    
+
     /**
      * Converts a `Date` to a readable `String` format.
      *
@@ -111,10 +111,10 @@ extension UIViewController {
     func convertDateToString(date: Date) -> String {
         let timeFormatter = DateFormatter()
         timeFormatter.dateStyle = .long
-        
+
         return timeFormatter.string(from: date)
     }
-    
+
     /**
      * Converts a `String` to a `Date` type.
      *
@@ -128,8 +128,8 @@ extension UIViewController {
     func convertStringToDate(string: String) -> Date {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzz"
-        
+
         return timeFormatter.date(from: string)!
     }
-    
+
 }

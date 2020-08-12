@@ -15,30 +15,30 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
     @IBOutlet weak var taskNameField: UITextField!
     @IBOutlet weak var taskDescriptionView: UITextView!
     @IBOutlet weak var taskDuePicker: UIDatePicker!
-    
+
     // MARK: Properties
     var tasks: [Task] = []
-    
+
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Sets the delegate of the text fields as AddViewController.
         self.taskNameField.delegate = self
         self.taskDescriptionView.delegate = self
-        
+
         // Manually sets a placeholder in taskDescriptionView.
         taskDescriptionView.text = "Task description"
         taskDescriptionView.textColor = UIColor.lightGray
-        
+
         // Allows editing to end when any part of the screen is tapped outside the keyboard area.
         self.dismissKeyboardOnTap(completion: nil)
-        
+
         // Adds management of on-screen content to move when the keyboard is called.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     // MARK: Text Field Protocols
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == taskNameField {
@@ -47,7 +47,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         }
         return false
     }
-    
+
     // MARK: Text View Protocols
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
@@ -55,14 +55,14 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             textView.textColor = UIColor.black
         }
     }
-    
+
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Task description"
             textView.textColor = UIColor.lightGray
         }
     }
-    
+
     // MARK: Functions
     /**
      * Verifies if the user's inputs are valid.
@@ -76,10 +76,10 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             print("Warning: Something happened when retrieving the value for taskName.")
             return false
         }
-        
+
         return !(taskName.isEmpty || taskName == "")
     }
-    
+
     /**
      * Prepares and compiles all the information given into a `Task`.
      *
@@ -95,7 +95,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         let description = taskDescriptionView.text
         let dueDate = taskDuePicker.date
         let task: Task
-        
+
         if !(description == "Task description") {
             task = Task(taskName: taskName, dueDate: dueDate, description: description!, completionStatus: false)
         } else {
@@ -103,7 +103,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         }
         return task
     }
-    
+
     /**
      * Updates the user's tasks on the database.
      *
@@ -121,22 +121,21 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             return
         }
         let database = Firestore.firestore()
-        
+
         database.document("users/\(userID)").updateData(["tasks": tasks]) { (error) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
-            }
-            else {
+            } else {
                 completion()
             }
         }
     }
-    
+
     // MARK: Actions
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
         let isValid = validateInputs()
-        
+
         if isValid {
             tasks.append(prepareTask())
             let jsonTasks = self.convertTaskToJSON(tasks: tasks)
@@ -147,5 +146,5 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             self.displayAlert(title: "Whoops!", message: "Some fields are invalid. Please take a look at your fields and try again.", override: nil)
         }
     }
-    
+
 }

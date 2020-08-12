@@ -11,7 +11,7 @@ import Firebase
 import Hero
 
 class OnboardingViewController: UIViewController {
-    
+
     // MARK: Overrides
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "return" {
@@ -19,7 +19,7 @@ class OnboardingViewController: UIViewController {
             destination.hero.modalAnimationType = .slide(direction: .down)
         }
     }
-    
+
     // MARK: Functions
     /**
      * Updates the user's `configured` state to `true`.
@@ -33,7 +33,7 @@ class OnboardingViewController: UIViewController {
             self.showReauthenticationAlert()
             return
         }
-        
+
         let database = Firestore.firestore()
         database.document("users/\(userID)").updateData(["configured": true]) { (error) in
             if let error = error {
@@ -44,12 +44,12 @@ class OnboardingViewController: UIViewController {
             }
         }
     }
-    
+
     // MARK: Actions
     @IBAction func finishButton(_ sender: ListeButton) {
         updateUserStatus {
             self.performSegue(withIdentifier: "return", sender: nil)
         }
     }
-    
+
 }

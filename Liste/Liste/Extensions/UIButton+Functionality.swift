@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton {
-    
+
     /**
      * Changes the state and, if given, changes the title of the `UIButton`.
      *
@@ -21,7 +21,7 @@ extension UIButton {
      */
     func changeState(state: Bool, text: String?) {
         self.isEnabled = state
-        
+
         if state == true {
             UIView.animate(withDuration: 0.5) {
                 self.alpha = 1.0
@@ -31,10 +31,10 @@ extension UIButton {
                 self.alpha = 0.5
             }
         }
-        
+
         if let text = text {
             self.setTitle(text, for: .normal)
         }
     }
-    
+
 }

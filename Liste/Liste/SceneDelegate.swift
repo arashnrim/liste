@@ -11,12 +11,13 @@ import Firebase
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
+
     var window: UIWindow?
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        //swiftlint:disable unused_optional_binding
         guard let _ = (scene as? UIWindowScene) else { return }
-        
+
         // Performs conditional navigation on the status of currentUser.
         // If currentUser is not nil, then the app will start in the Main Storyboard.
         // Else, the app will start in the Auth Storyboard.
@@ -33,5 +34,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.makeKeyAndVisible()
         }
     }
-    
+
 }
