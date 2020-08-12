@@ -10,40 +10,40 @@ import UIKit
 import Firebase
 
 class AuthViewController: UIViewController, UITextFieldDelegate {
-    
+
     // MARK: Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var authButton: ListeButton!
-    
+
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Sets the delegate of the text fields as AuthViewController.
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
+
         // Assumes authButton to be disabled when the view loads.
         authButton.changeState(state: false, text: "...")
-        
+
         // Allows editing to end when any part of the screen is tapped outside the keyboard area.
         self.dismissKeyboardOnTap {
             let valid = self.validate()
             valid ? self.checkUserStatus() : self.authButton.changeState(state: false, text: "...")
         }
-        
+
         // Adds management of on-screen content to move when the keyboard is called.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     // MARK: Delegate Protocols
     func textFieldDidEndEditing(_ textField: UITextField) {
         let valid = validate()
         valid ? checkUserStatus() : authButton.changeState(state: false, text: "...")
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case emailTextField:
@@ -55,7 +55,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
         return false
     }
-    
+
     // MARK: Functions
     /**
      * Checks if the user input in the `emailTextField` and `passwordTextField` fields are valid.
@@ -75,10 +75,10 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
         let emailValid = !(email.isEmpty) && (email.contains("@"))
         let passwordValid = !(password.isEmpty) && (password.count > 5)
-        
+
         return emailValid && passwordValid
     }
-    
+
     /**
      * Checks if the entered user credentials are linked to an existing account or otherwise.
      *
@@ -89,7 +89,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             print("Warning: Email String value appears to be empty; assuming the check result to be false.")
             return
         }
-        
+
         Auth.auth().fetchSignInMethods(forEmail: email) { (methods, error) in
             if let error = error {
                 self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
@@ -106,7 +106,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
+
     /**
      * Signs the user into the app.
      *
@@ -124,13 +124,13 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             print("Warning: Password String value appears to be empty; sign in procedure may fail.")
             return
         }
-        
+
         print("Auth: Attempting to sign user in...")
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             completion(error)
         }
     }
-    
+
     /**
      * Creates a user account and signs the user into the app.
      *
@@ -148,36 +148,36 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             print("Warning: Password String value appears to be empty; sign up procedure may fail.")
             return
         }
-        
+
         print("Auth: Attempting to create user account...")
         Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
             completion(error)
         }
     }
-    
+
     func addUserDatabase(completion: @escaping () -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticated user is found; attempt to recover later on.")
             return
         }
-        
+
         let database = Firestore.firestore()
         let data = [
             "configured": false,
             "tasks": [],
-            "listName": "",
-        ] as [String : Any]
+            "listName": ""
+            ] as [String: Any]
         database.document("users/\(userID)").setData(data)
         completion()
     }
-    
+
     // MARK: Actions
     @IBAction func authButton(_ sender: UIButton) {
         guard let state = authButton.currentTitle else {
             print("Warning: authButton's title appears to be nil; auth procedure may fail.")
             return
         }
-        
+
         // Checks the 'state' of authButton (from the text, whether it's "Sign In" or "Sign Up") and performs the respective actions.
         // When the 'state' is "Sign In", Firebase's sign in function is invoked.
         // Else, when the 'state' is "Sign Up", Firebase's create user function is invoked.
@@ -203,7 +203,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     print("Auth: Auth appears to be OK.")
                     print("Database: Setting up user database...")
-                    
+
                     self.addUserDatabase {
                         print("Database: Database creation appears to be OK.")
                         self.performSegue(withIdentifier: "complete", sender: nil)
@@ -212,5 +212,5 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
+
 }

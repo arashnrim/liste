@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    
+
     /**
      * Creates an alert that will be displayed to the user.
      *
@@ -22,7 +22,7 @@ extension UIViewController {
      */
     func displayAlert(title: String, message: String, override: ((_ alert: UIAlertController) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
+
         if let override = override {
             override(alert)
         } else {
@@ -30,7 +30,7 @@ extension UIViewController {
             self.show(alert, sender: nil)
         }
     }
-    
+
     /**
      * Presents a customized alert that prompts for user reauthentication.
      *
@@ -43,5 +43,5 @@ extension UIViewController {
             }))
         }
     }
-    
+
 }

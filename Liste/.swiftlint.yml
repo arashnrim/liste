@@ -1,0 +1,11 @@
+disabled_rules:
+  - closure_body_length
+  - file_length
+  - function_body_length
+  - line_length
+  - type_body_length
+  - force_cast
+  - multiple_closures_with_trailing_closure
+  
+excluded:
+  - Pods

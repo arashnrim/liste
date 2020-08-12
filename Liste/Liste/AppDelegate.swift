@@ -12,20 +12,20 @@ import Sentry
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         // Configures the Firebase library.
         FirebaseApp.configure()
-        
+
         // Configures the Sentry library.
         SentrySDK.start { options in
             options.dsn = "https://918b7ea086f74bd0ba68316a15f59143@o419985.ingest.sentry.io/5337381"
             options.debug = true // Enabled debug when first installing is always helpful
         }
-        
+
         // Performs conditional navigation on the status of currentUser.
         // If currentUser is not nil, then the app will start in the Main Storyboard.
         // Else, the app will start in the Auth Storyboard.
@@ -51,8 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
         }
-        
+
         return true
     }
-    
+
 }

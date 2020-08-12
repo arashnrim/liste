@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    
+
     /**
      * Allows editing to end when any part of the screen is tapped outside the keyboard area.
      *
@@ -24,7 +24,7 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
         completion?()
     }
-    
+
     /**
      * A supplementary function for `dismissKeyboardOnTap()`.
      *
@@ -33,8 +33,8 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-    /**
+
+    /**a
      * Shifts the contents of the view upwards when the keyboard will be shown.
      *
      * This function monitors the status of the keyboard's size, and moves the view upwards when the keyboard is called and appears on-screen.
@@ -46,7 +46,7 @@ extension UIViewController {
             }
         }
     }
-    
+
     /**
      * Restores the contents of the view back as it was initially (converse action to  `keyboardWillShow()`.
      *
@@ -57,5 +57,5 @@ extension UIViewController {
             self.view.frame.origin.y = 0
         }
     }
-    
+
 }
