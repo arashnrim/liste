@@ -14,7 +14,7 @@ class ShadowView: UIView {
             setupShadow()
         }
     }
-    
+
     private func setupShadow() {
         self.layer.cornerRadius = 8
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
