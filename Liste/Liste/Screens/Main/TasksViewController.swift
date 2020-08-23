@@ -22,6 +22,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     // MARK: Properties
     var tasks = [Task]()
+    var refreshControl = UIRefreshControl()
 
     // MARK: Overrides
     override func viewDidLoad() {
@@ -37,6 +38,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.readTasks(data: data)
             self.readListName(data: data)
         }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTable), name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.reloadTable), for: .valueChanged)
+        tasksTableView.addSubview(refreshControl)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -175,6 +182,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let convertedTasks = self.convertJSONToTask(tasks: tasks)
             self.tasks += convertedTasks
             self.tasksTableView.reloadData()
+            refreshControl.endRefreshing()
 
             if self.loadingView != nil && self.emptyView != nil {
                 UIView.animate(withDuration: 0.5, animations: {
@@ -239,6 +247,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else {
                 completion?()
             }
+        }
+    }
+
+    @objc func reloadTable() {
+        tasks = []
+        retrieveDatabase { (data) in
+            self.readTasks(data: data)
         }
     }
 
