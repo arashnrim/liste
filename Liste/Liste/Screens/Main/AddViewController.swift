@@ -143,4 +143,13 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         }
     }
 
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        self.displayAlert(title: "Wait!", message: "Are you sure to dismiss all written data? This action cannot be recovered.") { (alert) in
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: { (_) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.show(alert, sender: nil)
+        }
+    }
 }
