@@ -197,6 +197,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JxH-oD-NKz" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" constant="-108" id="0z8-li-aBH"/>
                             <constraint firstItem="b29-YZ-1bI" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" id="4zH-zF-frL"/>
@@ -215,6 +216,9 @@
                             <constraint firstItem="cvq-MP-7a4" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" id="rac-h9-nGN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6g4-th-qUM" appends="YES" id="OOb-pc-hzz"/>
+                        </connections>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -231,6 +235,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="6g4-th-qUM">
+                    <connections>
+                        <segue destination="34k-8J-I0g" kind="show" identifier="add" id="BId-tV-XoD"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
         </scene>
@@ -259,6 +268,9 @@
                                     <navigationItem id="EJZ-LS-oaJ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xfo-IY-Uhy">
                                             <color key="tintColor" name="Liste Orange"/>
+                                            <connections>
+                                                <action selector="cancelButton:" destination="34k-8J-I0g" id="i7U-Lx-nBI"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="26Q-2y-PyH">
                                             <color key="tintColor" name="Liste Orange"/>
@@ -363,6 +375,9 @@
             <point key="canvasLocation" x="963.76811594202911" y="127.90178571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BId-tV-XoD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="44" height="44"/>
         <image name="emptyList" width="1093" height="764"/>
