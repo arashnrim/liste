@@ -92,6 +92,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print("Row \(indexPath.row) tapped!")
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tasks.remove(at: indexPath.row)
+            updateTasks()
+            self.tasksTableView.reloadData()
+        }
+    }
+
     // MARK: Text Field Protocols
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let newName = listNameTextField.text else {
@@ -246,6 +254,25 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
             } else {
                 completion?()
+            }
+        }
+    }
+
+    func updateTasks() {
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("Warning: No authenticated user is found; attempting to recover by redirection.")
+            self.showReauthenticationAlert()
+            return
+        }
+        let database = Firestore.firestore()
+        let convertedTasks = self.convertTaskToJSON(tasks: self.tasks)
+
+        database.document("users/\(userID)").updateData(["tasks": convertedTasks]) { (error) in
+            if let error = error {
+                print("Error (while updating list name): \(error.localizedDescription)")
+                self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+            } else {
+                print("Task update successfully changed silently.")
             }
         }
     }
