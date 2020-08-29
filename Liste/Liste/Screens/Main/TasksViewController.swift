@@ -192,21 +192,34 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.tasksTableView.reloadData()
             refreshControl.endRefreshing()
 
-            if self.loadingView != nil && self.emptyView != nil {
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.loadingView.alpha = 0.0
-                    self.emptyView.alpha = 0.0
-                }) { (_) in
-                    self.loadingView.removeFromSuperview()
-                    self.emptyView.removeFromSuperview()
-                }
+            self.loadingView.isHidden = false
+            self.emptyView.isHidden = false
+
+            UIView.animate(withDuration: 0.5) {
+                self.loadingView.alpha = 1.0
+                self.emptyView.alpha = 1.0
             }
-        } else {
-            if self.loadingView != nil && self.emptyView != nil {
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.loadingView.alpha = 0.0
-                }) { (_) in
-                    self.loadingView.removeFromSuperview()
+
+            if !(tasks.isEmpty) {
+                if self.loadingView != nil && self.emptyView != nil {
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.loadingView.alpha = 0.0
+                        self.emptyView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
+                        self.emptyView.isHidden = true
+                    }
+                }
+            } else {
+                self.emptyView.isHidden = false
+
+                if self.loadingView != nil && self.emptyView != nil {
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.loadingView.alpha = 0.0
+                        self.emptyView.alpha = 1.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
+                    }
                 }
             }
         }
@@ -267,17 +280,56 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let database = Firestore.firestore()
         let convertedTasks = self.convertTaskToJSON(tasks: self.tasks)
 
+        self.loadingView.isHidden = false
+        self.emptyView.isHidden = false
+
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 1.0
+            self.emptyView.alpha = 1.0
+        }
+
         database.document("users/\(userID)").updateData(["tasks": convertedTasks]) { (error) in
             if let error = error {
                 print("Error (while updating list name): \(error.localizedDescription)")
                 self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
             } else {
                 print("Task update successfully changed silently.")
+
+                if !(self.tasks.isEmpty) {
+                    if self.loadingView != nil && self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.loadingView.alpha = 0.0
+                            self.emptyView.alpha = 0.0
+                        }) { (_) in
+                            self.loadingView.isHidden = true
+                            self.emptyView.isHidden = true
+                        }
+                    }
+                } else {
+                    self.emptyView.isHidden = false
+
+                    if self.loadingView != nil && self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.loadingView.alpha = 0.0
+                            self.emptyView.alpha = 1.0
+                        }) { (_) in
+                            self.loadingView.isHidden = true
+                        }
+                    }
+                }
             }
         }
     }
 
     @objc func reloadTable() {
+        self.loadingView.isHidden = false
+        self.emptyView.isHidden = false
+
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 1.0
+            self.emptyView.alpha = 1.0
+        }
+
         tasks = []
         retrieveDatabase { (data) in
             self.readTasks(data: data)
