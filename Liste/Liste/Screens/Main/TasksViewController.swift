@@ -53,6 +53,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else if segue.identifier == "add" {
             let destination = segue.destination as! AddViewController
             destination.tasks = tasks
+        } else if segue.identifier == "info" {
+            let destination = segue.destination as! InfoViewController
+            destination.heroModalAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
         }
     }
 
@@ -90,6 +93,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row \(indexPath.row) tapped!")
+        self.performSegue(withIdentifier: "info", sender: nil)
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
