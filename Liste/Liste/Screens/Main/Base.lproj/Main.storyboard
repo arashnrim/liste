@@ -232,6 +232,7 @@
                         <outlet property="tasksTableView" destination="cvq-MP-7a4" id="Q0K-6b-VWE"/>
                         <segue destination="JKM-Zz-9PI" kind="show" identifier="auth" id="KLB-Lz-qyH"/>
                         <segue destination="BJl-v8-Q3w" kind="show" identifier="configure" id="jDs-ce-Ttc"/>
+                        <segue destination="0Jz-C6-qbO" kind="show" identifier="info" id="9cY-mJ-Cjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -374,12 +375,58 @@
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="127.90178571428571"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="gT5-Ma-aLq">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="0Jz-C6-qbO" customClass="InfoViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8oo-1G-ciq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npt-8f-Vng">
+                                <rect key="frame" x="20" y="50" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6xG-0f-Ze2"/>
+                                    <constraint firstAttribute="width" constant="40" id="bC6-GV-pXx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" name="Liste Orange"/>
+                                <state key="normal" image="back">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="0Jz-C6-qbO" eventType="touchUpInside" id="05f-Pb-oY5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Npt-8f-Vng" firstAttribute="top" secondItem="vZg-US-ycX" secondAttribute="top" constant="6" id="Bgj-Ss-IoI"/>
+                            <constraint firstItem="Npt-8f-Vng" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="OLn-4I-r7V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vZg-US-ycX"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7Vc-ma-Mf9" appends="YES" id="NZi-Cv-iW7"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="HWX-GR-0Yd"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYn-Gn-1Pg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="7Vc-ma-Mf9"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="128"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BId-tV-XoD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="44" height="44"/>
+        <image name="back" width="16" height="26"/>
         <image name="emptyList" width="1093" height="764"/>
         <image name="menu" width="24" height="24"/>
         <image name="unchecked" width="23" height="24"/>
