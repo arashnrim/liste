@@ -55,7 +55,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             destination.tasks = tasks
         } else if segue.identifier == "info" {
             let destination = segue.destination as! InfoViewController
+            guard let indexPath = tasksTableView.indexPathForSelectedRow else {
+                print("Warning: Something went wrong while retrieving the table view cell's index path information.")
+                return
+            }
             destination.heroModalAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
+            destination.task = tasks[indexPath.row]
         }
     }
 

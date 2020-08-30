@@ -466,6 +466,11 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="taskDescriptionView" destination="I1R-D3-Peg" id="9x8-Jd-8pt"/>
+                        <outlet property="taskDueLabel" destination="Omu-kr-m32" id="ssj-Bx-pbn"/>
+                        <outlet property="taskNameField" destination="yHg-Zb-Xvq" id="UAX-vv-dsC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYn-Gn-1Pg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="7Vc-ma-Mf9"/>
