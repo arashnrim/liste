@@ -248,16 +248,12 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
-  - Sentry (5.1.10-beta.0):
-    - Sentry/Core (= 5.1.10-beta.0)
-  - Sentry/Core (5.1.10-beta.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - FirebaseFirestoreSwift
   - Hero
-  - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `5.1.10-beta.0`)
 
 SPEC REPOS:
   trunk:
@@ -281,16 +277,6 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
 
-EXTERNAL SOURCES:
-  Sentry:
-    :git: https://github.com/getsentry/sentry-cocoa.git
-    :tag: 5.1.10-beta.0
-
-CHECKOUT OPTIONS:
-  Sentry:
-    :git: https://github.com/getsentry/sentry-cocoa.git
-    :tag: 5.1.10-beta.0
-
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -311,8 +297,7 @@ SPEC CHECKSUMS:
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  Sentry: 1575d5a673f425c2a2d83d9b6a52f5b6f0f4a253
 
-PODFILE CHECKSUM: 2073da73d817f629790e868f08e6b9368add918d
+PODFILE CHECKSUM: b2ea5a15d84202161df992d7fcd804cdc857f07c
 
 COCOAPODS: 1.9.1
