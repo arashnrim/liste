@@ -12,12 +12,12 @@ class InfoViewController: UIViewController {
 
     // MARK: Properties
     var task: Task?
-    
+
     // MARK: Outlets
     @IBOutlet weak var taskNameField: UITextField!
     @IBOutlet weak var taskDescriptionView: UITextView!
     @IBOutlet weak var taskDueLabel: UILabel!
-    
+
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +27,16 @@ class InfoViewController: UIViewController {
             let name = task.taskName
             let description = task.description
             let dueDate = self.convertDateToString(date: task.dueDate)
-            
+
             self.taskNameField.text = name
-            
+
             if description != "" {
                 self.taskDescriptionView.text = description
             } else {
                 self.taskDescriptionView.text = "No description provided."
                 self.taskDescriptionView.textColor = .lightGray
             }
-            
+
             self.taskDueLabel.text = dueDate
         }
     }
