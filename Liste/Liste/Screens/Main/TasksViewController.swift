@@ -34,8 +34,42 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         listNameTextField.delegate = self
 
         retrieveDatabase { (data) in
+            self.loadingView.isHidden = false
+            self.emptyView.isHidden = false
+
+            UIView.animate(withDuration: 0.5) {
+                self.loadingView.alpha = 1.0
+                self.emptyView.alpha = 1.0
+            }
+
             self.readUserStatus(data: data)
-            self.readTasks(data: data)
+            self.readTasks(data: data) { (tasks) in
+                if !(tasks.isEmpty) {
+                    if self.loadingView != nil && self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.emptyView.alpha = 0.0
+                        }) { (_) in
+                            self.emptyView.isHidden = true
+                            UIView.animate(withDuration: 0.5, animations: {
+                                self.loadingView.alpha = 0.0
+                            }) { (_) in
+                                self.loadingView.isHidden = true
+                            }
+                        }
+                    }
+                } else {
+                    self.emptyView.isHidden = false
+
+                    if self.loadingView != nil && self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.loadingView.alpha = 0.0
+                            self.emptyView.alpha = 1.0
+                        }) { (_) in
+                            self.loadingView.isHidden = true
+                        }
+                    }
+                }
+            }
             self.readListName(data: data)
         }
 
@@ -193,45 +227,15 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
      * - Parameters:
      *      - data: A `[String:Any]` parameter, preferably the data retrieved from the Firestore database.
      */
-    func readTasks(data: [String: Any]) {
+    func readTasks(data: [String: Any], completion: (([Task]) -> Void)?) {
         if let tasks = data["tasks"] as? [String: [String: Any]] {
             let convertedTasks = self.convertJSONToTask(tasks: tasks)
             self.tasks += convertedTasks
             self.tasksTableView.reloadData()
             refreshControl.endRefreshing()
 
-            self.loadingView.isHidden = false
-            self.emptyView.isHidden = false
-
-            UIView.animate(withDuration: 0.5) {
-                self.loadingView.alpha = 1.0
-                self.emptyView.alpha = 1.0
-            }
-
-            if !(tasks.isEmpty) {
-                if self.loadingView != nil && self.emptyView != nil {
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.emptyView.alpha = 0.0
-                    }) { (_) in
-                        self.emptyView.isHidden = true
-                        UIView.animate(withDuration: 0.5, animations: {
-                            self.loadingView.alpha = 0.0
-                        }) { (_) in
-                            self.loadingView.isHidden = true
-                        }
-                    }
-                }
-            } else {
-                self.emptyView.isHidden = false
-
-                if self.loadingView != nil && self.emptyView != nil {
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.loadingView.alpha = 0.0
-                        self.emptyView.alpha = 1.0
-                    }) { (_) in
-                        self.loadingView.isHidden = true
-                    }
-                }
+            if let completion = completion {
+                completion(self.tasks)
             }
         }
     }
@@ -291,14 +295,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let database = Firestore.firestore()
         let convertedTasks = self.convertTaskToJSON(tasks: self.tasks)
 
-        self.loadingView.isHidden = false
-        self.emptyView.isHidden = false
-
-        UIView.animate(withDuration: 0.5) {
-            self.loadingView.alpha = 1.0
-            self.emptyView.alpha = 1.0
-        }
-
         database.document("users/\(userID)").updateData(["tasks": convertedTasks]) { (error) in
             if let error = error {
                 print("Error (while updating list name): \(error.localizedDescription)")
@@ -333,25 +329,41 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     @objc func reloadTable() {
-        self.loadingView.isHidden = false
-        self.emptyView.isHidden = false
-
-        UIView.animate(withDuration: 0.5) {
-            self.loadingView.alpha = 1.0
-            self.emptyView.alpha = 1.0
-        }
-
         tasks = []
         retrieveDatabase { (data) in
-            self.readTasks(data: data)
+            self.readTasks(data: data, completion: nil)
         }
     }
 
     @IBAction func unwindToTasks(_ unwindSegue: UIStoryboardSegue) {
         tasks = []
         retrieveDatabase { (data) in
+            self.emptyView.isHidden = false
+
+            UIView.animate(withDuration: 0.5) {
+                self.emptyView.alpha = 1.0
+            }
+
             self.readUserStatus(data: data)
-            self.readTasks(data: data)
+            self.readTasks(data: data) { (tasks) in
+                if !(tasks.isEmpty) {
+                    if self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.emptyView.alpha = 0.0
+                        }) { (_) in
+                            self.emptyView.isHidden = true
+                        }
+                    }
+                } else {
+                    self.emptyView.isHidden = false
+
+                    if self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5) {
+                            self.emptyView.alpha = 1.0
+                        }
+                    }
+                }
+            }
             self.readListName(data: data)
         }
         self.tasksTableView.reloadData()
