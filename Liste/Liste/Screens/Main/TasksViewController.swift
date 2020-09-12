@@ -211,11 +211,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if !(tasks.isEmpty) {
                 if self.loadingView != nil && self.emptyView != nil {
                     UIView.animate(withDuration: 0.5, animations: {
-                        self.loadingView.alpha = 0.0
                         self.emptyView.alpha = 0.0
                     }) { (_) in
-                        self.loadingView.isHidden = true
                         self.emptyView.isHidden = true
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.loadingView.alpha = 0.0
+                        }) { (_) in
+                            self.loadingView.isHidden = true
+                        }
                     }
                 }
             } else {
