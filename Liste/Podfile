@@ -5,6 +5,7 @@ target 'Liste' do
   inhibit_all_warnings!
 
   pod 'Hero'
+  pod 'SwiftLint'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'  
   pod 'FirebaseFirestoreSwift'
