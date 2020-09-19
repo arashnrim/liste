@@ -10,13 +10,15 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
-    // MARK: Properties
-    var task: Task?
-
     // MARK: Outlets
     @IBOutlet weak var taskNameField: UITextField!
     @IBOutlet weak var taskDescriptionView: UITextView!
     @IBOutlet weak var taskDueLabel: UILabel!
+    
+    // MARK: Properties
+    var tasks: [Task] = []
+    var task: Task?
+    var row: Int?
 
     // MARK: Overrides
     override func viewDidLoad() {
@@ -38,6 +40,15 @@ class InfoViewController: UIViewController {
             }
 
             self.taskDueLabel.text = dueDate
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "edit" {
+            let destination = segue.destination as! AddViewController
+            destination.tasks = tasks
+            destination.task = task
+            destination.row = row
         }
     }
 
