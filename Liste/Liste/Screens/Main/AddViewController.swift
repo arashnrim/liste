@@ -25,6 +25,9 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
 
     // MARK: Properties
     var tasks: [Task] = []
+    // The task and row variable below is used only for editing; in both instances, the full list of tasks are used.
+    var task: Task?
+    var row: Int?
 
     // MARK: Overrides
     override func viewDidLoad() {
@@ -40,6 +43,14 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
 
         // Allows editing to end when any part of the screen is tapped outside the keyboard area.
         self.dismissKeyboardOnTap(completion: nil)
+        
+        // If the task variable is not nil, then it's likely because the user wants to edit a task. In that case, the task's details are listed here.
+        if let task = task {
+            self.taskNameField.text = task.taskName
+            self.taskDescriptionView.text = task.description
+            self.taskDescriptionView.textColor = .black
+            self.taskDuePicker.date = task.dueDate
+        }
     }
 
     // MARK: Text Field Protocols
@@ -71,6 +82,9 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         let isValid = validateInputs()
 
         if isValid {
+            if let row = row {
+                tasks.remove(at: row)
+            }
             tasks.append(prepareTask())
             let jsonTasks = self.convertTaskToJSON(tasks: tasks)
             self.updateDatabase(tasks: jsonTasks) {
