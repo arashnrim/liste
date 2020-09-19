@@ -313,7 +313,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="jow-a2-nPe">
-                                                <rect key="frame" x="0.0" y="432.5" width="414" height="216"/>
+                                                <rect key="frame" x="20" y="432.5" width="374" height="216"/>
                                             </datePicker>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heY-VE-yZG">
                                                 <rect key="frame" x="20" y="40" width="374" height="49.5"/>
@@ -323,12 +323,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="jow-a2-nPe" secondAttribute="trailing" id="2vF-lj-8wm"/>
+                                            <constraint firstAttribute="trailing" secondItem="jow-a2-nPe" secondAttribute="trailing" constant="20" id="2vF-lj-8wm"/>
                                             <constraint firstItem="VnW-op-meQ" firstAttribute="top" secondItem="47s-ia-fiK" secondAttribute="bottom" constant="40" id="3i7-aX-NDP"/>
                                             <constraint firstAttribute="height" constant="700" id="49N-mA-Hxd"/>
                                             <constraint firstAttribute="trailing" secondItem="6yl-hh-xUZ" secondAttribute="trailing" constant="20" id="4aE-ge-5ae"/>
                                             <constraint firstItem="VnW-op-meQ" firstAttribute="leading" secondItem="7Ih-Ya-yR6" secondAttribute="leading" constant="20" id="EdI-wU-3zQ"/>
-                                            <constraint firstItem="jow-a2-nPe" firstAttribute="leading" secondItem="7Ih-Ya-yR6" secondAttribute="leading" id="HpO-YB-ovv"/>
                                             <constraint firstItem="47s-ia-fiK" firstAttribute="top" secondItem="6yl-hh-xUZ" secondAttribute="bottom" constant="8" id="Nzv-hw-lWc"/>
                                             <constraint firstItem="6yl-hh-xUZ" firstAttribute="top" secondItem="heY-VE-yZG" secondAttribute="bottom" constant="40" id="XX3-Ct-d2W"/>
                                             <constraint firstItem="47s-ia-fiK" firstAttribute="leading" secondItem="7Ih-Ya-yR6" secondAttribute="leading" constant="20" id="ZHW-c5-wie"/>
@@ -336,6 +335,7 @@
                                             <constraint firstAttribute="trailing" secondItem="47s-ia-fiK" secondAttribute="trailing" constant="20" id="gee-ZU-AnJ"/>
                                             <constraint firstItem="6yl-hh-xUZ" firstAttribute="leading" secondItem="7Ih-Ya-yR6" secondAttribute="leading" constant="20" id="llV-sM-2gz"/>
                                             <constraint firstItem="jow-a2-nPe" firstAttribute="top" secondItem="VnW-op-meQ" secondAttribute="bottom" constant="8" id="pX3-k2-Wyy"/>
+                                            <constraint firstItem="jow-a2-nPe" firstAttribute="leading" secondItem="7Ih-Ya-yR6" secondAttribute="leading" constant="20" id="qGm-ce-qVp"/>
                                             <constraint firstItem="heY-VE-yZG" firstAttribute="leading" secondItem="7Ih-Ya-yR6" secondAttribute="leading" constant="20" id="rIA-oh-jUg"/>
                                             <constraint firstAttribute="trailing" secondItem="heY-VE-yZG" secondAttribute="trailing" constant="20" id="rma-yu-gpg"/>
                                             <constraint firstItem="heY-VE-yZG" firstAttribute="top" secondItem="7Ih-Ya-yR6" secondAttribute="top" constant="40" id="u3p-BK-UBI"/>
