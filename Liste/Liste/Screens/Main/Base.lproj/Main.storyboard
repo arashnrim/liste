@@ -436,6 +436,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbA-BA-x9v" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" name="Liste Orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XoJ-QD-5jd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Start Focus Mode">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhj-Yo-Y3x">
+                                <rect key="frame" x="354" y="50" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3zl-oN-WLU"/>
+                                    <constraint firstAttribute="width" constant="40" id="MPc-fK-6ns"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" name="Liste Orange"/>
+                                <state key="normal" image="edit">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="34k-8J-I0g" kind="show" identifier="edit" id="HNk-Vn-e5c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vZg-US-ycX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -443,18 +469,23 @@
                         <constraints>
                             <constraint firstItem="vZg-US-ycX" firstAttribute="trailing" secondItem="I1R-D3-Peg" secondAttribute="trailing" constant="20" id="61k-n8-Vtz"/>
                             <constraint firstItem="vZg-US-ycX" firstAttribute="trailing" secondItem="vRA-1x-1l3" secondAttribute="trailing" constant="20" id="6ak-9N-wlW"/>
+                            <constraint firstItem="Xhj-Yo-Y3x" firstAttribute="top" secondItem="vZg-US-ycX" secondAttribute="top" constant="6" id="9Er-rA-gHh"/>
                             <constraint firstItem="I1R-D3-Peg" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="Auo-PW-hbX"/>
                             <constraint firstItem="yHg-Zb-Xvq" firstAttribute="top" secondItem="Npt-8f-Vng" secondAttribute="bottom" constant="40" id="FAz-lQ-iF1"/>
                             <constraint firstItem="Omu-kr-m32" firstAttribute="top" secondItem="uSd-Xn-F4g" secondAttribute="bottom" constant="8" id="IvC-l5-MGG"/>
                             <constraint firstItem="Omu-kr-m32" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="NQX-IU-oYc"/>
                             <constraint firstItem="Npt-8f-Vng" firstAttribute="top" secondItem="vZg-US-ycX" secondAttribute="top" constant="6" id="OF7-ra-Uky"/>
                             <constraint firstItem="Npt-8f-Vng" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="OLn-4I-r7V"/>
+                            <constraint firstItem="vZg-US-ycX" firstAttribute="trailing" secondItem="Xhj-Yo-Y3x" secondAttribute="trailing" constant="20" id="PWy-gw-WqH"/>
+                            <constraint firstItem="vZg-US-ycX" firstAttribute="trailing" secondItem="bbA-BA-x9v" secondAttribute="trailing" constant="20" id="WAb-6Y-BOH"/>
                             <constraint firstItem="vRA-1x-1l3" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="YDE-1e-Scl"/>
                             <constraint firstItem="yHg-Zb-Xvq" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="c5E-7P-T22"/>
                             <constraint firstItem="vRA-1x-1l3" firstAttribute="top" secondItem="yHg-Zb-Xvq" secondAttribute="bottom" constant="40" id="iyh-wB-e8U"/>
                             <constraint firstItem="vZg-US-ycX" firstAttribute="trailing" secondItem="yHg-Zb-Xvq" secondAttribute="trailing" constant="20" id="jro-bf-dIT"/>
                             <constraint firstItem="I1R-D3-Peg" firstAttribute="top" secondItem="vRA-1x-1l3" secondAttribute="bottom" constant="8" id="kdp-K9-1Ov"/>
+                            <constraint firstItem="bbA-BA-x9v" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="ke9-qE-vHt"/>
                             <constraint firstItem="uSd-Xn-F4g" firstAttribute="top" secondItem="I1R-D3-Peg" secondAttribute="bottom" constant="40" id="koj-jl-Dyi"/>
+                            <constraint firstItem="vZg-US-ycX" firstAttribute="bottom" secondItem="bbA-BA-x9v" secondAttribute="bottom" constant="20" id="lVG-hq-dcX"/>
                             <constraint firstItem="vZg-US-ycX" firstAttribute="trailing" secondItem="Omu-kr-m32" secondAttribute="trailing" constant="20" id="oza-iS-OEw"/>
                             <constraint firstItem="uSd-Xn-F4g" firstAttribute="leading" secondItem="vZg-US-ycX" secondAttribute="leading" constant="20" id="tjw-7E-z4U"/>
                             <constraint firstItem="vZg-US-ycX" firstAttribute="trailing" secondItem="uSd-Xn-F4g" secondAttribute="trailing" constant="20" id="uaI-TG-oqY"/>
@@ -480,11 +511,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BId-tV-XoD"/>
+        <segue reference="g31-YG-L5l"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="44" height="44"/>
         <image name="back" width="16" height="26"/>
+        <image name="edit" width="44" height="44"/>
         <image name="emptyList" width="1093" height="764"/>
         <image name="menu" width="24" height="24"/>
         <image name="unchecked" width="23" height="24"/>

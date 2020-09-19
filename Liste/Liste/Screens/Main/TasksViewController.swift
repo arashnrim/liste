@@ -102,6 +102,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             destination.heroModalAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
             destination.task = tasks[indexPath.row]
+            destination.tasks = tasks
+            destination.row = indexPath.row
         }
     }
 
