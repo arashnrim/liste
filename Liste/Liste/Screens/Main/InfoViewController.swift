@@ -14,7 +14,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var taskNameField: UITextField!
     @IBOutlet weak var taskDescriptionView: UITextView!
     @IBOutlet weak var taskDueLabel: UILabel!
-    
+
     // MARK: Properties
     var tasks: [Task] = []
     var task: Task?
@@ -42,7 +42,7 @@ class InfoViewController: UIViewController {
             self.taskDueLabel.text = dueDate
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit" {
             let destination = segue.destination as! AddViewController
