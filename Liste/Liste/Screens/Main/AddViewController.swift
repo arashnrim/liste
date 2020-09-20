@@ -43,7 +43,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
 
         // Allows editing to end when any part of the screen is tapped outside the keyboard area.
         self.dismissKeyboardOnTap(completion: nil)
-        
+
         // If the task variable is not nil, then it's likely because the user wants to edit a task. In that case, the task's details are listed here.
         if let task = task {
             self.taskNameField.text = task.taskName
