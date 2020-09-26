@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double HGCircularSliderVersionNumber;
-FOUNDATION_EXPORT const unsigned char HGCircularSliderVersionString[];
+FOUNDATION_EXPORT double MSCircularSliderVersionNumber;
+FOUNDATION_EXPORT const unsigned char MSCircularSliderVersionString[];
 

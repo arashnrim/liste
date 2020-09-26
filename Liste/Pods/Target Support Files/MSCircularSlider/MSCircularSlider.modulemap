@@ -1,0 +1,6 @@
+framework module MSCircularSlider {
+  umbrella header "MSCircularSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}
