@@ -446,6 +446,9 @@
                                 <state key="normal" title="Start Focus Mode">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="z8v-1M-jm0" kind="show" id="nqd-3U-T44"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhj-Yo-Y3x">
                                 <rect key="frame" x="354" y="50" width="40" height="40"/>
@@ -509,9 +512,19 @@
             </objects>
             <point key="canvasLocation" x="-694" y="128"/>
         </scene>
+        <!--FMInitialisationViewController-->
+        <scene sceneID="19f-a9-es7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Focus" referencedIdentifier="FMInitialisationViewController" id="z8v-1M-jm0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7dT-7C-Rq6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sV-Wa-8nM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1279" y="128"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g31-YG-L5l"/>
+        <segue reference="HNk-Vn-e5c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="44" height="44"/>

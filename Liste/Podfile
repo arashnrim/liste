@@ -9,7 +9,7 @@ target 'Liste' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'  
   pod 'FirebaseFirestoreSwift'
-  pod 'HGCircularSlider'
+  pod 'MSCircularSlider'
 
 end
 
