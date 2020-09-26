@@ -242,8 +242,8 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.3.1)
   - Hero (1.5.0)
-  - HGCircularSlider (2.2.0)
   - leveldb-library (1.22)
+  - MSCircularSlider (1.3.2)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -256,7 +256,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FirebaseFirestoreSwift
   - Hero
-  - HGCircularSlider
+  - MSCircularSlider
   - SwiftLint
 
 SPEC REPOS:
@@ -278,8 +278,8 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - Hero
-    - HGCircularSlider
     - leveldb-library
+    - MSCircularSlider
     - nanopb
     - SwiftLint
 
@@ -301,11 +301,11 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
-  HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  MSCircularSlider: 07fe922e6a7e05fb67e876d449e365327fdad3d1
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   SwiftLint: 1216c910d27c2633ade33b4f071bb6b930982e62
 
-PODFILE CHECKSUM: 1b4b819b8af7edb31a22d71545cf509bb1fc5ff1
+PODFILE CHECKSUM: 59f48b4ef5d54941bfdcb02fffc25247bac7c11f
 
 COCOAPODS: 1.9.1
