@@ -10,7 +10,7 @@ import UIKit
 import MSCircularSlider
 
 class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate {
- 
+
     // MARK: Outlets
     @IBOutlet weak var timerCircularSlider: MSCircularSlider!
     @IBOutlet weak var timeLabel: UILabel!
@@ -27,7 +27,7 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
         let minutes = time - (hours * 60)
         var string = ""
         print(time, hours, minutes)
-        
+
         if hours > 1 {
             string = "\(hours) hours"
         } else if hours == 1 {
@@ -35,22 +35,22 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
         } else {
             string = ""
         }
-        
+
         if minutes == 1 {
             string += " \(minutes) minute"
         } else if minutes > 1 {
             string += " \(minutes) minutes"
         }
-        
+
         self.timeLabel.text = string
     }
 
     // MARK: Actions
     @IBAction func startButton(_ sender: ListeButton) {
     }
-    
+
     @IBAction func cancelButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
 }
