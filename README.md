@@ -1,4 +1,6 @@
-![Listé app screenshots](liste.jpg?raw=true "Listé app screenshots")
+<p align="center">
+  <img src="https://raw.githubusercontent.com/arashnrim/Liste/main/liste.jpeg" height="20%">
+</p>
 
 # Listé – Productivity Made Easy
 
