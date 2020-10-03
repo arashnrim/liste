@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/arashnrim/Liste/main/liste.jpeg">
+  <img src="./liste.svg">
 </p>
 
 # Listé – Productivity Made Easy
