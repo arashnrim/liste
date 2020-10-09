@@ -40,7 +40,7 @@ class InfoViewController: UIViewController {
             }
 
             // Gets the current date and time.
-            let date = Date().localDate()
+            let date = Date()
 
             self.taskDueLabel.text = dueDate
             if task.dueDate <= date {
