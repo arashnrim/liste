@@ -39,7 +39,13 @@ class InfoViewController: UIViewController {
                 self.taskDescriptionView.textColor = .lightGray
             }
 
+            // Gets the current date and time.
+            let date = Date().localDate()
+
             self.taskDueLabel.text = dueDate
+            if task.dueDate <= date {
+                self.taskDueLabel.textColor = UIColor(named: "Liste Orange")
+            }
         }
     }
 
