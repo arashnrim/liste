@@ -17,7 +17,7 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
     @IBOutlet weak var timeLabel: UILabel!
 
     // MARK: Properties
-    var focusTime: Int?
+    var focusTime: Int = 0
 
     // MARK: Overrides
     override func viewDidLoad() {
@@ -30,6 +30,7 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
         if segue.identifier == "start" {
             let destination = segue.destination as! FMPreflightViewController
             destination.hero.modalAnimationType = .slide(direction: .left)
+            destination.focusTime = self.focusTime
         }
     }
 
@@ -60,10 +61,8 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
 
     // MARK: Actions
     @IBAction func startButton(_ sender: ListeButton) {
-        if let focusTime = focusTime {
-            if focusTime > 0 {
-                self.performSegue(withIdentifier: "start", sender: nil)
-            }
+        if focusTime > 0 {
+            self.performSegue(withIdentifier: "start", sender: nil)
         }
     }
 

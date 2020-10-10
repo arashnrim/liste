@@ -11,6 +11,9 @@ import Hero
 
 class FMPreflightViewController: UIViewController {
 
+    // MARK: Properties
+    var focusTime: Int = 0
+
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,7 @@ class FMPreflightViewController: UIViewController {
         if segue.identifier == "start" {
             let destination = segue.destination as! FocusViewController
             destination.hero.modalAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
+            destination.focusTime = Double(self.focusTime)
         }
     }
 
