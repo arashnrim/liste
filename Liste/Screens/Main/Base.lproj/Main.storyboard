@@ -255,6 +255,24 @@
             </objects>
             <point key="canvasLocation" x="138" y="514"/>
         </scene>
+        <!--Focus View Controller-->
+        <scene sceneID="Qpu-sx-nJ9">
+            <objects>
+                <viewController storyboardIdentifier="FocusViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DcD-yX-vIO" customClass="FocusViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x3x-To-mij">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4RC-hp-npz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7GX-of-BGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="858"/>
+        </scene>
         <!--Add View Controller-->
         <scene sceneID="8iy-LX-qAt">
             <objects>
@@ -524,7 +542,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HNk-Vn-e5c"/>
+        <segue reference="BId-tV-XoD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="44" height="44"/>

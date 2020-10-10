@@ -8,6 +8,7 @@
 
 import UIKit
 import MSCircularSlider
+import Hero
 
 class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate {
 
@@ -15,18 +16,29 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
     @IBOutlet weak var timerCircularSlider: MSCircularSlider!
     @IBOutlet weak var timeLabel: UILabel!
 
+    // MARK: Properties
+    var focusTime: Int?
+
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.timerCircularSlider.delegate = self
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "start" {
+            let destination = segue.destination as! FMPreflightViewController
+            destination.hero.modalAnimationType = .slide(direction: .left)
+        }
+    }
+
+    // MARK: Circular Slider Protocols
     func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
         let time = Int(round(value))
         let hours = Int(time / 60)
         let minutes = time - (hours * 60)
         var string = ""
-        print(time, hours, minutes)
 
         if hours > 1 {
             string = "\(hours) hours"
@@ -43,10 +55,16 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
         }
 
         self.timeLabel.text = string
+        self.focusTime = time
     }
 
     // MARK: Actions
     @IBAction func startButton(_ sender: ListeButton) {
+        if let focusTime = focusTime {
+            if focusTime > 0 {
+                self.performSegue(withIdentifier: "start", sender: nil)
+            }
+        }
     }
 
     @IBAction func cancelButton(_ sender: UIButton) {
