@@ -304,7 +304,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kaj-7a-kGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="XQD-W4-JQ7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="115"/>
+            <point key="canvasLocation" x="1432" y="115"/>
         </scene>
     </scenes>
     <designables>

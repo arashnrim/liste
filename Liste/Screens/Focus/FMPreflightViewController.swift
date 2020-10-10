@@ -13,12 +13,15 @@ class FMPreflightViewController: UIViewController {
 
     // MARK: Properties
     var focusTime: Double = 0.0
+    var screenBrightness: CGFloat = 0.0
 
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
+        
+        screenBrightness = UIScreen.main.brightness
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,10 +43,11 @@ class FMPreflightViewController: UIViewController {
             self.performSegue(withIdentifier: "start", sender: nil)
         }
     }
-    
+
     @IBAction func unwindToPreflight(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as! FocusViewController
         let remainingTime = sourceViewController.focusTime
         self.focusTime = remainingTime
+        UIScreen.main.brightness = self.screenBrightness
     }
 }
