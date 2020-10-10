@@ -20,7 +20,7 @@ class FMPreflightViewController: UIViewController {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
-        
+
         screenBrightness = UIScreen.main.brightness
     }
 
