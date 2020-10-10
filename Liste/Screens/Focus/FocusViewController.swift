@@ -12,7 +12,7 @@ import MSCircularSlider
 class FocusViewController: UIViewController {
 
     // MARK: Properties
-    var focusTime: Double = 0.0 // minutes
+    var focusTime: Double = 0.0
     var countdownTimer = Timer()
 
     // MARK: Outlets
@@ -23,9 +23,23 @@ class FocusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.timerSlider.maximumValue = Double(self.focusTime * 60)
-
+        if UserDefaults.standard.value(forKey: "focusModeMaxTime") == nil {
+            self.timerSlider.maximumValue = Double(self.focusTime * 60)
+            UserDefaults.standard.setValue(Double(self.focusTime * 60), forKey: "focusModeMaxTime")
+        } else {
+            if let maxValue = UserDefaults.standard.value(forKey: "focusModeMaxTime") {
+                self.timerSlider.maximumValue = maxValue as! Double
+            }
+        }
         countdownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+
+        UIScreen.main.brightness = CGFloat(0.0)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
+        UserDefaults.standard.setValue(true, forKey: "focusModeStarted")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }
 
     // MARK: Functions
@@ -59,6 +73,14 @@ class FocusViewController: UIViewController {
                 string = "\(seconds) seconds"
             }
             self.remainingTime.text = string
+        }
+    }
+
+    @objc func orientationChanged() {
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        if UIDevice.current.orientation == .faceUp {
+            self.performSegue(withIdentifier: "stop", sender: nil)
+            self.countdownTimer.invalidate()
         }
     }
 }

@@ -186,7 +186,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxH-oD-NKz">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-8S-AAI">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-8S-AAI">
                                         <rect key="frame" x="197" y="321" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -254,117 +254,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kx5-I5-Dfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="514"/>
-        </scene>
-        <!--Focus View Controller-->
-        <scene sceneID="Qpu-sx-nJ9">
-            <objects>
-                <viewController storyboardIdentifier="FocusViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DcD-yX-vIO" customClass="FocusViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x3x-To-mij">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4u-xg-IOJ">
-                                <rect key="frame" x="20" y="84" width="374" height="48"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="35"/>
-                                <color key="textColor" name="Liste Orange"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can do it; focus on your task!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJL-uN-8Ok">
-                                <rect key="frame" x="20" y="152" width="374" height="27.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmP-me-Gy3" customClass="MSCircularSlider">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="aov-4E-UsX"/>
-                                    <constraint firstAttribute="height" constant="250" id="ccT-mv-TAd"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="_unfilledColor">
-                                        <color key="value" systemColor="systemGray5Color"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
-                                        <color key="value" name="Liste Orange"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
-                                        <real key="value" value="181"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
-                                        <real key="value" value="180"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumRevolutions">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_lineWidth">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_labelOffset">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="_snapToMarkers" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_rotationAngle">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_sliderPadding">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_handleType">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="_handleColor">
-                                        <color key="value" name="Liste Orange"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 minute" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eB-zP-J8i">
-                                <rect key="frame" x="20" y="613" width="374" height="41"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="remaining" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUB-sE-0Fg">
-                                <rect key="frame" x="20" y="662" width="374" height="27.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4RC-hp-npz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="pJL-uN-8Ok" firstAttribute="top" secondItem="p4u-xg-IOJ" secondAttribute="bottom" constant="20" id="0fR-If-TTa"/>
-                            <constraint firstItem="4RC-hp-npz" firstAttribute="trailing" secondItem="VUB-sE-0Fg" secondAttribute="trailing" constant="20" id="Coy-lF-Mb0"/>
-                            <constraint firstItem="p4u-xg-IOJ" firstAttribute="top" secondItem="4RC-hp-npz" secondAttribute="top" constant="40" id="FM3-5j-dAl"/>
-                            <constraint firstItem="4RC-hp-npz" firstAttribute="trailing" secondItem="pJL-uN-8Ok" secondAttribute="trailing" constant="20" id="GhY-n5-M5w"/>
-                            <constraint firstItem="CmP-me-Gy3" firstAttribute="centerY" secondItem="x3x-To-mij" secondAttribute="centerY" id="PWF-16-Pvn"/>
-                            <constraint firstItem="4RC-hp-npz" firstAttribute="trailing" secondItem="0eB-zP-J8i" secondAttribute="trailing" constant="20" id="Rme-16-EX6"/>
-                            <constraint firstItem="CmP-me-Gy3" firstAttribute="centerX" secondItem="x3x-To-mij" secondAttribute="centerX" id="US6-2G-HqB"/>
-                            <constraint firstItem="VUB-sE-0Fg" firstAttribute="top" secondItem="0eB-zP-J8i" secondAttribute="bottom" constant="8" id="j71-9H-zQZ"/>
-                            <constraint firstItem="4RC-hp-npz" firstAttribute="trailing" secondItem="p4u-xg-IOJ" secondAttribute="trailing" constant="20" id="kD2-j4-Nel"/>
-                            <constraint firstItem="0eB-zP-J8i" firstAttribute="leading" secondItem="4RC-hp-npz" secondAttribute="leading" constant="20" id="sZd-me-ybE"/>
-                            <constraint firstItem="p4u-xg-IOJ" firstAttribute="leading" secondItem="4RC-hp-npz" secondAttribute="leading" constant="20" id="sbG-Qf-5gZ"/>
-                            <constraint firstItem="VUB-sE-0Fg" firstAttribute="leading" secondItem="4RC-hp-npz" secondAttribute="leading" constant="20" id="wqr-lv-RtG"/>
-                            <constraint firstItem="pJL-uN-8Ok" firstAttribute="leading" secondItem="4RC-hp-npz" secondAttribute="leading" constant="20" id="xKA-m7-Fbt"/>
-                            <constraint firstItem="0eB-zP-J8i" firstAttribute="top" secondItem="CmP-me-Gy3" secondAttribute="bottom" constant="40" id="xem-CZ-LFH"/>
-                        </constraints>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="remainingTime" destination="0eB-zP-J8i" id="M6v-Da-gpw"/>
-                        <outlet property="timerSlider" destination="CmP-me-Gy3" id="eP4-Hr-Gd7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7GX-of-BGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-694" y="858"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="8iy-LX-qAt">
@@ -634,13 +523,8 @@
             <point key="canvasLocation" x="-1279" y="128"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="CmP-me-Gy3">
-            <size key="intrinsicContentSize" width="224" height="224"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="HNk-Vn-e5c"/>
+        <segue reference="g31-YG-L5l"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="44" height="44"/>
@@ -657,9 +541,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -17,7 +17,7 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
     @IBOutlet weak var timeLabel: UILabel!
 
     // MARK: Properties
-    var focusTime: Int = 0
+    var focusTime: Double = 0.0
 
     // MARK: Overrides
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
         }
 
         self.timeLabel.text = string
-        self.focusTime = time
+        self.focusTime = Double(time)
     }
 
     // MARK: Actions

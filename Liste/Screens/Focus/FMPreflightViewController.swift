@@ -12,7 +12,7 @@ import Hero
 class FMPreflightViewController: UIViewController {
 
     // MARK: Properties
-    var focusTime: Int = 0
+    var focusTime: Double = 0.0
 
     // MARK: Overrides
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class FMPreflightViewController: UIViewController {
         if segue.identifier == "start" {
             let destination = segue.destination as! FocusViewController
             destination.hero.modalAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
-            destination.focusTime = Double(self.focusTime)
+            destination.focusTime = self.focusTime
         }
     }
 
@@ -39,5 +39,11 @@ class FMPreflightViewController: UIViewController {
         if UIDevice.current.orientation == .faceDown {
             self.performSegue(withIdentifier: "start", sender: nil)
         }
+    }
+    
+    @IBAction func unwindToPreflight(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as! FocusViewController
+        let remainingTime = sourceViewController.focusTime
+        self.focusTime = remainingTime
     }
 }
