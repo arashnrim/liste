@@ -18,12 +18,17 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
 
     // MARK: Properties
     var focusTime: Double = 0.0
+    var tasks: [Task] = []
+    var task: Task?
+    var row: Int?
 
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.timerCircularSlider.delegate = self
+ 
+        self.navigationController?.viewControllers = [self]
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,6 +36,10 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
             let destination = segue.destination as! FMPreflightViewController
             destination.hero.modalAnimationType = .slide(direction: .left)
             destination.focusTime = self.focusTime
+            destination.tasks = self.tasks
+            destination.task = self.task!
+            destination.row = self.row!
+            print(self.focusTime)
         }
     }
 

@@ -9,7 +9,7 @@
 import UIKit
 import MSCircularSlider
 
-class FocusViewController: UIViewController {
+class FMTimerViewController: UIViewController {
 
     // MARK: Properties
     var focusTime: Double = 0.0

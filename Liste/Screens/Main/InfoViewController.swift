@@ -55,6 +55,11 @@ class InfoViewController: UIViewController {
             destination.tasks = tasks
             destination.task = task
             destination.row = row
+        } else if segue.identifier == "focus" {
+            let destination = segue.destination as! FMInitialisationViewController
+            destination.tasks = tasks
+            destination.task = task
+            destination.row = row
         }
     }
 

@@ -22,6 +22,7 @@
 		49498E8324A897E400064238 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49498E8224A897E400064238 /* GoogleService-Info.plist */; };
 		494FC52A24B0152600BB9F90 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FC52924B0152600BB9F90 /* TaskTableViewCell.swift */; };
 		4952CDC124F9EE1800D6DDF7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952CDC024F9EE1800D6DDF7 /* InfoViewController.swift */; };
+		4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */; };
 		495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C3BAA24D4368F00B65CB6 /* AddViewController.swift */; };
 		49870DA324DE432B00D674B6 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49870DA224DE432B00D674B6 /* ShadowView.swift */; };
 		499B42B624C29DF10069D739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B42B524C29DF10069D739 /* OnboardingViewController.swift */; };
@@ -31,7 +32,7 @@
 		49DC74D4251F13A500608F91 /* FMInitialisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */; };
 		49DFF319249DB1E20030D5AD /* ListeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF318249DB1E20030D5AD /* ListeButton.swift */; };
 		49DFF31B249DB26F0030D5AD /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DFF31A249DB26F0030D5AD /* Auth.storyboard */; };
-		49E978D7253180D80027C6E5 /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E978D6253180D80027C6E5 /* FocusViewController.swift */; };
+		49E978D7253180D80027C6E5 /* FMTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E978D6253180D80027C6E5 /* FMTimerViewController.swift */; };
 		49E978DB253184750027C6E5 /* FMPreflightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E978DA253184750027C6E5 /* FMPreflightViewController.swift */; };
 		7EA3CE3EC1001298DE66C414 /* Pods_Liste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EAE577C331A812E3B32A9A /* Pods_Liste.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		49498E8224A897E400064238 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		494FC52924B0152600BB9F90 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4952CDC024F9EE1800D6DDF7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSuccessViewController.swift; sourceTree = "<group>"; };
 		495C3BAA24D4368F00B65CB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		49870DA224DE432B00D674B6 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		499B42B524C29DF10069D739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMInitialisationViewController.swift; sourceTree = "<group>"; };
 		49DFF318249DB1E20030D5AD /* ListeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeButton.swift; sourceTree = "<group>"; };
 		49DFF31A249DB26F0030D5AD /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
-		49E978D6253180D80027C6E5 /* FocusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
+		49E978D6253180D80027C6E5 /* FMTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMTimerViewController.swift; sourceTree = "<group>"; };
 		49E978DA253184750027C6E5 /* FMPreflightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPreflightViewController.swift; sourceTree = "<group>"; };
 		55D8F4B67E36774477049986 /* Pods-Liste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liste.release.xcconfig"; path = "Target Support Files/Pods-Liste/Pods-Liste.release.xcconfig"; sourceTree = "<group>"; };
 		74ED5CE3EDC516BC55368A0A /* Pods-Liste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liste.debug.xcconfig"; path = "Target Support Files/Pods-Liste/Pods-Liste.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,7 +176,8 @@
 				49DC74D0251F136D00608F91 /* Focus.storyboard */,
 				49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */,
 				49E978DA253184750027C6E5 /* FMPreflightViewController.swift */,
-				49E978D6253180D80027C6E5 /* FocusViewController.swift */,
+				49E978D6253180D80027C6E5 /* FMTimerViewController.swift */,
+				4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */,
 			);
 			path = Focus;
 			sourceTree = "<group>";
@@ -363,11 +366,12 @@
 				49109BA424A63398003310FB /* UIViewController+Functionality.swift in Sources */,
 				4927522C23432F4200FCFA6E /* TasksViewController.swift in Sources */,
 				495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */,
+				4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */,
 				49DC74D4251F13A500608F91 /* FMInitialisationViewController.swift in Sources */,
 				492DFC2F24B8424A00D9D862 /* Task.swift in Sources */,
 				494FC52A24B0152600BB9F90 /* TaskTableViewCell.swift in Sources */,
 				49109BA224A62E01003310FB /* UITextField+Functionality.swift in Sources */,
-				49E978D7253180D80027C6E5 /* FocusViewController.swift in Sources */,
+				49E978D7253180D80027C6E5 /* FMTimerViewController.swift in Sources */,
 				49E978DB253184750027C6E5 /* FMPreflightViewController.swift in Sources */,
 				499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */,
 				49DFF319249DB1E20030D5AD /* ListeButton.swift in Sources */,

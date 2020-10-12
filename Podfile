@@ -7,6 +7,7 @@ target 'Liste' do
   pod 'Hero'
   pod 'SwiftLint'
   pod 'Firebase/Auth'
+  pod 'SwiftConfettiView'
   pod 'Firebase/Firestore'  
   pod 'FirebaseFirestoreSwift'
   pod 'MSCircularSlider'
