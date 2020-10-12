@@ -14,6 +14,9 @@ class FMPreflightViewController: UIViewController {
     // MARK: Properties
     var focusTime: Double = 0.0
     var screenBrightness: CGFloat = 0.0
+    var tasks: [Task] = []
+    var task: Task?
+    var row: Int?
 
     // MARK: Overrides
     override func viewDidLoad() {
@@ -26,9 +29,13 @@ class FMPreflightViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "start" {
-            let destination = segue.destination as! FocusViewController
+            let destination = segue.destination as! FMTimerViewController
             destination.hero.modalAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
             destination.focusTime = self.focusTime
+            destination.tasks = self.tasks
+            destination.task = self.task!
+            destination.row = self.row!
+            print(self.focusTime)
         }
     }
 
@@ -45,7 +52,7 @@ class FMPreflightViewController: UIViewController {
     }
 
     @IBAction func unwindToPreflight(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source as! FocusViewController
+        let sourceViewController = unwindSegue.source as! FMTimerViewController
         let remainingTime = sourceViewController.focusTime
         self.focusTime = remainingTime
         UIScreen.main.brightness = self.screenBrightness
