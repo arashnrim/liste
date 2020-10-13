@@ -20,6 +20,7 @@ class FMTimerViewController: UIViewController {
     var tasks: [Task] = []
     var task: Task?
     var row: Int?
+    var disabled: Bool = false
 
     // MARK: Outlets
     @IBOutlet weak var timerSlider: MSCircularSlider!
@@ -79,6 +80,7 @@ class FMTimerViewController: UIViewController {
     /// Counts down the time.
     @objc func countdown() {
         if self.localFT < 0 {
+            self.disabled = true
             self.performSegue(withIdentifier: "success", sender: nil)
         } else {
             self.localFT -= 1/60
@@ -112,7 +114,9 @@ class FMTimerViewController: UIViewController {
     @objc func orientationChanged() {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         if UIDevice.current.orientation == .faceUp {
-            self.performSegue(withIdentifier: "stop", sender: nil)
+            if !(self.disabled) {
+                self.performSegue(withIdentifier: "stop", sender: nil)
+            }
             self.countdownTimer.invalidate()
         }
     }
