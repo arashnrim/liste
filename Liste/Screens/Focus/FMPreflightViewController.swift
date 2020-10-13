@@ -22,8 +22,10 @@ class FMPreflightViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Adds an observer that watches for changes in the device's orientation.
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
 
+        // Keeps track of the screen brightness for restoration when FMTimerViewController is interrupted.
         screenBrightness = UIScreen.main.brightness
     }
 
@@ -35,16 +37,17 @@ class FMPreflightViewController: UIViewController {
             destination.tasks = self.tasks
             destination.task = self.task!
             destination.row = self.row!
-            print(self.focusTime)
         }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
+        // To mitigate consumption and (perhaps) prevent mishaps, the ViewController stops observing changes in the device's orientation when it moves into the background.
         UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }
 
     // MARK: Functions
     @objc func orientationChanged() {
+        // Begins to observe changes in the device's orientation.
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         if UIDevice.current.orientation == .faceDown {
             self.performSegue(withIdentifier: "start", sender: nil)
@@ -53,8 +56,10 @@ class FMPreflightViewController: UIViewController {
 
     @IBAction func unwindToPreflight(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as! FMTimerViewController
+        // Keeps track of the remaining time left when the user picked up their phone for re-use.
         let remainingTime = sourceViewController.focusTime
         self.focusTime = remainingTime
+        // If brought back from FMTimerViewController, the screen's brightness is restored to its initial value.
         UIScreen.main.brightness = self.screenBrightness
     }
 }

@@ -24,7 +24,7 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Reads the data of the task and applies them on the visual components.
+        // Reads the data of the task and loads them.
         if let task = task {
             let name = task.taskName
             let description = task.description
@@ -39,10 +39,10 @@ class InfoViewController: UIViewController {
                 self.taskDescriptionView.textColor = .lightGray
             }
 
-            // Gets the current date and time.
-            let date = Date()
-
             self.taskDueLabel.text = dueDate
+            // Gets and compares the current date with the task's due date.
+            // If the current date is later than or exactly the due date, the date will be highlighted to indicate that the task is overdue.
+            let date = Date()
             if task.dueDate <= date {
                 self.taskDueLabel.textColor = UIColor(named: "Liste Orange")
             }

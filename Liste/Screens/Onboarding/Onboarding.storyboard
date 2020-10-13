@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1rT-XR-f1X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1rT-XR-f1X">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-Cn-Dw6" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-Cn-Dw6" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <color key="backgroundColor" name="Liste Orange"/>
                                 <constraints>
@@ -44,7 +45,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PmV-ik-CSb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Erk-xs-TN2" firstAttribute="leading" secondItem="PmV-ik-CSb" secondAttribute="leading" constant="20" id="8J4-Tw-Xex"/>
                             <constraint firstItem="PmV-ik-CSb" firstAttribute="bottom" secondItem="vSw-Cn-Dw6" secondAttribute="bottom" constant="20" id="D2d-wu-gma"/>
@@ -56,7 +58,6 @@
                             <constraint firstItem="vSw-Cn-Dw6" firstAttribute="leading" secondItem="PmV-ik-CSb" secondAttribute="leading" constant="20" id="uPs-ni-H09"/>
                             <constraint firstItem="PmV-ik-CSb" firstAttribute="trailing" secondItem="Erk-xs-TN2" secondAttribute="trailing" constant="20" id="ybs-Tc-HqG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PmV-ik-CSb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7p-HN-5mQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,7 +72,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiI-tl-po7" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiI-tl-po7" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <color key="backgroundColor" name="Liste Orange"/>
                                 <constraints>
@@ -124,7 +125,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="tVO-TV-90I" firstAttribute="centerX" secondItem="PcZ-wA-cy6" secondAttribute="centerX" id="6ai-VY-BYZ"/>
                                     <constraint firstItem="tVO-TV-90I" firstAttribute="centerY" secondItem="PcZ-wA-cy6" secondAttribute="centerY" id="Sbf-Wg-wDg"/>
@@ -133,7 +134,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="AUN-d5-Ewh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AUN-d5-Ewh" firstAttribute="trailing" secondItem="Qeq-DZ-9Zs" secondAttribute="trailing" constant="20" id="1b0-X1-9wt"/>
                             <constraint firstItem="vMc-m4-U8h" firstAttribute="top" secondItem="iWt-LE-Dyl" secondAttribute="bottom" id="2un-uv-fw3"/>
@@ -152,7 +154,6 @@
                             <constraint firstItem="Qeq-DZ-9Zs" firstAttribute="leading" secondItem="AUN-d5-Ewh" secondAttribute="leading" constant="20" id="tve-R7-2P8"/>
                             <constraint firstItem="PcZ-wA-cy6" firstAttribute="top" secondItem="AUN-d5-Ewh" secondAttribute="top" constant="20" id="ukJ-2g-2Kr"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="AUN-d5-Ewh"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ls1-Ww-phV"/>
                     <userDefinedRuntimeAttributes>
@@ -172,7 +173,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBZ-jX-q9A" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBZ-jX-q9A" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <color key="backgroundColor" name="Liste Orange"/>
                                 <constraints>
@@ -222,7 +223,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nFC-W5-W5j" secondAttribute="trailing" constant="20" id="G0C-TL-Ten"/>
                                     <constraint firstItem="nFC-W5-W5j" firstAttribute="centerY" secondItem="ROu-iR-iz9" secondAttribute="centerY" id="hdE-Vn-RuV"/>
@@ -231,7 +232,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Qom-82-nYC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ROu-iR-iz9" firstAttribute="top" secondItem="Qom-82-nYC" secondAttribute="top" constant="20" id="767-zI-BbR"/>
                             <constraint firstItem="yiG-X8-2Qx" firstAttribute="leading" secondItem="Qom-82-nYC" secondAttribute="leading" constant="20" id="7pa-CE-11d"/>
@@ -250,7 +252,6 @@
                             <constraint firstItem="KBZ-jX-q9A" firstAttribute="leading" secondItem="Qom-82-nYC" secondAttribute="leading" constant="20" id="rpM-W2-9Ox"/>
                             <constraint firstItem="Qom-82-nYC" firstAttribute="bottom" secondItem="KBZ-jX-q9A" secondAttribute="bottom" constant="20" id="vFq-Bz-XU1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Qom-82-nYC"/>
                     </view>
                     <navigationItem key="navigationItem" id="fST-2B-pCL"/>
                     <userDefinedRuntimeAttributes>
@@ -265,12 +266,12 @@
         <!--Onboarding View Controller-->
         <scene sceneID="KFd-ZN-0pl">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="dXf-ef-lsh" customClass="OnboardingViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dXf-ef-lsh" customClass="OnboardingViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vlT-s7-0PM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWh-87-7lE" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWh-87-7lE" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <color key="backgroundColor" name="Liste Orange"/>
                                 <constraints>
@@ -320,7 +321,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="fnp-kA-hXw" firstAttribute="centerX" secondItem="hKK-Rw-R0w" secondAttribute="centerX" id="ZFN-uv-CDQ"/>
                                     <constraint firstAttribute="trailing" secondItem="fnp-kA-hXw" secondAttribute="trailing" constant="20" id="hET-NV-pLX"/>
@@ -329,7 +330,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="f8Z-A6-9WZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="f8Z-A6-9WZ" firstAttribute="trailing" secondItem="zwE-CK-rAx" secondAttribute="trailing" constant="20" id="7ID-CB-d2a"/>
                             <constraint firstItem="f8Z-A6-9WZ" firstAttribute="trailing" secondItem="hKK-Rw-R0w" secondAttribute="trailing" constant="20" id="8Qp-QW-i6b"/>
@@ -348,7 +350,6 @@
                             <constraint firstItem="f8Z-A6-9WZ" firstAttribute="bottom" secondItem="tWh-87-7lE" secondAttribute="bottom" constant="20" id="ppm-j8-1zg"/>
                             <constraint firstItem="f8Z-A6-9WZ" firstAttribute="trailing" secondItem="tWh-87-7lE" secondAttribute="trailing" constant="20" id="zf4-pq-olK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="f8Z-A6-9WZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="W34-iu-xU1"/>
                     <userDefinedRuntimeAttributes>
@@ -382,5 +383,8 @@
         <namedColor name="Liste Orange">
             <color red="1" green="0.15294117647058825" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -27,8 +27,6 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
         super.viewDidLoad()
 
         self.timerCircularSlider.delegate = self
- 
-        self.navigationController?.viewControllers = [self]
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,12 +37,12 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
             destination.tasks = self.tasks
             destination.task = self.task!
             destination.row = self.row!
-            print(self.focusTime)
         }
     }
 
     // MARK: Circular Slider Protocols
     func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
+        // Gets the value from the circular slider and updates the label's value of the time set.
         let time = Int(round(value))
         let hours = Int(time / 60)
         let minutes = time - (hours * 60)

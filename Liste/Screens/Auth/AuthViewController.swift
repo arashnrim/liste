@@ -20,7 +20,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Sets the delegate of the text fields as AuthViewController.
         emailTextField.delegate = self
         passwordTextField.delegate = self
 
@@ -33,7 +32,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             valid ? self.checkUserStatus() : self.authButton.changeState(state: false, text: "...")
         }
 
-        // Adds management of on-screen content to move when the keyboard is called.
+        // Adds an observer to move the content of the screen upwards when the keyboard is presented.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }

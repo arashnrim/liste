@@ -40,6 +40,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         listNameTextField.delegate = self
 
+        // Retrieves the user's database information (e.g., tasks) and loads them into the app.
         retrieveDatabase { (data) in
             self.loadingView.isHidden = false
             self.emptyView.isHidden = false
@@ -49,7 +50,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.emptyView.alpha = 1.0
             }
 
+            // Reads the user's configuration status — if false, the user is directed to onboarding.
             self.readUserStatus(data: data)
+            // Read's the user's tasks and performs conditional actions based on the presence of the tasks.
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
                     if self.loadingView != nil && self.emptyView != nil {
@@ -82,6 +85,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTable), name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
 
+        // Adds a pull-to-refresh capability in the table view.
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.reloadTable), for: .valueChanged)
         tasksTableView.addSubview(refreshControl)
@@ -182,6 +186,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     // MARK: Actions
+    /// Refreshes the table view to ensure that content in up-to-date following the addition of a task.
+    ///
+    /// This function is executed when unwound from `AddViewController`; since the latter does add a task to the user's database, it's likely that we'll need to refresh the table view with a more up-to-date version of tasks.
     @IBAction func unwindToTasks(_ unwindSegue: UIStoryboardSegue) {
         tasks = []
         retrieveDatabase { (data) in

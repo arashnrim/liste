@@ -33,18 +33,17 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Sets the delegate of the text fields as AddViewController.
         self.taskNameField.delegate = self
         self.taskDescriptionView.delegate = self
 
-        // Manually sets a placeholder in taskDescriptionView.
+        // Manually sets a placeholder in the text view, since Xcode doesn't natively support them for now.
         taskDescriptionView.text = "Task description"
         taskDescriptionView.textColor = UIColor.lightGray
 
         // Allows editing to end when any part of the screen is tapped outside the keyboard area.
         self.dismissKeyboardOnTap(completion: nil)
 
-        // If the task variable is not nil, then it's likely because the user wants to edit a task. In that case, the task's details are listed here.
+        // If the task variable is not nil, then it's likely because the user wants to edit a task. In that case, the task's details are loaded.
         if let task = task {
             self.taskNameField.text = task.taskName
             self.taskDescriptionView.text = task.description
@@ -79,6 +78,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
 
     // MARK: Actions
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        // Checks if the inputs are valid — once all conditions are met will the result be true.
         let isValid = validateInputs()
 
         if isValid {

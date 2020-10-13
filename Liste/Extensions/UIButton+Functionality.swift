@@ -22,11 +22,12 @@ extension UIButton {
     func changeState(state: Bool, text: String?) {
         self.isEnabled = state
 
-        if state == true {
+        switch state {
+        case true:
             UIView.animate(withDuration: 0.5) {
                 self.alpha = 1.0
             }
-        } else {
+        case false:
             UIView.animate(withDuration: 0.5) {
                 self.alpha = 0.5
             }

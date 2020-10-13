@@ -196,7 +196,7 @@
         <!--Timer View Controller-->
         <scene sceneID="EcG-Mw-iPq">
             <objects>
-                <viewController storyboardIdentifier="FocusViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f5K-1K-Hjn" customClass="FMTimerViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FMTimerViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f5K-1K-Hjn" customClass="FMTimerViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QWR-4O-cKi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -384,10 +384,10 @@
             </objects>
             <point key="canvasLocation" x="2251" y="115"/>
         </scene>
-        <!--Tasks-->
+        <!--TasksViewController-->
         <scene sceneID="yg6-oC-IdN">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Tasks" id="2xH-DE-Med" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TasksViewController" id="2xH-DE-Med" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8zO-Dj-jbf"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="poC-D9-3on" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -410,14 +410,6 @@
             <point key="canvasLocation" x="-1084" y="115"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="qDO-w7-iu5">
-            <size key="intrinsicContentSize" width="228" height="228"/>
-        </designable>
-        <designable name="qNT-K5-rG6">
-            <size key="intrinsicContentSize" width="224" height="224"/>
-        </designable>
-    </designables>
     <resources>
         <image name="phoneDown" width="74" height="148"/>
         <namedColor name="Liste Orange">

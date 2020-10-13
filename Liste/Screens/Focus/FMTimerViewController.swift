@@ -29,7 +29,10 @@ class FMTimerViewController: UIViewController {
         super.viewDidLoad()
 
         self.localFT = self.focusTime
-        
+
+        // This is quite a wonky workaround, but it works.
+        // Basically, the total time of the Focus Mode period is stored in UserDefaults so that the value isn't lost when returned to FMPreflightViewController when the phone is picked up.
+        // If there isn't any existing value in UserDefaults, it means that Focus Mode wasn't interrupted before; just to be safe, this value is stored here then.
         if UserDefaults.standard.value(forKey: "focusModeMaxTime") == nil {
             self.timerSlider.maximumValue = Double(self.focusTime * 60)
             UserDefaults.standard.setValue(Double(self.focusTime * 60), forKey: "focusModeMaxTime")
@@ -39,11 +42,13 @@ class FMTimerViewController: UIViewController {
             }
         }
 
+        // The main driving force of this view controller; a Timer that gradually counts down.
         countdownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
 
+        // Dims the screen to the dimmest it can go; this helps to encourage the user to focus on their tasks by making it harder to use their phone!
         UIScreen.main.brightness = CGFloat(0.0)
+        // Begins to observe for changes in the device orientation; if faced up, the user is thrown back to FMPreflightViewController.
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
-        UserDefaults.standard.setValue(true, forKey: "focusModeStarted")
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -62,8 +67,8 @@ class FMTimerViewController: UIViewController {
     }
 
     // MARK: Functions
+    /// Counts down the time.
     @objc func countdown() {
-        print(localFT)
         if self.localFT < 0 {
             self.performSegue(withIdentifier: "success", sender: nil)
         } else {

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Auth-->
+        <!--AuthViewController-->
         <scene sceneID="utM-Nd-Aa4">
             <objects>
-                <viewControllerPlaceholder storyboardName="Auth" referencedIdentifier="Auth" id="JKM-Zz-9PI" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Auth" referencedIdentifier="AuthViewController" id="JKM-Zz-9PI" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="WI4-lf-55I"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qU-ou-VuJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -23,7 +23,7 @@
         <!--Tasks View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Tasks" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TasksViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TasksViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TasksViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,7 +258,7 @@
         <!--Add View Controller-->
         <scene sceneID="8iy-LX-qAt">
             <objects>
-                <viewController id="34k-8J-I0g" customClass="AddViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="34k-8J-I0g" customClass="AddViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TkU-9q-qjb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,7 +379,7 @@
         <!--Info View Controller-->
         <scene sceneID="gT5-Ma-aLq">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="0Jz-C6-qbO" customClass="InfoViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Jz-C6-qbO" customClass="InfoViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8oo-1G-ciq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

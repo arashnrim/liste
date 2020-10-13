@@ -31,7 +31,7 @@ class FMSuccessViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: "focusModeStarted")
     }
 
-    //  MARK: Functions
+    // MARK: Functions
     @objc func stopConfetti() {
         self.confettiView.stopConfetti()
     }
@@ -49,7 +49,7 @@ class FMSuccessViewController: UIViewController {
      */
     func updateDatabase(tasks: [String: [String: Any]], completion: @escaping (() -> Void)) {
         guard let userID = Auth.auth().currentUser?.uid else {
-            print("Warning: No authenticatd user is found; future functions may fail.")
+            print("Warning: No authenticated user is found; future functions may fail.")
             return
         }
         let database = Firestore.firestore()
@@ -82,10 +82,5 @@ class FMSuccessViewController: UIViewController {
             }))
             self.show(alert, sender: nil)
         }
-    }
-    
-    @IBAction func unwindToSuccess(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source as! FMTimerViewController
-        // TODO: Import stuff
     }
 }

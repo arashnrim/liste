@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JBR-mn-uh2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JBR-mn-uh2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Welcome-->
         <scene sceneID="w6Z-Gv-KUK">
             <objects>
-                <viewController storyboardIdentifier="Welcome" title="Welcome" id="JBR-mn-uh2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" title="Welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JBR-mn-uh2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Es-pJ-MFh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcD-xE-VQx" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcD-xE-VQx" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <color key="backgroundColor" name="Liste Orange"/>
                                 <constraints>
@@ -50,7 +51,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bo0-RK-Z41"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DiS-TO-goK" firstAttribute="top" secondItem="PfW-LQ-Hj7" secondAttribute="bottom" constant="8" id="1rh-Ff-fBc"/>
                             <constraint firstItem="YcD-xE-VQx" firstAttribute="top" secondItem="DiS-TO-goK" secondAttribute="bottom" constant="100" id="2qk-33-Ctc"/>
@@ -65,7 +67,6 @@
                             <constraint firstItem="PfW-LQ-Hj7" firstAttribute="top" secondItem="uVh-2N-YCd" secondAttribute="bottom" id="qNU-gw-x66"/>
                             <constraint firstItem="bo0-RK-Z41" firstAttribute="trailing" secondItem="uVh-2N-YCd" secondAttribute="trailing" constant="20" id="xWp-yl-HxF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bo0-RK-Z41"/>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -78,12 +79,12 @@
         <!--Auth View Controller-->
         <scene sceneID="cde-xl-aar">
             <objects>
-                <viewController storyboardIdentifier="Auth" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BOY-07-S1O" customClass="AuthViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BOY-07-S1O" customClass="AuthViewController" customModule="Liste" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rxJ-zY-bsF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvY-qV-MO2" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvY-qV-MO2" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <color key="backgroundColor" name="Liste Orange"/>
                                 <constraints>
@@ -134,7 +135,8 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Olp-WV-vhM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Olp-WV-vhM" firstAttribute="trailing" secondItem="xcF-ER-7ya" secondAttribute="trailing" constant="20" id="1Kj-fK-Pr1"/>
                             <constraint firstItem="xmh-b1-rdV" firstAttribute="top" secondItem="X5Y-bc-Ubg" secondAttribute="bottom" constant="8" id="48y-Gf-uST"/>
@@ -154,7 +156,6 @@
                             <constraint firstItem="xmh-b1-rdV" firstAttribute="leading" secondItem="Olp-WV-vhM" secondAttribute="leading" constant="20" id="wjg-hP-ZuA"/>
                             <constraint firstItem="Olp-WV-vhM" firstAttribute="trailing" secondItem="X5Y-bc-Ubg" secondAttribute="trailing" constant="20" id="zEJ-DF-SJi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Olp-WV-vhM"/>
                     </view>
                     <navigationItem key="navigationItem" id="tjS-Ag-ucZ"/>
                     <userDefinedRuntimeAttributes>
@@ -188,5 +189,8 @@
         <namedColor name="Liste Orange">
             <color red="1" green="0.15294117647058825" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

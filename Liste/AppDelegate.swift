@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let rootViewController: UIViewController
             if #available(iOS 13.0, *) {
-                rootViewController = storyboard.instantiateViewController(identifier: "Tasks")
+                rootViewController = storyboard.instantiateViewController(identifier: "TasksViewController")
             } else {
-                rootViewController = storyboard.instantiateViewController(withIdentifier: "Tasks")
+                rootViewController = storyboard.instantiateViewController(withIdentifier: "TasksViewController")
             }
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
@@ -37,9 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Auth", bundle: nil)
             let rootViewController: UIViewController
             if #available(iOS 13.0, *) {
-                rootViewController = storyboard.instantiateViewController(identifier: "Welcome")
+                rootViewController = storyboard.instantiateViewController(identifier: "WelcomeViewController")
             } else {
-                rootViewController = storyboard.instantiateViewController(withIdentifier: "Welcome")
+                rootViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController")
             }
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
