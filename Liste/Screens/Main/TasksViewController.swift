@@ -175,7 +175,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         } else {
-            self.displayAlert(title: "Whoops.", message: "The name of your list cannot be empty.") { (alert) in
+            self.displayAlert(title: NSLocalizedString("whoops", comment: "An informal way of noting that something wrong happened."), message: NSLocalizedString("listNameCannotBeEmpty", comment: "The name of your list cannot be empty.")) { (alert) in
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
                     textField.becomeFirstResponder()
                 }))

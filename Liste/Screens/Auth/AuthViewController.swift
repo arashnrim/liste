@@ -91,7 +91,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
 
         Auth.auth().fetchSignInMethods(forEmail: email) { (methods, error) in
             if let error = error {
-                self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
+                self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
             } else {
                 if let methods = methods {
                     if !(methods.isEmpty) {
@@ -185,7 +185,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             signIn { (error) in
                 if let error = error {
                     print("Auth: \(error.localizedDescription)")
-                    self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
+                    self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
                     self.authButton.changeState(state: true, text: "Sign In")
                 } else {
                     print("Auth: Auth appears to be OK.")
@@ -197,7 +197,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             signUp { (error) in
                 if let error = error {
                     print("Auth: \(error.localizedDescription)")
-                    self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
+                    self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
                     self.authButton.changeState(state: true, text: "Sign Up")
                 } else {
                     print("Auth: Auth appears to be OK.")

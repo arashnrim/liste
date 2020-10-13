@@ -35,7 +35,7 @@ class InfoViewController: UIViewController {
             if description != "" {
                 self.taskDescriptionView.text = description
             } else {
-                self.taskDescriptionView.text = "No description provided."
+                self.taskDescriptionView.text = NSLocalizedString("noDescription", comment: "No description provided.")
                 self.taskDescriptionView.textColor = .lightGray
             }
 

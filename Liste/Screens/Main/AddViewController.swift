@@ -91,14 +91,14 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
                 self.performSegue(withIdentifier: "dismiss", sender: nil)
             }
         } else {
-            self.displayAlert(title: "Whoops!", message: "Some fields are invalid. Please take a look at your fields and try again.", override: nil)
+            self.displayAlert(title: NSLocalizedString("whoops", comment: "An informal way of noting that something wrong happened."), message: NSLocalizedString("invalidFields", comment: "Some fields are invalid. Please take a look at your fields and try again."), override: nil)
         }
     }
 
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        self.displayAlert(title: "Wait!", message: "Are you sure to dismiss all written data? This action cannot be recovered.") { (alert) in
-            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: { (_) in
+        self.displayAlert(title: NSLocalizedString("wait", comment: "An exclaimation to stop the user before an action."), message: NSLocalizedString("addVCDismissMessage", comment: "Are you sure to dismiss all written data? This action cannot be recovered.")) { (alert) in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: "Cancel an action."), style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("dismiss", comment: "Dismiss the screen."), style: .destructive, handler: { (_) in
                 self.dismiss(animated: true, completion: nil)
             }))
             self.show(alert, sender: nil)

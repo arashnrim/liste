@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  Liste
+
+  Created by Arash on 13/10/20.
+  Copyright © 2020 Apprendre. All rights reserved.
+*/
+
+/* -- Main Storyboard -- */
+/* Are you sure to dismiss all written data? This action cannot be recovered. */
+"addVCDismissMessage" = "Adakah kamu tetap untuk mengetepikan semua data yang sudah ditulis? Lakuan ini tidak boleh dipulihkan.";
+
+/* Cancel an action. */
+"cancel" = "Batal";
+
+/* Dismiss the screen. */
+"dismiss" = "Tepikan";
+
+/* Some fields are invalid. Please take a look at your fields and try again. */
+"invalidFields" = "Beberapa input tidak sah. Sila melihat dan cuba lagi.";
+
+/* The name of your list cannot be empty. */
+"listNameCannotBeEmpty" = "Nama senarai kamu tidak dibenarkan kosong.";
+
+/* No description provided. */
+"noDescription" = "Tiada deskripsi diberikan.";
+
+/* An exclaimation to stop the user before an action. */
+"wait" = "Tunggu!";
+
+/* An informal way of noting that something wrong happened. */
+"whoops" = "Oops.";
+
+/* -- Focus Storyboard -- */
+/* Singular form of hour. */
+"hour" = "jam";
+
+/* Plural form of hour. */
+"hours" = "jam";
+
+/* Mark task as complete? */
+"markCompleteTitle" = "Tandakan tugasan sebagai selesai?";
+
+/* Singular form of minute. */
+"minute" = "minit";
+
+/* Plural form of minute. */
+"minutes" = "minit";
+
+/* Would you like to mark your task as complete? */
+"markCompleteMessage" = "Adakah kamu mahu menanda tugasan ini sebagai selesai?";
+
+/* Plural form of second. */
+"seconds" = "saat";
+
+/* An affirmative statement. */
+"yes" = "Ya";
+
+/* A rejective statement. */
+"no" = "Tidak";
+
+/* -- Auth Storyboard -- */
+/* An error occurred. */
+"errorOccurred" = "Sebuah kesilapan telah berlaku.";
+
+/* -- Onboarding Storyboard -- */
+/* An informal way of noting that something wrong happened. */
+"whoops" = "Oops.";

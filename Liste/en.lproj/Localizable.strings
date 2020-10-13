@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  Liste
+
+  Created by Arash on 13/10/20.
+  Copyright © 2020 Apprendre. All rights reserved.
+*/
+
+/* -- Main Storyboard -- */
+/* Are you sure to dismiss all written data? This action cannot be recovered. */
+"addVCDismissMessage" = "Are you sure to dismiss all written data? This action cannot be recovered.";
+
+/* Cancel an action. */
+"cancel" = "Cancel";
+
+/* Dismiss the screen. */
+"dismiss" = "Dismiss";
+
+/* Some fields are invalid. Please take a look at your fields and try again. */
+"invalidFields" = "Some fields are invalid. Please take a look at your fields and try again.";
+
+/* The name of your list cannot be empty. */
+"listNameCannotBeEmpty" = "The name of your list cannot be empty.";
+
+/* No description provided. */
+"noDescription" = "No description provided.";
+
+/* An exclaimation to stop the user before an action. */
+"wait" = "Wait!";
+
+/* An informal way of noting that something wrong happened. */
+"whoops" = "Whoops.";
+
+/* -- Focus Storyboard -- */
+/* Singular form of hour. */
+"hour" = "hour";
+
+/* Plural form of hour. */
+"hours" = "hours";
+
+/* Mark task as complete? */
+"markCompleteTitle" = "Mark task as complete?";
+
+/* Singular form of minute. */
+"minute" = "minute";
+
+/* Plural form of minute. */
+"minutes" = "minutes";
+
+/* Would you like to mark your task as complete? */
+"markCompleteMessage" = "Would you like to mark your task as complete?";
+
+/* Plural form of second. */
+"seconds" = "seconds";
+
+/* An affirmative statement. */
+"yes" = "Yes";
+
+/* A rejective statement. */
+"no" = "No";
+
+/* -- Auth Storyboard -- */
+/* An error occurred. */
+"errorOccurred" = "errorOccurred";
+
+/* -- Onboarding Storyboard -- */
+/* An informal way of noting that something wrong happened. */
+"whoops" = "whoops";

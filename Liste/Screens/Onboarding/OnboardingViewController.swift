@@ -38,7 +38,7 @@ class OnboardingViewController: UIViewController {
         database.document("users/\(userID)").updateData(["configured": true]) { (error) in
             if let error = error {
                 print("Error (while changing user configuration status): \(error.localizedDescription)")
-                self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+                self.displayAlert(title: NSLocalizedString("whoops", comment: "An informal way of noting that something wrong happened."), message: error.localizedDescription, override: nil)
             } else {
                 completion()
             }

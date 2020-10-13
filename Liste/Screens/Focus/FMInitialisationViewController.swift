@@ -49,17 +49,17 @@ class FMInitialisationViewController: UIViewController, MSCircularSliderDelegate
         var string = ""
 
         if hours > 1 {
-            string = "\(hours) hours"
+            string = "\(hours) \(NSLocalizedString("hours", comment: "Plural form of hour."))"
         } else if hours == 1 {
-            string = "\(hours) hour"
+            string = "\(hours) \(NSLocalizedString("hour", comment: "Singular form of hour."))"
         } else {
             string = ""
         }
 
         if minutes == 1 {
-            string += " \(minutes) minute"
+            string += " \(minutes) \(NSLocalizedString("minute", comment: "Singular form of minute."))"
         } else if minutes > 1 {
-            string += " \(minutes) minutes"
+            string += " \(minutes) \(NSLocalizedString("minutes", comment: "Plural form of minute."))"
         }
 
         self.timeLabel.text = string

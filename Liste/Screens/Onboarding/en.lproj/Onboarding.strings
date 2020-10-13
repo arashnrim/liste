@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Let's get started!"; ObjectID = "0gA-Jd-wuU"; */
+"0gA-Jd-wuU.text" = "Let's get started!";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "EiI-tl-po7"; */
+"EiI-tl-po7.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Welcome to Listé."; ObjectID = "Erk-xs-TN2"; */
+"Erk-xs-TN2.text" = "Welcome to Listé.";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "KBZ-jX-q9A"; */
+"KBZ-jX-q9A.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "To create tasks, swipe left or tap the plus button."; ObjectID = "Qeq-DZ-9Zs"; */
+"Qeq-DZ-9Zs.text" = "To create tasks, swipe left or tap the plus button.";
+
+/* Class = "UILabel"; text = "Accessing the menu?"; ObjectID = "W1g-k0-Qen"; */
+"W1g-k0-Qen.text" = "Accessing the menu?";
+
+/* Class = "UILabel"; text = "Name your new list."; ObjectID = "ZPn-A2-Tiw"; */
+"ZPn-A2-Tiw.text" = "Name your new list.";
+
+/* Class = "UILabel"; text = "Creating a task is as easy as"; ObjectID = "iWt-LE-Dyl"; */
+"iWt-LE-Dyl.text" = "Creating a task is as easy as";
+
+/* Class = "UILabel"; text = "Tap the list name to name your first list!"; ObjectID = "mRx-rY-49u"; */
+"mRx-rY-49u.text" = "Tap the list name to name your first list!";
+
+/* Class = "UILabel"; text = "Swipe again."; ObjectID = "tCR-Gv-Brp"; */
+"tCR-Gv-Brp.text" = "Swipe again.";
+
+/* Class = "UIButton"; normalTitle = "Let's go!"; ObjectID = "tWh-87-7lE"; */
+"tWh-87-7lE.normalTitle" = "Let's go!";
+
+/* Class = "UILabel"; text = "a single swipe."; ObjectID = "vMc-m4-U8h"; */
+"vMc-m4-U8h.text" = "a single swipe.";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "vSw-Cn-Dw6"; */
+"vSw-Cn-Dw6.normalTitle" = "Start";
+
+/* Class = "UILabel"; text = "To access the menu, swipe right."; ObjectID = "yiG-X8-2Qx"; */
+"yiG-X8-2Qx.text" = "To access the menu, swipe right.";
+
+/* Class = "UILabel"; text = "Let's go!"; ObjectID = "zwE-CK-rAx"; */
+"zwE-CK-rAx.text" = "Let's go!";

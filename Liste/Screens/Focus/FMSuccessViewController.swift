@@ -66,8 +66,8 @@ class FMSuccessViewController: UIViewController {
 
     // MARK: Actions
     @IBAction func finishButton(_ sender: ListeButton) {
-        self.displayAlert(title: "Mark task as complete?", message: "Would you like to mark your task as complete?") { (alert) in
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+        self.displayAlert(title: NSLocalizedString("markCompleteTitle", comment: "Mark task as complete?"), message: NSLocalizedString("markCompleteMessage", comment: "Would you like to mark your task as complete?")) { (alert) in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("yes", comment: "An affirmative statement."), style: .default, handler: { (_) in
                 // Changes the completion status of the task.
                 self.task!.completionStatus = true
                 self.tasks[self.row!] = self.task!
@@ -77,7 +77,7 @@ class FMSuccessViewController: UIViewController {
                     self.performSegue(withIdentifier: "home", sender: nil)
                 }
             }))
-            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("no", comment: "A rejective statement."), style: .default, handler: { (_) in
                 self.performSegue(withIdentifier: "home", sender: nil)
             }))
             self.show(alert, sender: nil)

@@ -1,0 +1,45 @@
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "47s-ia-fiK"; */
+"47s-ia-fiK.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Task Description"; ObjectID = "6yl-hh-xUZ"; */
+"6yl-hh-xUZ.text" = "Deskripsi Tugasan";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BEk-Yw-oWm"; */
+"BEk-Yw-oWm.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "I1R-D3-Peg"; */
+"I1R-D3-Peg.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LbD-Nw-4F3"; */
+"LbD-Nw-4F3.text" = "Label";
+
+/* Class = "UILabel"; text = "Task Deadline"; ObjectID = "Omu-kr-m32"; */
+"Omu-kr-m32.text" = "Tarikh Akhir Tugasan";
+
+/* Class = "UILabel"; text = "Task Deadline"; ObjectID = "VnW-op-meQ"; */
+"VnW-op-meQ.text" = "Tarikh Akhir Tugasan";
+
+/* Class = "UITextField"; placeholder = "List"; ObjectID = "X5K-Oe-yZ8"; */
+"X5K-Oe-yZ8.placeholder" = "Senarai";
+
+/* Class = "UIButton"; normalTitle = "Start Focus Mode"; ObjectID = "bbA-BA-x9v"; */
+"bbA-BA-x9v.normalTitle" = "Bermula Mod Fokus";
+
+/* Class = "UITextField"; placeholder = "Task Name"; ObjectID = "heY-VE-yZG"; */
+"heY-VE-yZG.placeholder" = "Nama Tugas";
+
+/* Class = "UILabel"; text = "Go ahead and create your first task!"; ObjectID = "t9I-hw-G8O"; */
+"t9I-hw-G8O.text" = "Teruskan dan mencipta tugasan pertama kamu!";
+
+/* Class = "UILabel"; text = "Task Deadline"; ObjectID = "uSd-Xn-F4g"; */
+"uSd-Xn-F4g.text" = "Tarikh Akhir Tugasan";
+
+/* Class = "UILabel"; text = "Task Description"; ObjectID = "vRA-1x-1l3"; */
+"vRA-1x-1l3.text" = "Deskripsi Tugasan";
+
+/* Class = "UILabel"; text = "It's empty here."; ObjectID = "x6u-pv-jpc"; */
+"x6u-pv-jpc.text" = "Ia kosong di sini.";
+
+/* Class = "UITextField"; placeholder = "Task Name"; ObjectID = "yHg-Zb-Xvq"; */
+"yHg-Zb-Xvq.placeholder" = "Nama Tugasan";
