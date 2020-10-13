@@ -59,6 +59,12 @@
 /* A rejective statement. */
 "no" = "Tidak";
 
+/* Wait, come back! */
+"focusModeExitTitle" = "Tunggu, datang kembali!";
+
+/* You still have an ongoing Focus Mode session. */
+"focusModeExitMessage" = "Kamu tetap ada satu sesi Mod Fokus yang sedang berlaku.";
+
 /* -- Auth Storyboard -- */
 /* An error occurred. */
 "errorOccurred" = "Sebuah kesilapan telah berlaku.";

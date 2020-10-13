@@ -59,6 +59,12 @@
 /* A rejective statement. */
 "no" = "No";
 
+/* Wait, come back! */
+"focusModeExitTitle" = "Wait, come back!";
+
+/* You still have an ongoing Focus Mode session. */
+"focusModeExitMessage" = "You still have an ongoing Focus Mode session.";
+
 /* -- Auth Storyboard -- */
 /* An error occurred. */
 "errorOccurred" = "errorOccurred";

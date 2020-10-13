@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()
+        }
+
+        let centre = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert]
+        centre.requestAuthorization(options: options) { (_, error) in
+            if let error = error {
+                print("Error (while requesting notification authorisation: \(error.localizedDescription)")
+            }
         }
 
         return true

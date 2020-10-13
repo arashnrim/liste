@@ -9,6 +9,7 @@
 import UIKit
 import MSCircularSlider
 import Hero
+import UserNotifications
 
 class FMTimerViewController: UIViewController {
 
@@ -49,6 +50,14 @@ class FMTimerViewController: UIViewController {
         UIScreen.main.brightness = CGFloat(0.0)
         // Begins to observe for changes in the device orientation; if faced up, the user is thrown back to FMPreflightViewController.
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
+
+        // Adds an observer that watches if the app goes into the background during this screen.
+        // If that's the case, the user isn't using their time on their task!
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIScene.willDeactivateNotification, object: nil)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -105,6 +114,24 @@ class FMTimerViewController: UIViewController {
         if UIDevice.current.orientation == .faceUp {
             self.performSegue(withIdentifier: "stop", sender: nil)
             self.countdownTimer.invalidate()
+        }
+    }
+
+    @objc func willResignActive(_ notification: Notification) {
+        self.performSegue(withIdentifier: "stop", sender: nil)
+        self.countdownTimer.invalidate()
+
+        // Queues a notification to remind the user to get back to the app (and their task!)
+        let centre = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = NSLocalizedString("focusModeExitTitle", comment: "Wait, come back!")
+        content.body = NSLocalizedString("focusModeExitMessage", comment: "You still have an ongoing Focus Mode session.")
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        let request = UNNotificationRequest(identifier: "focusModeExit", content: content, trigger: trigger)
+        centre.add(request) { (error) in
+            if let error = error {
+                print("Error (while requesting notification): \(error.localizedDescription)")
+            }
         }
     }
 }
