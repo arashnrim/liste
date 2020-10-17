@@ -13,6 +13,7 @@ import Firebase
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Outlets
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var listsTableView: UITableView!
@@ -32,6 +33,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         retrieveDatabase { (data) in
             self.readListName(data: data)
             self.listsTableView.reloadData()
+            UIView.animate(withDuration: 0.5) {
+                self.loadingView.alpha = 0.0
+            } completion: { (_) in
+                self.loadingView.isHidden = true
+            }
+
         }
     }
 

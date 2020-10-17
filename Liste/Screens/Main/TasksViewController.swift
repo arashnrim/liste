@@ -191,30 +191,28 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     /// This function is executed when unwound from `AddViewController`; since the latter does add a task to the user's database, it's likely that we'll need to refresh the table view with a more up-to-date version of tasks.
     @IBAction func unwindToTasks(_ unwindSegue: UIStoryboardSegue) {
         tasks = []
+
+        self.loadingView.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 1.0
+        }
+
         retrieveDatabase { (data) in
-            self.emptyView.isHidden = false
-
-            UIView.animate(withDuration: 0.5) {
-                self.emptyView.alpha = 1.0
-            }
-
             self.readUserStatus(data: data)
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
-                    if self.emptyView != nil {
-                        UIView.animate(withDuration: 0.5, animations: {
-                            self.emptyView.alpha = 0.0
-                        }) { (_) in
-                            self.emptyView.isHidden = true
-                        }
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
                     }
                 } else {
                     self.emptyView.isHidden = false
-
-                    if self.emptyView != nil {
-                        UIView.animate(withDuration: 0.5) {
-                            self.emptyView.alpha = 1.0
-                        }
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.emptyView.alpha = 1.0
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
                     }
                 }
             }
@@ -225,30 +223,28 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBAction func unwindFromMenu(_ unwindSegue: UIStoryboardSegue) {
         tasks = []
+
+        self.loadingView.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 1.0
+        }
+
         retrieveDatabase { (data) in
-            self.emptyView.isHidden = false
-
-            UIView.animate(withDuration: 0.5) {
-                self.emptyView.alpha = 1.0
-            }
-
             self.readUserStatus(data: data)
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
-                    if self.emptyView != nil {
-                        UIView.animate(withDuration: 0.5, animations: {
-                            self.emptyView.alpha = 0.0
-                        }) { (_) in
-                            self.emptyView.isHidden = true
-                        }
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
                     }
                 } else {
                     self.emptyView.isHidden = false
-
-                    if self.emptyView != nil {
-                        UIView.animate(withDuration: 0.5) {
-                            self.emptyView.alpha = 1.0
-                        }
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.emptyView.alpha = 1.0
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
                     }
                 }
             }
