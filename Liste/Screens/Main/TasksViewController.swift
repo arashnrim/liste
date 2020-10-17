@@ -108,6 +108,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             destination.task = tasks[indexPath.row]
             destination.tasks = tasks
             destination.row = indexPath.row
+        } else if segue.identifier == "menu" {
+            let destination = segue.destination
+            destination.hero.modalAnimationType = .selectBy(presenting: .cover(direction: .right), dismissing: .uncover(direction: .left))
         }
     }
 

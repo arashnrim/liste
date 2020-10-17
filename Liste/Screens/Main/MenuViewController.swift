@@ -46,6 +46,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         if segue.identifier == "menuUnwind" {
             let destination = segue.destination
             destination.hero.modalAnimationType = .uncover(direction: .left)
+        } else if segue.identifier == "settings" {
+            let destination = segue.destination
+            destination.hero.modalAnimationType = .selectBy(presenting: .zoomOut, dismissing: .zoom)
         }
     }
 

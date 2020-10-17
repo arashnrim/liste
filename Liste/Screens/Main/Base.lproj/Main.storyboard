@@ -48,7 +48,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
                                         </state>
                                         <connections>
-                                            <segue destination="WVv-21-6db" kind="show" id="M9R-pF-vm9"/>
+                                            <segue destination="WVv-21-6db" kind="show" identifier="menu" id="M9R-pF-vm9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5I-vC-2Wf">
@@ -533,20 +533,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btl-zi-sm5">
-                                <rect key="frame" x="20" y="84" width="374" height="34.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="there!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv3-Hm-EF9">
-                                <rect key="frame" x="20" y="118.5" width="374" height="41"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv3-Hm-EF9">
+                                <rect key="frame" x="20" y="84" width="374" height="48"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-PF-YjQ">
-                                <rect key="frame" x="0.0" y="199.5" width="414" height="622.5"/>
+                                <rect key="frame" x="0.0" y="172" width="414" height="650"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="list" rowHeight="75" id="3cN-EN-dMx" customClass="MenuTableViewCell" customModule="Liste" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
@@ -577,10 +571,10 @@
                                 <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5X-2v-989">
-                                <rect key="frame" x="0.0" y="200" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="172.5" width="414" height="650.5"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Iv8-8p-4c4">
-                                        <rect key="frame" x="197" y="301.5" width="20" height="20"/>
+                                        <rect key="frame" x="197" y="315.5" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -589,24 +583,34 @@
                                     <constraint firstItem="Iv8-8p-4c4" firstAttribute="centerX" secondItem="n5X-2v-989" secondAttribute="centerX" id="mnQ-0G-nvf"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bka-cu-BLf">
+                                <rect key="frame" x="354" y="84" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hoG-0K-L5x"/>
+                                    <constraint firstAttribute="width" constant="40" id="vrM-CQ-qRN"/>
+                                </constraints>
+                                <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="muM-IS-sqE" kind="show" id="8xW-I0-2KL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WeN-JC-i8B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="btl-zi-sm5" firstAttribute="leading" secondItem="WeN-JC-i8B" secondAttribute="leading" constant="20" id="ELH-mO-QLd"/>
+                            <constraint firstItem="Bka-cu-BLf" firstAttribute="top" secondItem="WeN-JC-i8B" secondAttribute="top" constant="40" id="AN6-CD-3AU"/>
                             <constraint firstItem="V0B-PF-YjQ" firstAttribute="top" secondItem="Zv3-Hm-EF9" secondAttribute="bottom" constant="40" id="NiC-D3-qc0"/>
-                            <constraint firstItem="WeN-JC-i8B" firstAttribute="trailing" secondItem="btl-zi-sm5" secondAttribute="trailing" constant="20" id="PhI-aJ-8ee"/>
                             <constraint firstItem="WeN-JC-i8B" firstAttribute="trailing" secondItem="V0B-PF-YjQ" secondAttribute="trailing" id="Rda-Nd-toQ"/>
                             <constraint firstItem="WeN-JC-i8B" firstAttribute="bottom" secondItem="V0B-PF-YjQ" secondAttribute="bottom" constant="40" id="WPn-I2-2nc"/>
                             <constraint firstItem="V0B-PF-YjQ" firstAttribute="leading" secondItem="WeN-JC-i8B" secondAttribute="leading" id="bXl-he-HSZ"/>
                             <constraint firstItem="Zv3-Hm-EF9" firstAttribute="leading" secondItem="WeN-JC-i8B" secondAttribute="leading" constant="20" id="cR6-Ee-co4"/>
                             <constraint firstItem="WeN-JC-i8B" firstAttribute="bottom" secondItem="n5X-2v-989" secondAttribute="bottom" constant="39" id="iNd-DT-qxh"/>
                             <constraint firstItem="WeN-JC-i8B" firstAttribute="trailing" secondItem="Zv3-Hm-EF9" secondAttribute="trailing" constant="20" id="k0c-if-vsh"/>
-                            <constraint firstItem="Zv3-Hm-EF9" firstAttribute="top" secondItem="btl-zi-sm5" secondAttribute="bottom" id="kPl-lC-BPX"/>
-                            <constraint firstItem="btl-zi-sm5" firstAttribute="top" secondItem="WeN-JC-i8B" secondAttribute="top" constant="40" id="pum-4s-Z62"/>
+                            <constraint firstItem="WeN-JC-i8B" firstAttribute="trailing" secondItem="Bka-cu-BLf" secondAttribute="trailing" constant="20" id="qhX-FD-CxC"/>
                             <constraint firstItem="n5X-2v-989" firstAttribute="top" secondItem="Zv3-Hm-EF9" secondAttribute="bottom" constant="40.5" id="t2f-Cw-DRY"/>
                             <constraint firstItem="n5X-2v-989" firstAttribute="leading" secondItem="WeN-JC-i8B" secondAttribute="leading" id="t4C-qb-5BK"/>
                             <constraint firstItem="WeN-JC-i8B" firstAttribute="trailing" secondItem="n5X-2v-989" secondAttribute="trailing" id="uQU-ck-6yR"/>
+                            <constraint firstItem="Zv3-Hm-EF9" firstAttribute="top" secondItem="WeN-JC-i8B" secondAttribute="top" constant="40" id="unJ-v8-Oh9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1ke-CH-RRy"/>
@@ -614,7 +618,6 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="greetingLabel" destination="btl-zi-sm5" id="TbU-M6-8Ng"/>
                         <outlet property="listsTableView" destination="V0B-PF-YjQ" id="dtG-Kj-M77"/>
                         <outlet property="loadingView" destination="n5X-2v-989" id="4aQ-b9-bI2"/>
                         <outlet property="nameLabel" destination="Zv3-Hm-EF9" id="dO9-bc-hgg"/>
@@ -626,9 +629,19 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="893.97321428571422"/>
         </scene>
+        <!--SettingsViewController-->
+        <scene sceneID="qZI-q0-iuW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsViewController" id="muM-IS-sqE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6BO-b8-ZAD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoh-OS-p8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="894"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BId-tV-XoD"/>
+        <segue reference="HNk-Vn-e5c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="44" height="44"/>
@@ -636,6 +649,7 @@
         <image name="edit" width="44" height="44"/>
         <image name="emptyList" width="1093" height="764"/>
         <image name="menu" width="24" height="24"/>
+        <image name="settings" width="44" height="44"/>
         <image name="unchecked" width="23" height="24"/>
         <namedColor name="Liste Orange">
             <color red="1" green="0.15294117647058825" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
