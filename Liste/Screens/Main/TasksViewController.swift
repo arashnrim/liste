@@ -223,4 +223,38 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tasksTableView.reloadData()
     }
 
+    @IBAction func unwindFromMenu(_ unwindSegue: UIStoryboardSegue) {
+        tasks = []
+        retrieveDatabase { (data) in
+            self.emptyView.isHidden = false
+
+            UIView.animate(withDuration: 0.5) {
+                self.emptyView.alpha = 1.0
+            }
+
+            self.readUserStatus(data: data)
+            self.readTasks(data: data) { (tasks) in
+                if !(tasks.isEmpty) {
+                    if self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.emptyView.alpha = 0.0
+                        }) { (_) in
+                            self.emptyView.isHidden = true
+                        }
+                    }
+                } else {
+                    self.emptyView.isHidden = false
+
+                    if self.emptyView != nil {
+                        UIView.animate(withDuration: 0.5) {
+                            self.emptyView.alpha = 1.0
+                        }
+                    }
+                }
+            }
+            self.readListName(data: data)
+        }
+        self.tasksTableView.reloadData()
+    }
+
 }

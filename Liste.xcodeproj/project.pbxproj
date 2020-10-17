@@ -35,6 +35,8 @@
 		49DFF319249DB1E20030D5AD /* ListeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF318249DB1E20030D5AD /* ListeButton.swift */; };
 		49E978D7253180D80027C6E5 /* FMTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E978D6253180D80027C6E5 /* FMTimerViewController.swift */; };
 		49E978DB253184750027C6E5 /* FMPreflightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E978DA253184750027C6E5 /* FMPreflightViewController.swift */; };
+		49F94384253A7FE70094D26A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F94383253A7FE70094D26A /* MenuViewController.swift */; };
+		49F94388253A80520094D26A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F94387253A80520094D26A /* MenuTableViewCell.swift */; };
 		7EA3CE3EC1001298DE66C414 /* Pods_Liste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EAE577C331A812E3B32A9A /* Pods_Liste.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		49DFF318249DB1E20030D5AD /* ListeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeButton.swift; sourceTree = "<group>"; };
 		49E978D6253180D80027C6E5 /* FMTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMTimerViewController.swift; sourceTree = "<group>"; };
 		49E978DA253184750027C6E5 /* FMPreflightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPreflightViewController.swift; sourceTree = "<group>"; };
+		49F94383253A7FE70094D26A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		49F94387253A80520094D26A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		55D8F4B67E36774477049986 /* Pods-Liste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liste.release.xcconfig"; path = "Target Support Files/Pods-Liste/Pods-Liste.release.xcconfig"; sourceTree = "<group>"; };
 		74ED5CE3EDC516BC55368A0A /* Pods-Liste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liste.debug.xcconfig"; path = "Target Support Files/Pods-Liste/Pods-Liste.debug.xcconfig"; sourceTree = "<group>"; };
 		A6EAE577C331A812E3B32A9A /* Pods_Liste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Liste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +207,8 @@
 				494FC52924B0152600BB9F90 /* TaskTableViewCell.swift */,
 				495C3BAA24D4368F00B65CB6 /* AddViewController.swift */,
 				4952CDC024F9EE1800D6DDF7 /* InfoViewController.swift */,
+				49F94383253A7FE70094D26A /* MenuViewController.swift */,
+				49F94387253A80520094D26A /* MenuTableViewCell.swift */,
 				499E20A2250CB87A00D98846 /* Functions */,
 			);
 			path = Main;
@@ -388,6 +394,8 @@
 				49109BA224A62E01003310FB /* UITextField+Functionality.swift in Sources */,
 				49E978D7253180D80027C6E5 /* FMTimerViewController.swift in Sources */,
 				49E978DB253184750027C6E5 /* FMPreflightViewController.swift in Sources */,
+				49F94388253A80520094D26A /* MenuTableViewCell.swift in Sources */,
+				49F94384253A7FE70094D26A /* MenuViewController.swift in Sources */,
 				499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */,
 				49DFF319249DB1E20030D5AD /* ListeButton.swift in Sources */,
 				49109B9E24A61B0E003310FB /* AuthViewController.swift in Sources */,
