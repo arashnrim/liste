@@ -59,10 +59,14 @@ class FMTimerViewController: UIViewController {
         } else {
             NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
         }
+
+        // Prevents the phone from sleeping; this is a little workaround for now until I figure out how to get the timer working in the background!
+        UIApplication.shared.isIdleTimerDisabled = true
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         UIDevice.current.endGeneratingDeviceOrientationNotifications()
+        UIApplication.shared.isIdleTimerDisabled = false
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
