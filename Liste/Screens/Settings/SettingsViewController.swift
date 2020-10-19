@@ -11,7 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     // MARK: Actions
-    @IBAction func dismissButton(_ sender: UIButton) {
+    @IBAction func dismissButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
 

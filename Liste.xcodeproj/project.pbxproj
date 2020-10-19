@@ -26,6 +26,7 @@
 		4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */; };
 		495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C3BAA24D4368F00B65CB6 /* AddViewController.swift */; };
 		495F6617253AE86800610163 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6616253AE86800610163 /* SettingsViewController.swift */; };
+		49781B1D253D34AE001C8093 /* SF-Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49781B1C253D34AE001C8093 /* SF-Mono.ttf */; };
 		49870DA324DE432B00D674B6 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49870DA224DE432B00D674B6 /* ShadowView.swift */; };
 		499B42B624C29DF10069D739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B42B524C29DF10069D739 /* OnboardingViewController.swift */; };
 		499E20A4250CB8A600D98846 /* TasksViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */; };
@@ -66,6 +67,7 @@
 		4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSuccessViewController.swift; sourceTree = "<group>"; };
 		495C3BAA24D4368F00B65CB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		495F6616253AE86800610163 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		49781B1C253D34AE001C8093 /* SF-Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono.ttf"; sourceTree = "<group>"; };
 		49870DA224DE432B00D674B6 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		499B42B524C29DF10069D739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksViewController+Database.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		49781B1B253D33F5001C8093 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				49781B1C253D34AE001C8093 /* SF-Mono.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		497911B82423A4EB001432F5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				4927523023432F4300FCFA6E /* Assets.xcassets */,
+				49781B1B253D33F5001C8093 /* Fonts */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -327,6 +338,7 @@
 				49CC326E25354E4F00780A1D /* Onboarding.storyboard in Resources */,
 				4927523123432F4300FCFA6E /* Assets.xcassets in Resources */,
 				49CC327925354EFF00780A1D /* Localizable.strings in Resources */,
+				49781B1D253D34AE001C8093 /* SF-Mono.ttf in Resources */,
 				4947B03D253AADC700BA94DC /* Settings.storyboard in Resources */,
 				4927522F23432F4200FCFA6E /* Main.storyboard in Resources */,
 				4915305125354DEA00445A10 /* Focus.storyboard in Resources */,
