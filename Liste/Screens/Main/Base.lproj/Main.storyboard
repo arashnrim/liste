@@ -629,10 +629,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="893.97321428571422"/>
         </scene>
-        <!--SettingsViewController-->
+        <!--Settings-->
         <scene sceneID="qZI-q0-iuW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsViewController" id="muM-IS-sqE" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Settings" id="muM-IS-sqE" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="6BO-b8-ZAD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoh-OS-p8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
