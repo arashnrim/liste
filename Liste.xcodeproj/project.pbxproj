@@ -26,6 +26,7 @@
 		4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */; };
 		495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C3BAA24D4368F00B65CB6 /* AddViewController.swift */; };
 		495F6617253AE86800610163 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6616253AE86800610163 /* SettingsViewController.swift */; };
+		4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A0952544304500FFABC7 /* AccountViewController.swift */; };
 		49781B1D253D34AE001C8093 /* SF-Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49781B1C253D34AE001C8093 /* SF-Mono.ttf */; };
 		49870DA324DE432B00D674B6 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49870DA224DE432B00D674B6 /* ShadowView.swift */; };
 		499B42B624C29DF10069D739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B42B524C29DF10069D739 /* OnboardingViewController.swift */; };
@@ -67,6 +68,7 @@
 		4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSuccessViewController.swift; sourceTree = "<group>"; };
 		495C3BAA24D4368F00B65CB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		495F6616253AE86800610163 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4970A0952544304500FFABC7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		49781B1C253D34AE001C8093 /* SF-Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono.ttf"; sourceTree = "<group>"; };
 		49870DA224DE432B00D674B6 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		499B42B524C29DF10069D739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				4947B03C253AADC700BA94DC /* Settings.storyboard */,
 				495F6616253AE86800610163 /* SettingsViewController.swift */,
+				4970A0952544304500FFABC7 /* AccountViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				49109BA424A63398003310FB /* UIViewController+Functionality.swift in Sources */,
 				4927522C23432F4200FCFA6E /* TasksViewController.swift in Sources */,
+				4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */,
 				495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */,
 				4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */,
 				49DC74D4251F13A500608F91 /* FMInitialisationViewController.swift in Sources */,
