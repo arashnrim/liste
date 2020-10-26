@@ -42,5 +42,7 @@ This project is **accepting contributions**. If there's something broken or some
 ## Acknowledgements
 I'd want to thank everyone who spends their time and effort in contributing to this project. Eventually, you'll see that your efforts made something worth.
 
+This project was developed in the [Code with Friends: Fall 2020](https://codewithfriends.io/) coding event. Thank you to everyone along the way who offered guidance and assistance during this event!
+
 ## License
 This project uses the [MIT](https://spdx.org/licenses/MIT.html) license.
