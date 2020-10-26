@@ -27,6 +27,7 @@
 		495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C3BAA24D4368F00B65CB6 /* AddViewController.swift */; };
 		495F6617253AE86800610163 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6616253AE86800610163 /* SettingsViewController.swift */; };
 		4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A0952544304500FFABC7 /* AccountViewController.swift */; };
+		4970A09B254435DC00FFABC7 /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A09A254435DC00FFABC7 /* DeleteViewController.swift */; };
 		49781B1D253D34AE001C8093 /* SF-Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49781B1C253D34AE001C8093 /* SF-Mono.ttf */; };
 		49870DA324DE432B00D674B6 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49870DA224DE432B00D674B6 /* ShadowView.swift */; };
 		499B42B624C29DF10069D739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B42B524C29DF10069D739 /* OnboardingViewController.swift */; };
@@ -69,6 +70,7 @@
 		495C3BAA24D4368F00B65CB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		495F6616253AE86800610163 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4970A0952544304500FFABC7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4970A09A254435DC00FFABC7 /* DeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
 		49781B1C253D34AE001C8093 /* SF-Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono.ttf"; sourceTree = "<group>"; };
 		49870DA224DE432B00D674B6 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		499B42B524C29DF10069D739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				4947B03C253AADC700BA94DC /* Settings.storyboard */,
 				495F6616253AE86800610163 /* SettingsViewController.swift */,
 				4970A0952544304500FFABC7 /* AccountViewController.swift */,
+				4970A09A254435DC00FFABC7 /* DeleteViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				492DFC2F24B8424A00D9D862 /* Task.swift in Sources */,
 				494FC52A24B0152600BB9F90 /* TaskTableViewCell.swift in Sources */,
 				49109BA224A62E01003310FB /* UITextField+Functionality.swift in Sources */,
+				4970A09B254435DC00FFABC7 /* DeleteViewController.swift in Sources */,
 				49E978D7253180D80027C6E5 /* FMTimerViewController.swift in Sources */,
 				49E978DB253184750027C6E5 /* FMPreflightViewController.swift in Sources */,
 				49F94388253A80520094D26A /* MenuTableViewCell.swift in Sources */,

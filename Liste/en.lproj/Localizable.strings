@@ -67,8 +67,18 @@
 
 /* -- Auth Storyboard -- */
 /* An error occurred. */
-"errorOccurred" = "errorOccurred";
+"errorOccurred" = "An error occurred.";
 
 /* -- Onboarding Storyboard -- */
 /* An informal way of noting that something wrong happened. */
-"whoops" = "whoops";
+"whoops" = "Whoops.";
+
+/* -- Settings Storyboard -- */
+/* Are you sure you'd like to delete your data? */
+"deleteDataTitle" = "Are you sure you'd like to delete your data?";
+
+/* All your tasks will be deleted from your account, and your list will be deleted. */
+"deleteDataMessage" = "All your tasks will be deleted from your account, and your list will be deleted.";
+
+/* Delete. */
+"delete" = "Delete";

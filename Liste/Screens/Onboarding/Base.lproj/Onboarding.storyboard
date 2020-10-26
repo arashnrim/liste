@@ -357,22 +357,13 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="slide(left)"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="xvr-qP-rs1" kind="show" identifier="return" id="8xH-2D-RsT"/>
+                        <segue destination="Vd6-CS-tCL" kind="unwind" identifier="return" unwindAction="unwindFromOnboarding:" id="lLH-se-tcp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rri-UB-huF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Vd6-CS-tCL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2409" y="17"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="sQD-ap-9Th">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="xvr-qP-rs1" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="seH-pB-IUl"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gno-69-SLX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2981" y="17"/>
         </scene>
     </scenes>
     <resources>

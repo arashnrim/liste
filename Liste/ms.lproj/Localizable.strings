@@ -72,3 +72,13 @@
 /* -- Onboarding Storyboard -- */
 /* An informal way of noting that something wrong happened. */
 "whoops" = "Oops.";
+
+/* -- Settings Storyboard -- */
+/* Are you sure you'd like to delete your data? */
+"deleteDataTitle" = "Adakah kamu pasti kamu mahu padamkan data kamu?";
+
+/* All your tasks will be deleted from your account, and your list will be deleted. */
+"deleteDataMessage" = "Semua tugasan kamu akan dipadamkan, dan senarai kamu akan juga dipadamkan.";
+
+/* Delete. */
+"delete" = "Padam";

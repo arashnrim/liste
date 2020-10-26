@@ -16,6 +16,9 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var tasksLabel: UILabel!
 
+    // MARK: Properties
+    var userID: String = ""
+
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,7 @@ class AccountViewController: UIViewController {
             print("Warning: No authenticated user is found; future functions may fail.")
             return
         }
+        self.userID = userID
         firestore.document("users/\(userID)").getDocument { (snapshot, error) in
             if let error = error {
                 print("Error (while retrieving user data): \(error.localizedDescription)")
@@ -44,6 +48,12 @@ class AccountViewController: UIViewController {
                 }
             }
         }
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "delete" {
+            let destination = segue.destination as! DeleteViewController
+            destination.userID = self.userID
+        }
     }
 }
