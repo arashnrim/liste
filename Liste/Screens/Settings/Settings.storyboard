@@ -133,11 +133,28 @@
                                     <constraint firstItem="qwD-sR-PsQ" firstAttribute="top" secondItem="SF4-ew-Xmu" secondAttribute="top" id="vZx-jc-k8s"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0r-Vg-Yov" customClass="ListeButton" customModule="Liste" customModuleProvider="target">
+                                <rect key="frame" x="20" y="772" width="374" height="50"/>
+                                <color key="backgroundColor" name="Liste Orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Vjg-CE-Okt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButton:" destination="q4g-0z-WQd" eventType="touchUpInside" id="ZKv-Ft-oHx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ek8-pr-DZJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="q0r-Vg-Yov" firstAttribute="leading" secondItem="Ek8-pr-DZJ" secondAttribute="leading" constant="20" id="0eg-nC-SFG"/>
+                            <constraint firstItem="Ek8-pr-DZJ" firstAttribute="trailing" secondItem="q0r-Vg-Yov" secondAttribute="trailing" constant="20" id="I2h-b1-zne"/>
                             <constraint firstItem="Ek8-pr-DZJ" firstAttribute="trailing" secondItem="SF4-ew-Xmu" secondAttribute="trailing" constant="20" id="MUS-G2-2jG"/>
+                            <constraint firstItem="Ek8-pr-DZJ" firstAttribute="bottom" secondItem="q0r-Vg-Yov" secondAttribute="bottom" constant="40" id="Tzg-17-waT"/>
                             <constraint firstItem="Ek8-pr-DZJ" firstAttribute="trailing" secondItem="usn-FZ-nGE" secondAttribute="trailing" constant="20" id="Yay-MY-Waf"/>
                             <constraint firstItem="SF4-ew-Xmu" firstAttribute="leading" secondItem="Ek8-pr-DZJ" secondAttribute="leading" constant="20" id="diq-lE-aoL"/>
                             <constraint firstItem="usn-FZ-nGE" firstAttribute="top" secondItem="Ek8-pr-DZJ" secondAttribute="top" constant="40" id="lT4-Vu-gVh"/>
@@ -156,8 +173,12 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="zoomOut"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="050-rd-MIm" kind="unwind" identifier="signOut" unwindAction="unwindToWelcome:" id="gXC-lh-BuH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ab1-72-FCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="050-rd-MIm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-413.04347826086962" y="94.419642857142847"/>
         </scene>
