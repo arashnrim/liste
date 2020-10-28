@@ -60,5 +60,5 @@ class ReauthenticationViewController: UIViewController {
             }
         }
     }
-    
+
 }
