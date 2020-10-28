@@ -74,6 +74,15 @@
 "whoops" = "Whoops.";
 
 /* -- Settings Storyboard -- */
+/* Are you sure you'd like to sign out? */
+"signOutTitle" = "Are you sure you'd like to sign out?";
+
+/* Your session will be reset and you'll need to sign in again. */
+"signOutMessage" = "Your session will be reset and you'll need to sign in again.";
+
+/* Sign out. */
+"signOut" = "Sign out";
+
 /* Are you sure you'd like to delete your data? */
 "deleteDataTitle" = "Are you sure you'd like to delete your data?";
 

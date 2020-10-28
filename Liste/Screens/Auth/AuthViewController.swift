@@ -163,7 +163,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         let database = Firestore.firestore()
         let data = [
             "configured": false,
-            "tasks": [],
+            "tasks": [String: Any](),
             "listName": ""
             ] as [String: Any]
         database.document("users/\(userID)").setData(data)

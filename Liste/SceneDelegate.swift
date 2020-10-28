@@ -21,17 +21,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Performs conditional navigation on the status of currentUser.
         // If currentUser is not nil, then the app will start in the Main Storyboard.
         // Else, the app will start in the Auth Storyboard.
-        let user = Auth.auth().currentUser
-        if user != nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let rootViewController = storyboard.instantiateViewController(identifier: "TasksViewController")
-            window?.rootViewController = rootViewController
-            window?.makeKeyAndVisible()
-        } else {
-            let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-            let rootViewController = storyboard.instantiateViewController(identifier: "WelcomeViewController")
-            window?.rootViewController = rootViewController
-            window?.makeKeyAndVisible()
+        Auth.auth().addStateDidChangeListener { (_, user) in
+            if user != nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let rootViewController: UIViewController
+                rootViewController = storyboard.instantiateViewController(identifier: "TasksViewController")
+                self.window?.rootViewController = rootViewController
+                self.window?.makeKeyAndVisible()
+            } else {
+                let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+                let rootViewController: UIViewController
+                rootViewController = storyboard.instantiateViewController(identifier: "WelcomeViewController")
+                self.window?.rootViewController = rootViewController
+                self.window?.makeKeyAndVisible()
+            }
         }
     }
 

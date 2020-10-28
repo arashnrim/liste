@@ -256,7 +256,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tasksTableView.reloadData()
     }
 
-    @IBAction func unwindFromOnboarding(_ unwindSegue: UIStoryboardSegue) {  }
+    @IBAction func unwindFromOnboarding(_ unwindSegue: UIStoryboardSegue) {
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 0.0
+        } completion: { (_) in
+            self.loadingView.isHidden = true
+        }
+
+    }
 
     @IBAction func unwindFromDeletion(_ unwindSegue: UIStoryboardSegue) {
         self.listNameTextField.text = ""

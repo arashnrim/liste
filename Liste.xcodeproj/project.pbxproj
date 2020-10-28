@@ -34,7 +34,6 @@
 		499E20A4250CB8A600D98846 /* TasksViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */; };
 		499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A5250CB9F700D98846 /* AddViewController+Database.swift */; };
 		49B9E2DA2546C9000094C599 /* ReauthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */; };
-		49B9E2DD2546D0760094C599 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9E2DC2546D0760094C599 /* WelcomeViewController.swift */; };
 		49CC326925354E4400780A1D /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC326B25354E4400780A1D /* Auth.storyboard */; };
 		49CC326E25354E4F00780A1D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC327025354E4F00780A1D /* Onboarding.storyboard */; };
 		49CC327925354EFF00780A1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49CC327B25354EFF00780A1D /* Localizable.strings */; };
@@ -79,7 +78,6 @@
 		499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksViewController+Database.swift"; sourceTree = "<group>"; };
 		499E20A5250CB9F700D98846 /* AddViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Database.swift"; sourceTree = "<group>"; };
 		49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationViewController.swift; sourceTree = "<group>"; };
-		49B9E2DC2546D0760094C599 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		49CC326A25354E4400780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		49CC326D25354E4C00780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Auth.strings; sourceTree = "<group>"; };
 		49CC326F25354E4F00780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 			children = (
 				49CC326B25354E4400780A1D /* Auth.storyboard */,
 				49109B9D24A61B0E003310FB /* AuthViewController.swift */,
-				49B9E2DC2546D0760094C599 /* WelcomeViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -423,7 +420,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49B9E2DD2546D0760094C599 /* WelcomeViewController.swift in Sources */,
 				49109BA424A63398003310FB /* UIViewController+Functionality.swift in Sources */,
 				4927522C23432F4200FCFA6E /* TasksViewController.swift in Sources */,
 				4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */,
