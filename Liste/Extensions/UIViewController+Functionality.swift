@@ -27,7 +27,7 @@ extension UIViewController {
             override(alert)
         } else {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.show(alert, sender: nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
 
