@@ -89,6 +89,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.reloadTable), for: .valueChanged)
         tasksTableView.addSubview(refreshControl)
+
+        // Adds swipe gesture recognizers to show the menu or add a task.
+        let addTask = UISwipeGestureRecognizer(target: self, action: #selector(self.addTask))
+        addTask.direction = .left
+        let showMenu = UISwipeGestureRecognizer(target: self, action: #selector(self.showMenu))
+        showMenu.direction = .right
+        self.view.addGestureRecognizer(addTask)
+        self.view.addGestureRecognizer(showMenu)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -186,6 +194,15 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         return false
+    }
+
+    // MARK: Functions
+    @objc func addTask() {
+        self.performSegue(withIdentifier: "add", sender: nil)
+    }
+
+    @objc func showMenu() {
+        self.performSegue(withIdentifier: "menu", sender: nil)
     }
 
     // MARK: Actions

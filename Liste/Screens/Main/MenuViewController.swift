@@ -38,8 +38,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             } completion: { (_) in
                 self.loadingView.isHidden = true
             }
-
         }
+
+        // Adds a swipe gesture recognizer to dismiss the menu when swiped left.
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeGestureRecognizer.direction = .left
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,6 +82,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     // MARK: Functions
+    @objc func swiped() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     /**
      * Retrieves all user-related data in the Firestore database.
      *

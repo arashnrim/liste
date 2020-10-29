@@ -220,9 +220,6 @@
                             <constraint firstItem="b29-YZ-1bI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jJo-Mz-vlU"/>
                             <constraint firstItem="cvq-MP-7a4" firstAttribute="top" secondItem="Eeo-Kw-ryf" secondAttribute="bottom" id="rac-h9-nGN"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="6g4-th-qUM" appends="YES" id="OOb-pc-hzz"/>
-                        </connections>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -240,11 +237,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="6g4-th-qUM">
-                    <connections>
-                        <segue destination="34k-8J-I0g" kind="show" identifier="add" id="BId-tV-XoD"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
         </scene>
