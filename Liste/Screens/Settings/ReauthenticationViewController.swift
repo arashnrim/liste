@@ -82,6 +82,7 @@ class ReauthenticationViewController: UIViewController, UITextFieldDelegate {
     // MARK: Actions
     @IBAction func deleteAccountButton(_ sender: Any) {
         print("Initiating account deletion process.")
+        deleteButton.changeState(state: false, text: "...")
         guard let user = Auth.auth().currentUser else { return }
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -91,12 +92,15 @@ class ReauthenticationViewController: UIViewController, UITextFieldDelegate {
             if let error = error {
                 print("Error occurred (while re-authenticating): \(error.localizedDescription)")
                 self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
+                self.deleteButton.changeState(state: true, text: NSLocalizedString("deleteAccount", comment: "Delete account."))
             } else {
                 print("User re-authentication appears to be OK. Proceeding...")
                 print("Deleting user data...")
                 Firestore.firestore().document("users/\(user.uid)").delete { (error) in
                     if let error = error {
                         print("Error occurred (while deleting user data): \(error.localizedDescription)")
+                        self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
+                        self.deleteButton.changeState(state: true, text: NSLocalizedString("deleteAccount", comment: "Delete account."))
                     } else {
                         print("User data deletion appears to be OK. Proceeding...")
                         print("Clearing UserDefaults...")
@@ -105,9 +109,10 @@ class ReauthenticationViewController: UIViewController, UITextFieldDelegate {
                         user.delete { (error) in
                             if let error = error {
                                 print("Error occurred (while deleting account): \(error.localizedDescription)")
+                                self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
+                                self.deleteButton.changeState(state: true, text: NSLocalizedString("deleteAccount", comment: "Delete account."))
                             } else {
                                 print("Account deletion process concluded successfully.")
-                                self.performSegue(withIdentifier: "signOut", sender: nil)
                             }
                         }
                     }
