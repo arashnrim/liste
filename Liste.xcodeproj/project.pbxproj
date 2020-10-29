@@ -34,6 +34,7 @@
 		499E20A4250CB8A600D98846 /* TasksViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */; };
 		499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A5250CB9F700D98846 /* AddViewController+Database.swift */; };
 		49B9E2DA2546C9000094C599 /* ReauthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */; };
+		49C86213254A94A400630DD6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C86212254A94A400630DD6 /* AboutViewController.swift */; };
 		49CC326925354E4400780A1D /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC326B25354E4400780A1D /* Auth.storyboard */; };
 		49CC326E25354E4F00780A1D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC327025354E4F00780A1D /* Onboarding.storyboard */; };
 		49CC327925354EFF00780A1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49CC327B25354EFF00780A1D /* Localizable.strings */; };
@@ -78,6 +79,7 @@
 		499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksViewController+Database.swift"; sourceTree = "<group>"; };
 		499E20A5250CB9F700D98846 /* AddViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Database.swift"; sourceTree = "<group>"; };
 		49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationViewController.swift; sourceTree = "<group>"; };
+		49C86212254A94A400630DD6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		49CC326A25354E4400780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		49CC326D25354E4C00780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Auth.strings; sourceTree = "<group>"; };
 		49CC326F25354E4F00780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				495F6616253AE86800610163 /* SettingsViewController.swift */,
 				4970A0952544304500FFABC7 /* AccountViewController.swift */,
 				4970A09A254435DC00FFABC7 /* DeleteViewController.swift */,
+				49C86212254A94A400630DD6 /* AboutViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				4970A09B254435DC00FFABC7 /* DeleteViewController.swift in Sources */,
 				49E978D7253180D80027C6E5 /* FMTimerViewController.swift in Sources */,
 				49E978DB253184750027C6E5 /* FMPreflightViewController.swift in Sources */,
+				49C86213254A94A400630DD6 /* AboutViewController.swift in Sources */,
 				49F94388253A80520094D26A /* MenuTableViewCell.swift in Sources */,
 				49F94384253A7FE70094D26A /* MenuViewController.swift in Sources */,
 				499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */,
