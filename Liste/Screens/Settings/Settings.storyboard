@@ -459,6 +459,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reauthentication" id="dLr-oO-lUg"/>
                     <connections>
+                        <outlet property="deleteButton" destination="jBb-3y-AyT" id="rDA-bR-8H7"/>
                         <outlet property="emailTextField" destination="lJO-Om-9kE" id="RMn-xU-cY2"/>
                         <outlet property="passwordTextField" destination="cxS-NS-Q7y" id="vfQ-xH-uDN"/>
                     </connections>

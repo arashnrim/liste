@@ -91,3 +91,6 @@
 
 /* Delete. */
 "delete" = "Delete";
+
+/* Delete account. */
+"deleteAccount" = "Delete Account";

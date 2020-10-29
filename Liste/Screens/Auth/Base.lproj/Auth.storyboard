@@ -13,7 +13,7 @@
         <!--Welcome-->
         <scene sceneID="w6Z-Gv-KUK">
             <objects>
-                <viewController title="Welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JBR-mn-uh2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" title="Welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JBR-mn-uh2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Es-pJ-MFh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
