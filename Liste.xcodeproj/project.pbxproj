@@ -85,12 +85,6 @@
 		49CC326F25354E4F00780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
 		49CC327325354E5500780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Onboarding.strings; sourceTree = "<group>"; };
 		49CC327A25354EFF00780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		49CC327D2535508200780A1D /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Main.strings; sourceTree = "<group>"; };
-		49CC327E2535508300780A1D /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Focus.strings; sourceTree = "<group>"; };
-		49CC327F2535508300780A1D /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Auth.strings; sourceTree = "<group>"; };
-		49CC32802535508300780A1D /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Onboarding.strings; sourceTree = "<group>"; };
-		49CC32812535508300780A1D /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		49CC3283253550BE00780A1D /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMInitialisationViewController.swift; sourceTree = "<group>"; };
 		49DFF318249DB1E20030D5AD /* ListeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeButton.swift; sourceTree = "<group>"; };
 		49E978D6253180D80027C6E5 /* FMTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMTimerViewController.swift; sourceTree = "<group>"; };
@@ -327,7 +321,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ms,
 			);
 			mainGroup = 4927521B23432F4200FCFA6E;
 			productRefGroup = 4927522523432F4200FCFA6E /* Products */;
@@ -461,7 +454,6 @@
 			children = (
 				4915305225354DEA00445A10 /* Base */,
 				4915305625354DF300445A10 /* en */,
-				49CC327E2535508300780A1D /* ms */,
 			);
 			name = Focus.storyboard;
 			sourceTree = "<group>";
@@ -471,7 +463,6 @@
 			children = (
 				4927522E23432F4200FCFA6E /* Base */,
 				4915304F25354DD800445A10 /* en */,
-				49CC327D2535508200780A1D /* ms */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -480,7 +471,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				4927523323432F4300FCFA6E /* Base */,
-				49CC32812535508300780A1D /* ms */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -490,7 +480,6 @@
 			children = (
 				49CC326A25354E4400780A1D /* Base */,
 				49CC326D25354E4C00780A1D /* en */,
-				49CC327F2535508300780A1D /* ms */,
 			);
 			name = Auth.storyboard;
 			sourceTree = "<group>";
@@ -500,7 +489,6 @@
 			children = (
 				49CC326F25354E4F00780A1D /* Base */,
 				49CC327325354E5500780A1D /* en */,
-				49CC32802535508300780A1D /* ms */,
 			);
 			name = Onboarding.storyboard;
 			sourceTree = "<group>";
@@ -509,7 +497,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				49CC327A25354EFF00780A1D /* en */,
-				49CC3283253550BE00780A1D /* ms */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
