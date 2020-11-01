@@ -160,7 +160,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneDown" translatesAutoresizingMaskIntoConstraints="NO" id="f4A-Tn-Thz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneFlip" translatesAutoresizingMaskIntoConstraints="NO" id="f4A-Tn-Thz">
                                 <rect key="frame" x="157" y="348" width="100" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="MzC-CG-zak"/>
@@ -419,7 +419,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="phoneDown" width="74" height="148"/>
+        <image name="phoneFlip" width="74" height="148"/>
         <namedColor name="Liste Orange">
             <color red="1" green="0.15294117647058825" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
