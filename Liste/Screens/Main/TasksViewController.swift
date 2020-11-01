@@ -92,7 +92,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         // Adds swipe gesture recognizers to show the menu or add a task.
         let addTask = UISwipeGestureRecognizer(target: self, action: #selector(self.addTask))
-        addTask.direction = .left
+        addTask.direction = .up
         let showMenu = UISwipeGestureRecognizer(target: self, action: #selector(self.showMenu))
         showMenu.direction = .right
         self.view.addGestureRecognizer(addTask)
