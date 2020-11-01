@@ -43,8 +43,12 @@ extension AddViewController {
         let dueDate = taskDuePicker.date
         let task: Task
 
-        if !(description == "Task description") {
-            task = Task(taskName: taskName, dueDate: dueDate, description: description!, completionStatus: false)
+        if let description = description {
+            if !(description == "Task description") {
+                task = Task(taskName: taskName, dueDate: dueDate, description: description, completionStatus: false)
+            } else {
+                task = Task(taskName: taskName, dueDate: dueDate, completionStatus: false)
+            }
         } else {
             task = Task(taskName: taskName, dueDate: dueDate, completionStatus: false)
         }

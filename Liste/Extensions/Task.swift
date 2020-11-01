@@ -44,16 +44,18 @@ extension UIViewController {
                 print("Error: dueDate in \(task.key) is not a Timestamp.")
                 return []
             }
-            guard let description = data["description"] as? String else {
-                print("Error: description in \(task.key) is not a String.")
-                return []
-            }
+            let description = data["description"] as? String
             guard let completionStatus = data["completionStatus"] as? Bool else {
                 print("Error: completionStatus in \(task.key) is not a Bool.")
                 return []
             }
+            var convertedTask: Task
 
-            let convertedTask = Task(taskName: taskName, dueDate: dueDate.dateValue(), description: description, completionStatus: completionStatus)
+            if let description = description {
+                convertedTask = Task(taskName: taskName, dueDate: dueDate.dateValue(), description: description, completionStatus: completionStatus)
+            } else {
+                convertedTask = Task(taskName: taskName, dueDate: dueDate.dateValue(), description: nil, completionStatus: completionStatus)
+            }
             output.append(convertedTask)
         }
 
