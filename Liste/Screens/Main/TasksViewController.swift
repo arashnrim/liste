@@ -218,7 +218,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         retrieveDatabase { (data) in
             self.readTasks(data: data) { (tasks) in
-                print(tasks)
                 if !(tasks.isEmpty) {
                     self.emptyView.isHidden = true
                     UIView.animate(withDuration: 0.5, animations: {
