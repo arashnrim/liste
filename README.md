@@ -21,6 +21,10 @@ Whether you're a developer or user using the app, I'd love to add on the number 
 ## Getting Started
 Thanks for your interest in trying out this project! The explanation on how to get started is fairly long, so I've moved it to [the wiki](https://github.com/arashnrim/Liste/wiki/Building-List%C3%A9). Check it out to get started!
 
+### For designers
+
+I've ported the UI prototype into a file in Figma. [Check it out](https://www.figma.com/file/zTOJkVOZh2QUJb4FIlEdIu/List%C3%A9-%E2%80%94-UI-Prototype?node-id=0%3A1), make some changes if you'd like, and share your thoughts!
+
 ## Support
 If you need help with anything related to the project, I recommend opening a new issue in the Issue Tracker page. Following GitHub's [Open Source Guide](https://www.opensource.guide), it is strongly advised against privately communicating.
 
