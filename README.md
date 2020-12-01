@@ -2,7 +2,13 @@
   <img src="./liste.svg">
 </p>
 
-# Listé – Productivity Made Easy
+<h1 align="center">Listé – Productivity Made Easy</h1>
+
+<p align="center">
+  <a href="https://apps.apple.com/us/app/list%C3%A9-productive-to-do/id1486116734"><img src="./download.svg"></a>
+</p>
+
+---
 
 ## Table of Contents
 - [Introduction](#introduction)
