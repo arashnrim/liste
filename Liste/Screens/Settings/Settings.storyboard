@@ -285,6 +285,16 @@
                                     <constraint firstItem="W7R-XC-18m" firstAttribute="width" secondItem="jYC-8t-Jz8" secondAttribute="width" multiplier="0.3" id="wq6-Cx-hiV"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-l2-VdF">
+                                <rect key="frame" x="20" y="759" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset Master Password">
+                                    <color key="titleColor" name="Liste Orange"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="WFQ-cx-lEc" eventType="touchUpInside" id="ufu-gT-tmv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oSC-VU-WgL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

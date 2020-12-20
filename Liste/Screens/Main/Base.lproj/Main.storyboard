@@ -268,6 +268,7 @@
                         <segue destination="BJl-v8-Q3w" kind="show" identifier="configure" id="jDs-ce-Ttc"/>
                         <segue destination="0Jz-C6-qbO" kind="show" identifier="info" id="9cY-mJ-Cjg"/>
                         <segue destination="E3o-pi-DPp" kind="show" identifier="encrypt" id="O8N-ky-A4y"/>
+                        <segue destination="gUW-Y2-fji" kind="show" identifier="decrypt" id="q1y-Ru-uMQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -799,10 +800,10 @@
                                 <exclude reference="zsz-yP-c1u"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="3gN-nH-QmV"/>
                                 <exclude reference="fdB-9D-CaQ"/>
                                 <exclude reference="uVK-oB-V4B"/>
                                 <exclude reference="yJc-PK-MfM"/>
+                                <exclude reference="3gN-nH-QmV"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -810,10 +811,10 @@
                                 <include reference="zsz-yP-c1u"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="3gN-nH-QmV"/>
                                 <include reference="fdB-9D-CaQ"/>
                                 <include reference="uVK-oB-V4B"/>
                                 <include reference="yJc-PK-MfM"/>
+                                <include reference="3gN-nH-QmV"/>
                             </mask>
                         </variation>
                         <connections>
@@ -958,6 +959,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoh-OS-p8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="736" y="894"/>
+        </scene>
+        <!--EReentryViewController-->
+        <scene sceneID="Z2a-zf-MeW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Encryption" referencedIdentifier="EReentryViewController" id="gUW-Y2-fji" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="27m-Oe-gCA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TlN-8l-zey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-349"/>
         </scene>
         <!--Encryption-->
         <scene sceneID="BjO-kC-hFF">

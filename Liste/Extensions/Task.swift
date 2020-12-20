@@ -125,7 +125,7 @@ extension UIViewController {
                 guard let taskNameData = taskName.data(using: .utf8) else { return [:] }
                 let encryptedTaskName = RNCryptor.encrypt(data: taskNameData, withPassword: password)
                 convertedTask["taskName"] = encryptedTaskName
-                
+
                 if convertedTask["description"] != nil {
                     guard let descriptionData = (convertedTask["description"] as! String).data(using: .utf8) else { return [:] }
                     let encryptedDescription = RNCryptor.encrypt(data: descriptionData, withPassword: password)

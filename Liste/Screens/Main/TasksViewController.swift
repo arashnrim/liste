@@ -248,6 +248,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         retrieveDatabase { (data) in
+            self.verifyEncryption(data: data)
             self.readUserStatus(data: data)
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
@@ -282,6 +283,36 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBAction func unwindFromDeletion(_ unwindSegue: UIStoryboardSegue) {
         self.listNameTextField.text = ""
+    }
+
+    @IBAction func unwindFromReentry(_ unwindSegue: UIStoryboardSegue) {
+        tasks = []
+
+        self.emptyView.isHidden = true
+        self.loadingView.isHidden = false
+        self.loadingView.alpha = 1.0
+
+        retrieveDatabase { (data) in
+            self.readTasks(data: data) { (tasks) in
+                if !(tasks.isEmpty) {
+                    self.emptyView.isHidden = true
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
+                    }
+                } else {
+                    self.emptyView.isHidden = false
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.emptyView.alpha = 1.0
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
+                    }
+                }
+            }
+        }
+        self.tasksTableView.reloadData()
     }
 
 }

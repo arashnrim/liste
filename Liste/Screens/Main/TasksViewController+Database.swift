@@ -56,9 +56,13 @@ extension TasksViewController {
             if !(configured) {
                 self.configureUser()
             } else {
-                let ignoredEncryption = UserDefaults.standard.bool(forKey: "ignoredEncryption")
-                if !ignoredEncryption {
-                    self.performSegue(withIdentifier: "encrypt", sender: nil)
+                if let encrypted = data["encrypted"] as? Bool {
+                    if !encrypted {
+                        let ignoredEncryption = UserDefaults.standard.bool(forKey: "ignoredEncryption")
+                        if !ignoredEncryption {
+                            self.performSegue(withIdentifier: "encrypt", sender: nil)
+                        }
+                    }
                 }
             }
         }
@@ -72,6 +76,7 @@ extension TasksViewController {
      */
     func readTasks(data: [String: Any], completion: (([Task]) -> Void)?) {
         if let tasks = data["tasks"] as? [String: [String: Any]] {
+            verifyEncryption(data: data)
             let convertedTasks = self.convertJSONToTask(tasks: tasks)
             self.tasks += convertedTasks
             self.tasksTableView.reloadData()
@@ -79,6 +84,15 @@ extension TasksViewController {
 
             if let completion = completion {
                 completion(self.tasks)
+            }
+        }
+    }
+
+    func verifyEncryption(data: [String: Any]) {
+        if let encrypted = data["encrypted"] as? Bool {
+            print(UserDefaults.standard.string(forKey: "masterPassword") == nil, encrypted)
+            if encrypted && UserDefaults.standard.string(forKey: "masterPassword") == nil {
+                self.performSegue(withIdentifier: "decrypt", sender: nil)
             }
         }
     }

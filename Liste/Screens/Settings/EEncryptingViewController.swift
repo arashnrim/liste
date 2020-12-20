@@ -92,6 +92,7 @@ class EEncryptingViewController: UIViewController {
                 }
             }
         }
+        encryptedData["encrypted"] = true
         return encryptedData
     }
 

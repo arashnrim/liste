@@ -56,4 +56,8 @@ class AccountViewController: UIViewController {
             destination.userID = self.userID
         }
     }
+
+    @IBAction func reset(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "masterPassword")
+    }
 }
