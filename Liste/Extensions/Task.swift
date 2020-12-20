@@ -47,7 +47,12 @@ extension UIViewController {
                         let decryptedData = try RNCryptor.decrypt(data: taskName, withPassword: password)
                         extractedTaskName = String(decoding: decryptedData, as: UTF8.self)
                     } catch {
-                        self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
+                        self.displayAlert(title: "An error occurred.", message: "It's likely that you've entered the wrong master password. Try again.") { (alert) in
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                                self.performSegue(withIdentifier: "decrypt", sender: nil)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
                     }
                 }
                 if let description = data["description"] as? Data {
@@ -55,7 +60,12 @@ extension UIViewController {
                         let decryptedData = try RNCryptor.decrypt(data: description, withPassword: password)
                         extractedDescription = String(decoding: decryptedData, as: UTF8.self)
                     } catch {
-                        self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
+                        self.displayAlert(title: "An error occurred.", message: "It's likely that you've entered the wrong master password. Try again.") { (alert) in
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                                self.performSegue(withIdentifier: "decrypt", sender: nil)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
                     }
                 }
             } else {
