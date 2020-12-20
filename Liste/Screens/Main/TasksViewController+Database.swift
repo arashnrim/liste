@@ -55,6 +55,11 @@ extension TasksViewController {
         if let configured = data["configured"] as? Bool {
             if !(configured) {
                 self.configureUser()
+            } else {
+                let ignoredEncryption = UserDefaults.standard.bool(forKey: "ignoredEncryption")
+                if !ignoredEncryption {
+                    self.performSegue(withIdentifier: "encrypt", sender: nil)
+                }
             }
         }
     }

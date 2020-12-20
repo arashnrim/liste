@@ -34,6 +34,11 @@
 		499E20A4250CB8A600D98846 /* TasksViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */; };
 		499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A5250CB9F700D98846 /* AddViewController+Database.swift */; };
 		49B9E2DA2546C9000094C599 /* ReauthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */; };
+		49BAE148258F32E400AAF8B1 /* Encryption.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BAE147258F32E400AAF8B1 /* Encryption.storyboard */; };
+		49BAE167258F361100AAF8B1 /* EIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */; };
+		49BAE16B258F361F00AAF8B1 /* EPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */; };
+		49BAE170258F386200AAF8B1 /* OnboardingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE16F258F386200AAF8B1 /* OnboardingMenuViewController.swift */; };
+		49BAE173258F419000AAF8B1 /* EEncryptingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */; };
 		49C86213254A94A400630DD6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C86212254A94A400630DD6 /* AboutViewController.swift */; };
 		49CC326925354E4400780A1D /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC326B25354E4400780A1D /* Auth.storyboard */; };
 		49CC326E25354E4F00780A1D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC327025354E4F00780A1D /* Onboarding.storyboard */; };
@@ -79,6 +84,11 @@
 		499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksViewController+Database.swift"; sourceTree = "<group>"; };
 		499E20A5250CB9F700D98846 /* AddViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Database.swift"; sourceTree = "<group>"; };
 		49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationViewController.swift; sourceTree = "<group>"; };
+		49BAE147258F32E400AAF8B1 /* Encryption.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Encryption.storyboard; sourceTree = "<group>"; };
+		49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EIntroductionViewController.swift; sourceTree = "<group>"; };
+		49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPasswordViewController.swift; sourceTree = "<group>"; };
+		49BAE16F258F386200AAF8B1 /* OnboardingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMenuViewController.swift; sourceTree = "<group>"; };
+		49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEncryptingViewController.swift; sourceTree = "<group>"; };
 		49C86212254A94A400630DD6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		49CC326A25354E4400780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		49CC326D25354E4C00780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Auth.strings; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 			children = (
 				49CC327025354E4F00780A1D /* Onboarding.storyboard */,
 				499B42B524C29DF10069D739 /* OnboardingViewController.swift */,
+				49BAE16F258F386200AAF8B1 /* OnboardingMenuViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -157,6 +168,10 @@
 		4947B01A253A9B8500BA94DC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				49BAE147258F32E400AAF8B1 /* Encryption.storyboard */,
+				49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */,
+				49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */,
+				49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */,
 				4947B03C253AADC700BA94DC /* Settings.storyboard */,
 				49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */,
 				495F6616253AE86800610163 /* SettingsViewController.swift */,
@@ -339,6 +354,7 @@
 			files = (
 				4927523423432F4300FCFA6E /* LaunchScreen.storyboard in Resources */,
 				49CC326925354E4400780A1D /* Auth.storyboard in Resources */,
+				49BAE148258F32E400AAF8B1 /* Encryption.storyboard in Resources */,
 				49498E8324A897E400064238 /* GoogleService-Info.plist in Resources */,
 				49CC326E25354E4F00780A1D /* Onboarding.storyboard in Resources */,
 				4927523123432F4300FCFA6E /* Assets.xcassets in Resources */,
@@ -417,11 +433,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				49109BA424A63398003310FB /* UIViewController+Functionality.swift in Sources */,
+				49BAE16B258F361F00AAF8B1 /* EPasswordViewController.swift in Sources */,
+				49BAE170258F386200AAF8B1 /* OnboardingMenuViewController.swift in Sources */,
 				4927522C23432F4200FCFA6E /* TasksViewController.swift in Sources */,
 				4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */,
 				495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */,
 				4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */,
 				49DC74D4251F13A500608F91 /* FMInitialisationViewController.swift in Sources */,
+				49BAE173258F419000AAF8B1 /* EEncryptingViewController.swift in Sources */,
 				492DFC2F24B8424A00D9D862 /* Task.swift in Sources */,
 				494FC52A24B0152600BB9F90 /* TaskTableViewCell.swift in Sources */,
 				49109BA224A62E01003310FB /* UITextField+Functionality.swift in Sources */,
@@ -434,6 +453,7 @@
 				499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */,
 				49DFF319249DB1E20030D5AD /* ListeButton.swift in Sources */,
 				49109B9E24A61B0E003310FB /* AuthViewController.swift in Sources */,
+				49BAE167258F361100AAF8B1 /* EIntroductionViewController.swift in Sources */,
 				495F6617253AE86800610163 /* SettingsViewController.swift in Sources */,
 				4927522823432F4200FCFA6E /* AppDelegate.swift in Sources */,
 				4927522A23432F4200FCFA6E /* SceneDelegate.swift in Sources */,

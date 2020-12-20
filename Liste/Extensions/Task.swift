@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RNCryptor
 
 /**
  * A struct that contains all data required and related to a task in-app.
@@ -34,27 +35,51 @@ extension UIViewController {
     func convertJSONToTask(tasks: [String: [String: Any]]) -> [Task] {
         var output = [Task]()
 
+        let password = UserDefaults.standard.string(forKey: "masterPassword")
+
         for task in tasks {
             let data = task.value
-            guard let taskName = data["taskName"] as? String else {
-                print("Error: taskName in \(task.key) is not a String.")
-                return []
+            var extractedTaskName: String = ""
+            var extractedDescription: String? = ""
+            if let password = password {
+                if let taskName = data["taskName"] as? Data {
+                    do {
+                        let decryptedData = try RNCryptor.decrypt(data: taskName, withPassword: password)
+                        extractedTaskName = String(decoding: decryptedData, as: UTF8.self)
+                    } catch {
+                        self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
+                    }
+                }
+                if let description = data["description"] as? Data {
+                    do {
+                        let decryptedData = try RNCryptor.decrypt(data: description, withPassword: password)
+                        extractedDescription = String(decoding: decryptedData, as: UTF8.self)
+                    } catch {
+                        self.displayAlert(title: "An error occurred.", message: error.localizedDescription, override: nil)
+                    }
+                }
+            } else {
+                guard let taskName = data["taskName"] as? String else {
+                    print("Error: taskName in \(task.key) is not a String.")
+                    return []
+                }
+                extractedTaskName = taskName
+                extractedDescription = data["description"] as? String
             }
             guard let dueDate = data["dueDate"] as? Timestamp else {
                 print("Error: dueDate in \(task.key) is not a Timestamp.")
                 return []
             }
-            let description = data["description"] as? String
             guard let completionStatus = data["completionStatus"] as? Bool else {
                 print("Error: completionStatus in \(task.key) is not a Bool.")
                 return []
             }
             var convertedTask: Task
 
-            if let description = description {
-                convertedTask = Task(taskName: taskName, dueDate: dueDate.dateValue(), description: description, completionStatus: completionStatus)
+            if let description = extractedDescription {
+                convertedTask = Task(taskName: extractedTaskName, dueDate: dueDate.dateValue(), description: description, completionStatus: completionStatus)
             } else {
-                convertedTask = Task(taskName: taskName, dueDate: dueDate.dateValue(), description: nil, completionStatus: completionStatus)
+                convertedTask = Task(taskName: extractedTaskName, dueDate: dueDate.dateValue(), description: nil, completionStatus: completionStatus)
             }
             output.append(convertedTask)
         }
@@ -78,7 +103,7 @@ extension UIViewController {
             let dueDate = task.dueDate
             let description = task.description
             let completionStatus = task.completionStatus
-            let convertedTask: [String: Any]
+            var convertedTask: [String: Any]
 
             if !(description == nil) {
                 convertedTask = [
@@ -93,6 +118,19 @@ extension UIViewController {
                     "dueDate": Timestamp(date: dueDate),
                     "completionStatus": completionStatus
                     ] as [String: Any]
+            }
+
+            let password = UserDefaults.standard.string(forKey: "masterPassword")
+            if let password = password {
+                guard let taskNameData = taskName.data(using: .utf8) else { return [:] }
+                let encryptedTaskName = RNCryptor.encrypt(data: taskNameData, withPassword: password)
+                convertedTask["taskName"] = encryptedTaskName
+                
+                if convertedTask["description"] != nil {
+                    guard let descriptionData = (convertedTask["description"] as! String).data(using: .utf8) else { return [:] }
+                    let encryptedDescription = RNCryptor.encrypt(data: descriptionData, withPassword: password)
+                    convertedTask["description"] = encryptedDescription
+                }
             }
 
             let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

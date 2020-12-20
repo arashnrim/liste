@@ -249,6 +249,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - RNCryptor (5.1.0)
   - SwiftConfettiView (0.1.0)
   - SwiftLint (0.40.2)
 
@@ -258,6 +259,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - Hero
   - MSCircularSlider
+  - RNCryptor
   - SwiftConfettiView
   - SwiftLint
 
@@ -283,6 +285,7 @@ SPEC REPOS:
     - leveldb-library
     - MSCircularSlider
     - nanopb
+    - RNCryptor
     - SwiftConfettiView
     - SwiftLint
 
@@ -307,9 +310,10 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MSCircularSlider: 07fe922e6a7e05fb67e876d449e365327fdad3d1
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   SwiftConfettiView: 1bdbc2e6913b6b1c76d8070802b212508ad5c352
   SwiftLint: 1216c910d27c2633ade33b4f071bb6b930982e62
 
-PODFILE CHECKSUM: 7e8d04366d9738b84b3c9811d05e2fc4c359e266
+PODFILE CHECKSUM: 80ca5ccbdc2457bd8d34aed098a0f146814f777b
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0
