@@ -19,32 +19,36 @@ class EIntroductionViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func noButton(_ sender: Any) {
-        // Saves to user defaults that the user has ignored encryption.
-        UserDefaults.standard.setValue(true, forKey: "ignoredEncryption")
-
         let database = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticated user is found; attempting to recover by redirection.")
             self.showReauthenticationAlert()
             return
         }
-        database.document("users/\(userID)").getDocument { (snapshot, error) in
+        database.document("users/\(userID)").updateData(["encrypted": false]) { (error) in
             if let error = error {
                 print("Error (fetching from Firebase database): \(error.localizedDescription)")
                 self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
             } else {
-                if let snapshot = snapshot {
-                    let data = snapshot.data()
-                    if let data = data {
-                        if let configured = data["configured"] as? Bool {
-                            if !(configured) {
-                                self.performSegue(withIdentifier: "onboard", sender: nil)
+                database.document("users/\(userID)").getDocument { (snapshot, error) in
+                    if let error = error {
+                        print("Error (fetching from Firebase database): \(error.localizedDescription)")
+                        self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
+                    } else {
+                        if let snapshot = snapshot {
+                            let data = snapshot.data()
+                            if let data = data {
+                                if let configured = data["configured"] as? Bool {
+                                    if !(configured) {
+                                        self.performSegue(withIdentifier: "onboard", sender: nil)
+                                    } else {
+                                        self.performSegue(withIdentifier: "tasks", sender: nil)
+                                    }
+                                }
                             } else {
-                                self.performSegue(withIdentifier: "tasks", sender: nil)
+                                print("Warning: The snapshot data appears to be empty.")
                             }
                         }
-                    } else {
-                        print("Warning: The snapshot data appears to be empty.")
                     }
                 }
             }
