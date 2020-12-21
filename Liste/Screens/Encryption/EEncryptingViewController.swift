@@ -85,7 +85,7 @@ class EEncryptingViewController: UIViewController {
                             let details = task.value as! [String: Any]
                             // Encrypts the task name and description.
                             for detail in details {
-                                if detail.key == "taskName" || detail.key == "description" {
+                                if detail.key == "taskName" || detail.key == "description"{
                                     if let value = detail.value as? String {
                                         guard let valueData = value.data(using: .utf8) else { return [:] }
                                         let cipheredData = RNCryptor.encrypt(data: valueData, withPassword: password)
@@ -103,7 +103,6 @@ class EEncryptingViewController: UIViewController {
                                                 self.present(alert, animated: true, completion: nil)
                                             }
                                         }
-
                                         let cipheredData = RNCryptor.encrypt(data: decryptedValue, withPassword: password)
                                         encryptedTask[detail.key] = cipheredData
                                     }
@@ -113,7 +112,26 @@ class EEncryptingViewController: UIViewController {
                             }
                             encryptedTasks[task.key] = encryptedTask
                         }
-                        print(encryptedTasks)
+                        encryptedData["tasks"] = encryptedTasks
+                    }
+                } else if item.key == "listName" {
+                    if let _ = item.value as? String {
+                        encryptedData[item.key] = item.value
+                    } else if let listData = item.value as? Data {
+                        let previousPassword = UserDefaults.standard.string(forKey: "outdatedMasterPassword")!
+                        var decryptedValue = Data()
+                        do {
+                            decryptedValue = try RNCryptor.decrypt(data: listData, withPassword: previousPassword)
+                        } catch {
+                            self.displayAlert(title: "Encrypting failed.", message: "We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely.") { (alert) in
+                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                                    self.performSegue(withIdentifier: "complete", sender: nil)
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }
+                        let cipheredData = RNCryptor.encrypt(data: decryptedValue, withPassword: password)
+                        encryptedData[item.key] = cipheredData
                     }
                 } else {
                     encryptedData[item.key] = item.value
@@ -121,6 +139,7 @@ class EEncryptingViewController: UIViewController {
             }
         }
         encryptedData["encrypted"] = true
+        print(encryptedData)
         return encryptedData
     }
 
@@ -142,10 +161,8 @@ class EEncryptingViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 }
             } else {
-                self.displayAlert(title: "Encryption successful.", message: "Your data is now encrypted and more secure.") { (alert) in
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                        self.performSegue(withIdentifier: "complete", sender: nil)
-                    }))
+                self.displayAlert(title: "Encryption successful.", message: "Your data is now encrypted and more secure. Please restart the app for decryption to take place.") { (alert) in
+                    UserDefaults.standard.removeObject(forKey: "masterPassword")
                     self.present(alert, animated: true, completion: nil)
                 }
             }

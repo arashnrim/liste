@@ -287,7 +287,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-l2-VdF">
                                 <rect key="frame" x="20" y="762" width="374" height="30"/>
-                                <state key="normal" title="Reset Master Password">
+                                <state key="normal" title="Manage Encryption">
                                     <color key="titleColor" name="Liste Orange"/>
                                 </state>
                                 <connections>
@@ -321,6 +321,7 @@
                         <outlet property="emailLabel" destination="y1S-eQ-sA7" id="3qd-sQ-Rgn"/>
                         <outlet property="tasksLabel" destination="Pkd-bo-ZTu" id="g5S-Gk-Roc"/>
                         <segue destination="pgv-pr-uB5" kind="show" identifier="change" id="H0s-AK-dA2"/>
+                        <segue destination="OcO-Ya-vpd" kind="show" identifier="reset" id="g4f-13-fy8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meI-5i-ChU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -626,6 +627,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgN-CC-kOU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400.00000000000006" y="430.58035714285711"/>
+        </scene>
+        <!--EPasswordViewController-->
+        <scene sceneID="fC6-8p-DGo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Encryption" referencedIdentifier="EPasswordViewController" id="OcO-Ya-vpd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f1U-OW-Po2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsB-1v-Ko0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="401" y="-636"/>
         </scene>
         <!--EChangeViewController-->
         <scene sceneID="qHe-2B-PPv">
