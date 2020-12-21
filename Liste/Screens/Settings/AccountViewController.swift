@@ -57,7 +57,12 @@ class AccountViewController: UIViewController {
         }
     }
 
+    // MARK: Actions
     @IBAction func reset(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: "masterPassword")
+        let alert = UIAlertController(title: "Heads up!", message: "Resetting your master password is a potentially dangerous action. If you do so, you may lose access to your data.", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Change master password", style: .destructive, handler: { (_) in
+            self.performSegue(withIdentifier: "change", sender: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }

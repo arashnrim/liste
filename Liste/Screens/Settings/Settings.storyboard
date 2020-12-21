@@ -285,9 +285,8 @@
                                     <constraint firstItem="W7R-XC-18m" firstAttribute="width" secondItem="jYC-8t-Jz8" secondAttribute="width" multiplier="0.3" id="wq6-Cx-hiV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-l2-VdF">
-                                <rect key="frame" x="20" y="759" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-l2-VdF">
+                                <rect key="frame" x="20" y="762" width="374" height="30"/>
                                 <state key="normal" title="Reset Master Password">
                                     <color key="titleColor" name="Liste Orange"/>
                                 </state>
@@ -302,12 +301,15 @@
                             <constraint firstItem="jYC-8t-Jz8" firstAttribute="top" secondItem="kPH-Oe-Whu" secondAttribute="bottom" constant="8" id="5fR-QS-ldG"/>
                             <constraint firstItem="jYC-8t-Jz8" firstAttribute="leading" secondItem="oSC-VU-WgL" secondAttribute="leading" id="6zy-dN-rNy"/>
                             <constraint firstItem="oSC-VU-WgL" firstAttribute="trailing" secondItem="rUO-Cx-miA" secondAttribute="trailing" id="Bdp-em-zic"/>
+                            <constraint firstItem="oSC-VU-WgL" firstAttribute="trailing" secondItem="YZW-l2-VdF" secondAttribute="trailing" constant="20" id="Ej5-t9-pjY"/>
                             <constraint firstItem="kPH-Oe-Whu" firstAttribute="leading" secondItem="oSC-VU-WgL" secondAttribute="leading" id="IYI-Fv-diL"/>
+                            <constraint firstItem="9M9-zv-59V" firstAttribute="top" secondItem="YZW-l2-VdF" secondAttribute="bottom" constant="20" id="Jc3-gt-QUB"/>
                             <constraint firstAttribute="trailing" secondItem="kPH-Oe-Whu" secondAttribute="trailing" id="N3D-3v-tTZ"/>
                             <constraint firstItem="oSC-VU-WgL" firstAttribute="trailing" secondItem="9M9-zv-59V" secondAttribute="trailing" constant="20" id="VmL-iZ-uFy"/>
                             <constraint firstItem="9M9-zv-59V" firstAttribute="leading" secondItem="oSC-VU-WgL" secondAttribute="leading" constant="20" id="YnM-Oi-tXo"/>
                             <constraint firstItem="rUO-Cx-miA" firstAttribute="top" secondItem="oSC-VU-WgL" secondAttribute="top" constant="40" id="g2S-iu-xdo"/>
                             <constraint firstAttribute="trailing" secondItem="jYC-8t-Jz8" secondAttribute="trailing" id="qxu-XN-bgZ"/>
+                            <constraint firstItem="YZW-l2-VdF" firstAttribute="leading" secondItem="oSC-VU-WgL" secondAttribute="leading" constant="20" id="qyp-BM-zDc"/>
                             <constraint firstItem="oSC-VU-WgL" firstAttribute="bottom" secondItem="9M9-zv-59V" secondAttribute="bottom" constant="20" id="s5k-4E-trc"/>
                             <constraint firstItem="kPH-Oe-Whu" firstAttribute="top" secondItem="rUO-Cx-miA" secondAttribute="bottom" constant="8" id="w6V-2b-rRb"/>
                             <constraint firstItem="rUO-Cx-miA" firstAttribute="leading" secondItem="oSC-VU-WgL" secondAttribute="leading" id="z6B-qt-15f"/>
@@ -318,6 +320,7 @@
                         <outlet property="accountIDLabel" destination="GdY-e5-Ilm" id="ouu-mE-o3c"/>
                         <outlet property="emailLabel" destination="y1S-eQ-sA7" id="3qd-sQ-Rgn"/>
                         <outlet property="tasksLabel" destination="Pkd-bo-ZTu" id="g5S-Gk-Roc"/>
+                        <segue destination="pgv-pr-uB5" kind="show" identifier="change" id="H0s-AK-dA2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meI-5i-ChU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -623,6 +626,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgN-CC-kOU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400.00000000000006" y="430.58035714285711"/>
+        </scene>
+        <!--EChangeViewController-->
+        <scene sceneID="qHe-2B-PPv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Encryption" referencedIdentifier="EChangeViewController" id="pgv-pr-uB5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fzl-28-NU1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IxU-5x-Klg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="401" y="-598"/>
         </scene>
     </scenes>
     <resources>

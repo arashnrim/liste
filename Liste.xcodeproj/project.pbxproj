@@ -12,6 +12,7 @@
 		49109BA224A62E01003310FB /* UITextField+Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49109BA124A62E01003310FB /* UITextField+Functionality.swift */; };
 		49109BA424A63398003310FB /* UIViewController+Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49109BA324A63398003310FB /* UIViewController+Functionality.swift */; };
 		49119D05258F68BA008455FD /* EReentryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49119D04258F68BA008455FD /* EReentryViewController.swift */; };
+		49119D0A258F77A4008455FD /* EChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49119D09258F77A4008455FD /* EChangeViewController.swift */; };
 		4915305125354DEA00445A10 /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4915305325354DEA00445A10 /* Focus.storyboard */; };
 		4927522823432F4200FCFA6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927522723432F4200FCFA6E /* AppDelegate.swift */; };
 		4927522A23432F4200FCFA6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927522923432F4200FCFA6E /* SceneDelegate.swift */; };
@@ -59,6 +60,7 @@
 		49109BA124A62E01003310FB /* UITextField+Functionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Functionality.swift"; sourceTree = "<group>"; };
 		49109BA324A63398003310FB /* UIViewController+Functionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Functionality.swift"; sourceTree = "<group>"; };
 		49119D04258F68BA008455FD /* EReentryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EReentryViewController.swift; sourceTree = "<group>"; };
+		49119D09258F77A4008455FD /* EChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EChangeViewController.swift; sourceTree = "<group>"; };
 		4915304F25354DD800445A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4915305225354DEA00445A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Focus.storyboard; sourceTree = "<group>"; };
 		4915305625354DF300445A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Focus.strings; sourceTree = "<group>"; };
@@ -128,6 +130,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		49119D08258F778B008455FD /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				49BAE147258F32E400AAF8B1 /* Encryption.storyboard */,
+				49119D09258F77A4008455FD /* EChangeViewController.swift */,
+				49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */,
+				49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */,
+				49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */,
+				49119D04258F68BA008455FD /* EReentryViewController.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
 		4927521B23432F4200FCFA6E = {
 			isa = PBXGroup;
 			children = (
@@ -170,11 +185,6 @@
 		4947B01A253A9B8500BA94DC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				49BAE147258F32E400AAF8B1 /* Encryption.storyboard */,
-				49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */,
-				49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */,
-				49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */,
-				49119D04258F68BA008455FD /* EReentryViewController.swift */,
 				4947B03C253AADC700BA94DC /* Settings.storyboard */,
 				49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */,
 				495F6616253AE86800610163 /* SettingsViewController.swift */,
@@ -199,6 +209,7 @@
 				49DFF314249DAFCE0030D5AD /* Main */,
 				49DC74CE251F133200608F91 /* Focus */,
 				4947B01A253A9B8500BA94DC /* Settings */,
+				49119D08258F778B008455FD /* Encryption */,
 				49DFF315249DB0B60030D5AD /* Auth */,
 				492DFC3024B84D5100D9D862 /* Onboarding */,
 			);
@@ -444,6 +455,7 @@
 				495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */,
 				4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */,
 				49DC74D4251F13A500608F91 /* FMInitialisationViewController.swift in Sources */,
+				49119D0A258F77A4008455FD /* EChangeViewController.swift in Sources */,
 				49BAE173258F419000AAF8B1 /* EEncryptingViewController.swift in Sources */,
 				492DFC2F24B8424A00D9D862 /* Task.swift in Sources */,
 				494FC52A24B0152600BB9F90 /* TaskTableViewCell.swift in Sources */,

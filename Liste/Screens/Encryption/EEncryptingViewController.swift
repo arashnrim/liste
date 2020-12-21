@@ -15,8 +15,15 @@ class EEncryptingViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var statusLabel: UILabel!
 
+    // MARK: Properties
+    var newPassword: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let newPassword = newPassword {
+            UserDefaults.standard.setValue(newPassword, forKey: "masterPassword")
+        }
 
         statusLabel.text = "Connecting to database..."
         let database = Firestore.firestore()
@@ -45,6 +52,11 @@ class EEncryptingViewController: UIViewController {
                 }
             }
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,6 +90,22 @@ class EEncryptingViewController: UIViewController {
                                         guard let valueData = value.data(using: .utf8) else { return [:] }
                                         let cipheredData = RNCryptor.encrypt(data: valueData, withPassword: password)
                                         encryptedTask[detail.key] = cipheredData
+                                    } else if let value = detail.value as? Data {
+                                        let previousPassword = UserDefaults.standard.string(forKey: "outdatedMasterPassword")!
+                                        var decryptedValue = Data()
+                                        do {
+                                            decryptedValue = try RNCryptor.decrypt(data: value, withPassword: previousPassword)
+                                        } catch {
+                                            self.displayAlert(title: "Encrypting failed.", message: "We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely.") { (alert) in
+                                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                                                    self.performSegue(withIdentifier: "complete", sender: nil)
+                                                }))
+                                                self.present(alert, animated: true, completion: nil)
+                                            }
+                                        }
+
+                                        let cipheredData = RNCryptor.encrypt(data: decryptedValue, withPassword: password)
+                                        encryptedTask[detail.key] = cipheredData
                                     }
                                 } else {
                                     encryptedTask[detail.key] = detail.value
@@ -85,7 +113,7 @@ class EEncryptingViewController: UIViewController {
                             }
                             encryptedTasks[task.key] = encryptedTask
                         }
-                        encryptedData["tasks"] = encryptedTasks
+                        print(encryptedTasks)
                     }
                 } else {
                     encryptedData[item.key] = item.value
