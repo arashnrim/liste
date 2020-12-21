@@ -56,13 +56,10 @@ extension TasksViewController {
             if !(configured) {
                 self.configureUser()
             } else {
-                if let encrypted = data["encrypted"] as? Bool {
-                    if !encrypted {
-                        let ignoredEncryption = UserDefaults.standard.bool(forKey: "ignoredEncryption")
-                        if !ignoredEncryption {
-                            self.performSegue(withIdentifier: "encrypt", sender: nil)
-                        }
-                    }
+                print(UserDefaults.standard.string(forKey: "masterPassword"))
+                let encrypted = data["encrypted"] as? Bool
+                if encrypted == nil {
+                    self.performSegue(withIdentifier: "encrypt", sender: nil)
                 }
             }
         }
@@ -90,7 +87,6 @@ extension TasksViewController {
 
     func verifyEncryption(data: [String: Any]) {
         if let encrypted = data["encrypted"] as? Bool {
-            print(UserDefaults.standard.string(forKey: "masterPassword") == nil, encrypted)
             if encrypted && UserDefaults.standard.string(forKey: "masterPassword") == nil {
                 self.performSegue(withIdentifier: "decrypt", sender: nil)
             }
