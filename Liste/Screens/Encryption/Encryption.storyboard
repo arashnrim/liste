@@ -105,6 +105,9 @@
                             <constraint firstItem="UGI-ct-rtu" firstAttribute="trailing" secondItem="nce-Kd-62m" secondAttribute="trailing" constant="20" id="y5Q-AV-CfW"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="QHA-j3-qfP" kind="show" identifier="onboard" id="g2F-Oi-XOa"/>
                         <segue destination="63c-8p-l2n" kind="show" identifier="tasks" id="oBG-nE-jZj"/>
@@ -529,8 +532,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dYc-Z7-vlF"/>
-        <segue reference="Ei2-OA-SoI"/>
+        <segue reference="oBG-nE-jZj"/>
+        <segue reference="g2F-Oi-XOa"/>
         <segue reference="2mr-gC-k6j"/>
     </inferredMetricsTieBreakers>
     <resources>

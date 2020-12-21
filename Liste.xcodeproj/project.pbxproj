@@ -35,6 +35,7 @@
 		499B42B624C29DF10069D739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B42B524C29DF10069D739 /* OnboardingViewController.swift */; };
 		499E20A4250CB8A600D98846 /* TasksViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */; };
 		499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A5250CB9F700D98846 /* AddViewController+Database.swift */; };
+		49ADEF9E25906876004F4759 /* BeforeEncryptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADEF9D25906876004F4759 /* BeforeEncryptViewController.swift */; };
 		49B9E2DA2546C9000094C599 /* ReauthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */; };
 		49BAE148258F32E400AAF8B1 /* Encryption.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BAE147258F32E400AAF8B1 /* Encryption.storyboard */; };
 		49BAE167258F361100AAF8B1 /* EIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */; };
@@ -87,6 +88,7 @@
 		499B42B524C29DF10069D739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksViewController+Database.swift"; sourceTree = "<group>"; };
 		499E20A5250CB9F700D98846 /* AddViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Database.swift"; sourceTree = "<group>"; };
+		49ADEF9D25906876004F4759 /* BeforeEncryptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeEncryptViewController.swift; sourceTree = "<group>"; };
 		49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationViewController.swift; sourceTree = "<group>"; };
 		49BAE147258F32E400AAF8B1 /* Encryption.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Encryption.storyboard; sourceTree = "<group>"; };
 		49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EIntroductionViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				49CC327025354E4F00780A1D /* Onboarding.storyboard */,
 				499B42B524C29DF10069D739 /* OnboardingViewController.swift */,
 				49BAE16F258F386200AAF8B1 /* OnboardingMenuViewController.swift */,
+				49ADEF9D25906876004F4759 /* BeforeEncryptViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				49BAE170258F386200AAF8B1 /* OnboardingMenuViewController.swift in Sources */,
 				4927522C23432F4200FCFA6E /* TasksViewController.swift in Sources */,
 				49119D05258F68BA008455FD /* EReentryViewController.swift in Sources */,
+				49ADEF9E25906876004F4759 /* BeforeEncryptViewController.swift in Sources */,
 				4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */,
 				495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */,
 				4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */,
