@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RNCryptor
 
 extension TasksViewController {
 
@@ -56,7 +57,6 @@ extension TasksViewController {
             if !(configured) {
                 self.configureUser()
             } else {
-                print(UserDefaults.standard.string(forKey: "masterPassword"))
                 let encrypted = data["encrypted"] as? Bool
                 if encrypted == nil {
                     self.performSegue(withIdentifier: "encrypt", sender: nil)
@@ -102,6 +102,21 @@ extension TasksViewController {
     func readListName(data: [String: Any]) {
         if let listName = data["listName"] as? String {
             self.listNameTextField.text = listName
+        } else if let listData = data["listName"] as? Data {
+            guard let password = UserDefaults.standard.string(forKey: "masterPassword") else { return }
+            var listName = ""
+            do {
+                let listData = try RNCryptor.decrypt(data: listData, withPassword: password)
+                listName = String(decoding: listData, as: UTF8.self)
+            } catch {
+                self.displayAlert(title: "An error occurred.", message: "It's likely that you've entered the wrong master password. Try again.") { (alert) in
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                        self.performSegue(withIdentifier: "decrypt", sender: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            self.listNameTextField.text = listName
         }
     }
 
@@ -129,12 +144,25 @@ extension TasksViewController {
         }
 
         let database = Firestore.firestore()
-        database.document("users/\(userID)").updateData(["listName": newName]) { (error) in
-            if let error = error {
-                print("Error (while updating list name): \(error.localizedDescription)")
-                self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
-            } else {
-                completion?()
+        if let password = UserDefaults.standard.string(forKey: "masterPassword") {
+            guard let newData = newName.data(using: .utf8) else { return }
+            let cipheredText = RNCryptor.encrypt(data: newData, withPassword: password)
+            database.document("users/\(userID)").updateData(["listName": cipheredText]) { (error) in
+                if let error = error {
+                    print("Error (while updating list name): \(error.localizedDescription)")
+                    self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+                } else {
+                    completion?()
+                }
+            }
+        } else {
+            database.document("users/\(userID)").updateData(["listName": newName]) { (error) in
+                if let error = error {
+                    print("Error (while updating list name): \(error.localizedDescription)")
+                    self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+                } else {
+                    completion?()
+                }
             }
         }
     }

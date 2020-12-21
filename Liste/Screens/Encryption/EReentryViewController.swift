@@ -13,7 +13,7 @@ class EReentryViewController: UIViewController, UITextFieldDelegate {
     // MARK: Outlets
     @IBOutlet weak var masterPasswordTextField: UITextField!
     @IBOutlet weak var continueButton: ListeButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,5 +61,5 @@ class EReentryViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(password, forKey: "masterPassword")
         self.performSegue(withIdentifier: "complete", sender: nil)
     }
-    
+
 }

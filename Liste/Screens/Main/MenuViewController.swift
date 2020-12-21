@@ -9,6 +9,7 @@
 import UIKit
 import Hero
 import Firebase
+import RNCryptor
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -123,8 +124,20 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
      *      - data: A `[String:Any]` parameter, preferably the data retrieved from the Firestore database.
      */
     func readListName(data: [String: Any]) {
-        if let listName = data["listName"] as? String {
-            self.lists.append(listName)
+        if let password = UserDefaults.standard.string(forKey: "masterPassword") {
+            if let listData = data["listName"] as? Data {
+                do {
+                    let decryptedData = try RNCryptor.decrypt(data: listData, withPassword: password)
+                    let listName = String(decoding: decryptedData, as: UTF8.self)
+                    self.lists.append(listName)
+                } catch {
+                    print("An error occurred while decrypting.")
+                }
+            }
+        } else {
+            if let listName = data["listName"] as? String {
+                self.lists.append(listName)
+            }
         }
     }
 

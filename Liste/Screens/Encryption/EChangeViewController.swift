@@ -14,7 +14,7 @@ class EChangeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var currentMasterPasswordTextField: UITextField!
     @IBOutlet weak var newMasterPasswordTextField: UITextField!
     @IBOutlet weak var continueButton: ListeButton!
-    
+
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
