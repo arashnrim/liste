@@ -28,12 +28,12 @@ class EIntroductionViewController: UIViewController {
         database.document("users/\(userID)").updateData(["encrypted": false]) { (error) in
             if let error = error {
                 print("Error (fetching from Firebase database): \(error.localizedDescription)")
-                self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
+                self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
             } else {
                 database.document("users/\(userID)").getDocument { (snapshot, error) in
                     if let error = error {
                         print("Error (fetching from Firebase database): \(error.localizedDescription)")
-                        self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
+                        self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
                     } else {
                         if let snapshot = snapshot {
                             let data = snapshot.data()

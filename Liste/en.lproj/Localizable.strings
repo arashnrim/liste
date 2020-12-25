@@ -94,3 +94,38 @@
 
 /* Delete account. */
 "deleteAccount" = "Delete Account";
+
+/* -- Encryption Storyboard -- */
+/* Connecting to database... */
+"connectingToDatabase" = "Connecting to database...";
+
+/* Retrieving data... */
+"retrievingData" = "Retrieving data...";
+
+/* Encrypting data... */
+"encryptingData" = "Encrypting data...";
+
+/* Uploading changes... */
+"uploadingChanges" = "Uploading changes...";
+
+/* Completing encryption... */
+"completingEncryption" = "Completing encryption...";
+
+/* Encryption failed. */
+"encryptionFailedTitle" = "Encryption failed.";
+
+/* We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely. */
+"encryptionFailedMessage" = "We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely.";
+
+/* Encryption successful. */
+"encryptionSuccessfulTitle" = "Encryption successful.";
+
+/* Your data is now encrypted and more secure. Please restart the app for decryption to take place. */
+"encryptionSuccessfulMessage" = "Your data is now encrypted and more secure. Please restart the app for decryption to take place.";
+
+/* The entered master password is incorrect. Please check your entries and try again. */
+"incorrectPassword" = "The entered master password is incorrect. Please check your entries and try again.";
+
+/* -- General -- */
+/* An affirmative statement. */
+"ok" = "OK";

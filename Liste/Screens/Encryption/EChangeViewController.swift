@@ -93,7 +93,7 @@ class EChangeViewController: UIViewController, UITextFieldDelegate {
 
             self.performSegue(withIdentifier: "encrypt", sender: nil)
         } else {
-            self.displayAlert(title: "That's not right.", message: "The curernt master password is incorrect. Please try again!", override: nil)
+            self.displayAlert(title: NSLocalizedString("whoops", comment: "An informal way of noting that something wrong happened."), message: NSLocalizedString("incorrectPassword", comment: "The entered master password is incorrect. Please check your entries and try again."), override: nil)
         }
     }
 

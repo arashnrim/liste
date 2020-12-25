@@ -32,26 +32,25 @@ class EEncryptingViewController: UIViewController {
             UserDefaults.standard.setValue(newPassword, forKey: "masterPassword")
         }
 
-        statusLabel.text = "Connecting to database..."
+        statusLabel.text = NSLocalizedString("connectingToDatabase", comment: "Connecting to database...")
         let database = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {
             print("Warning: No authenticated user is found; attempting to recover by redirection.")
             self.showReauthenticationAlert()
             return
         }
-        statusLabel.text = "Retrieving data..."
+        statusLabel.text = NSLocalizedString("retrievingData", comment: "Retrieving data...")
         database.document("users/\(userID)").getDocument { (snapshot, error) in
             if let error = error {
-                print("Error (fetching from Firebase database): \(error.localizedDescription)")
-                self.displayAlert(title: "Uh oh.", message: error.localizedDescription, override: nil)
+                self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
             } else {
                 if let snapshot = snapshot {
                     let data = snapshot.data()
                     if let data = data {
-                        self.statusLabel.text = "Encrypting data..."
+                        self.statusLabel.text = NSLocalizedString("encryptingData", comment: "Encrypting data...")
                         let encryptedData = self.encryptData(unencryptedData: data)
 
-                        self.statusLabel.text = "Uploading changes..."
+                        self.statusLabel.text = NSLocalizedString("uploadingChanges", comment: "Uploading changes...")
                         self.updateDatabase(encryptedData: encryptedData)
                     } else {
                         print("Warning: The snapshot data appears to be empty.")
@@ -103,7 +102,7 @@ class EEncryptingViewController: UIViewController {
                                         do {
                                             decryptedValue = try RNCryptor.decrypt(data: value, withPassword: previousPassword)
                                         } catch {
-                                            self.displayAlert(title: "Encrypting failed.", message: "We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely.") { (alert) in
+                                            self.displayAlert(title: NSLocalizedString("encryptionFailedTitle", comment: "Encryption failed."), message: NSLocalizedString("encryptionFailedMessage", comment: "We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely.")) { (alert) in
                                                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
                                                     self.performSegue(withIdentifier: "complete", sender: nil)
                                                 }))
@@ -130,7 +129,7 @@ class EEncryptingViewController: UIViewController {
                         do {
                             decryptedValue = try RNCryptor.decrypt(data: listData, withPassword: previousPassword)
                         } catch {
-                            self.displayAlert(title: "Encrypting failed.", message: "We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely.") { (alert) in
+                            self.displayAlert(title: NSLocalizedString("encryptionFailedTitle", comment: "Encryption failed."), message: NSLocalizedString("encryptionFailedMessage", comment: "We couldn't decrypt your current encrypted data. You may need to reset your password and discard your tasks entirely.")) { (alert) in
                                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
                                     self.performSegue(withIdentifier: "complete", sender: nil)
                                 }))
@@ -159,16 +158,16 @@ class EEncryptingViewController: UIViewController {
         }
 
         database.document("users/\(userID)").updateData(encryptedData) { (error) in
-            self.statusLabel.text = "Finishing..."
+            self.statusLabel.text = NSLocalizedString("completingEncryption", comment: "Completing encryption...")
             if let error = error {
-                self.displayAlert(title: "An error occurred.", message: "Something went wrong when encrypting your data: \(error.localizedDescription). Encryption will terminate.") { (alert) in
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred"), message: error.localizedDescription) { (alert) in
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: "An affirmative statement."), style: .default, handler: { (_) in
                         self.performSegue(withIdentifier: "complete", sender: nil)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }
             } else {
-                self.displayAlert(title: "Encryption successful.", message: "Your data is now encrypted and more secure. Please restart the app for decryption to take place.") { (alert) in
+                self.displayAlert(title: NSLocalizedString("encryptionSuccessfulTitle", comment: "Encryption successful."), message: NSLocalizedString("encryptionSuccessfulMessage", comment: "Your data is now encrypted and more secure. Please restart the app for decryption to take place.")) { (alert) in
                     UserDefaults.standard.removeObject(forKey: "masterPassword")
                     self.present(alert, animated: true, completion: nil)
                 }
