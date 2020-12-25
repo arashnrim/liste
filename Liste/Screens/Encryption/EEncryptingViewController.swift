@@ -29,7 +29,7 @@ class EEncryptingViewController: UIViewController {
         }
 
         if let newPassword = newPassword {
-            UserDefaults.standard.setValue(newPassword, forKey: "masterPassword")
+            UserDefaults.standard.setValue(newPassword, forKey: "encryptionPassword")
         }
 
         statusLabel.text = NSLocalizedString("connectingToDatabase", comment: "Connecting to database...")
@@ -74,7 +74,7 @@ class EEncryptingViewController: UIViewController {
 
     // swiftlint:disable:next cyclomatic_complexity
     func encryptData(unencryptedData: [String: Any]) -> [String: Any] {
-        guard let password = UserDefaults.standard.string(forKey: "masterPassword") else { return [:] }
+        guard let password = UserDefaults.standard.string(forKey: "encryptionPassword") else { return [:] }
 
         var encryptedData = [String: Any]()
         for item in unencryptedData {
@@ -168,7 +168,7 @@ class EEncryptingViewController: UIViewController {
                 }
             } else {
                 self.displayAlert(title: NSLocalizedString("encryptionSuccessfulTitle", comment: "Encryption successful."), message: NSLocalizedString("encryptionSuccessfulMessage", comment: "Your data is now encrypted and more secure. Please restart the app for decryption to take place.")) { (alert) in
-                    UserDefaults.standard.removeObject(forKey: "masterPassword")
+                    UserDefaults.standard.removeObject(forKey: "encryptionPassword")
                     self.present(alert, animated: true, completion: nil)
                 }
             }

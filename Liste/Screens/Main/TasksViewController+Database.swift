@@ -87,7 +87,7 @@ extension TasksViewController {
 
     func verifyEncryption(data: [String: Any]) {
         if let encrypted = data["encrypted"] as? Bool {
-            if encrypted && UserDefaults.standard.string(forKey: "masterPassword") == nil {
+            if encrypted && UserDefaults.standard.string(forKey: "encryptionPassword") == nil {
                 self.performSegue(withIdentifier: "decrypt", sender: nil)
             }
         }
@@ -103,7 +103,7 @@ extension TasksViewController {
         if let listName = data["listName"] as? String {
             self.listNameTextField.text = listName
         } else if let listData = data["listName"] as? Data {
-            guard let password = UserDefaults.standard.string(forKey: "masterPassword") else { return }
+            guard let password = UserDefaults.standard.string(forKey: "encryptionPassword") else { return }
             var listName = ""
             do {
                 let listData = try RNCryptor.decrypt(data: listData, withPassword: password)
@@ -139,7 +139,7 @@ extension TasksViewController {
         }
 
         let database = Firestore.firestore()
-        if let password = UserDefaults.standard.string(forKey: "masterPassword") {
+        if let password = UserDefaults.standard.string(forKey: "encryptionPassword") {
             guard let newData = newName.data(using: .utf8) else { return }
             let cipheredText = RNCryptor.encrypt(data: newData, withPassword: password)
             database.document("users/\(userID)").updateData(["listName": cipheredText]) { (error) in

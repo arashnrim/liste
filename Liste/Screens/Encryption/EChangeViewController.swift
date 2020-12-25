@@ -11,20 +11,20 @@ import UIKit
 class EChangeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
-    @IBOutlet weak var currentMasterPasswordTextField: UITextField!
-    @IBOutlet weak var newMasterPasswordTextField: UITextField!
+    @IBOutlet weak var currentEncryptionPasswordTextField: UITextField!
+    @IBOutlet weak var newEncryptionPasswordTextField: UITextField!
     @IBOutlet weak var continueButton: ListeButton!
 
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.currentMasterPasswordTextField.delegate = self
-        self.newMasterPasswordTextField.delegate = self
+        self.currentEncryptionPasswordTextField.delegate = self
+        self.newEncryptionPasswordTextField.delegate = self
 
         self.dismissKeyboardOnTap {
-            guard let currentPassword = self.currentMasterPasswordTextField.text else { return }
-            guard let newPassword = self.newMasterPasswordTextField.text else { return }
+            guard let currentPassword = self.currentEncryptionPasswordTextField.text else { return }
+            guard let newPassword = self.newEncryptionPasswordTextField.text else { return }
             if (currentPassword != newPassword) && (!currentPassword.isEmpty && !newPassword.isEmpty) {
                 self.continueButton.isEnabled = true
                 UIView.animate(withDuration: 0.5) {
@@ -44,7 +44,7 @@ class EChangeViewController: UIViewController, UITextFieldDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "encrypt" {
-            guard let newPassword = newMasterPasswordTextField.text else { return }
+            guard let newPassword = newEncryptionPasswordTextField.text else { return }
             let destination = segue.destination as! EEncryptingViewController
             destination.newPassword = newPassword
         }
@@ -52,8 +52,8 @@ class EChangeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Text Field Protocols
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let currentPassword = currentMasterPasswordTextField.text else { return }
-        guard let newPassword = newMasterPasswordTextField.text else { return }
+        guard let currentPassword = currentEncryptionPasswordTextField.text else { return }
+        guard let newPassword = newEncryptionPasswordTextField.text else { return }
         if (currentPassword != newPassword) && (!currentPassword.isEmpty && !newPassword.isEmpty) {
             self.continueButton.isEnabled = true
             UIView.animate(withDuration: 0.5) {
@@ -70,10 +70,10 @@ class EChangeViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case currentMasterPasswordTextField:
-            currentMasterPasswordTextField.resignFirstResponder()
-            newMasterPasswordTextField.becomeFirstResponder()
-        case newMasterPasswordTextField:
+        case currentEncryptionPasswordTextField:
+            currentEncryptionPasswordTextField.resignFirstResponder()
+            newEncryptionPasswordTextField.becomeFirstResponder()
+        case newEncryptionPasswordTextField:
             view.endEditing(true)
         default:
             break
@@ -83,12 +83,12 @@ class EChangeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Actions
     @IBAction func continueButton(_ sender: Any) {
-        guard let currentpassword = currentMasterPasswordTextField.text else { return }
-        guard let newpassword = newMasterPasswordTextField.text else { return }
-        guard let masterPassword = UserDefaults.standard.string(forKey: "masterPassword") else { return }
+        guard let currentpassword = currentEncryptionPasswordTextField.text else { return }
+        guard let newpassword = newEncryptionPasswordTextField.text else { return }
+        guard let encryptionPassword = UserDefaults.standard.string(forKey: "encryptionPassword") else { return }
 
-        if masterPassword == currentpassword {
-            UserDefaults.standard.set(newpassword, forKey: "masterPassword")
+        if encryptionPassword == currentpassword {
+            UserDefaults.standard.set(newpassword, forKey: "encryptionPassword")
             UserDefaults.standard.set(currentpassword, forKey: "outdatedMasterPassword")
 
             self.performSegue(withIdentifier: "encrypt", sender: nil)

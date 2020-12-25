@@ -77,7 +77,7 @@ class AccountViewController: UIViewController {
                                 alert.addAction(UIAlertAction(title: "Reset master password", style: .destructive, handler: { (_) in
                                     let subAlert = UIAlertController(title: "Take note!", message: "This action will render all your existing tasks useless; therefore, they will be deleted. Continue?", preferredStyle: .alert)
                                     subAlert.addAction(UIAlertAction(title: "Continue", style: .destructive, handler: { (_) in
-                                        UserDefaults.standard.removeObject(forKey: "masterPassword")
+                                        UserDefaults.standard.removeObject(forKey: "encryptionPassword")
 
                                         database.document("users/\(userID)").updateData(["tasks": [String: Any](), "listName": ""]) { (error) in
                                             if error != nil {

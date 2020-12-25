@@ -35,7 +35,7 @@ extension UIViewController {
     func convertJSONToTask(tasks: [String: [String: Any]]) -> [Task] {
         var output = [Task]()
 
-        let password = UserDefaults.standard.string(forKey: "masterPassword")
+        let password = UserDefaults.standard.string(forKey: "encryptionPassword")
 
         for task in tasks {
             let data = task.value
@@ -120,7 +120,7 @@ extension UIViewController {
                     ] as [String: Any]
             }
 
-            let password = UserDefaults.standard.string(forKey: "masterPassword")
+            let password = UserDefaults.standard.string(forKey: "encryptionPassword")
             if let password = password {
                 guard let taskNameData = taskName.data(using: .utf8) else { return [:] }
                 let encryptedTaskName = RNCryptor.encrypt(data: taskNameData, withPassword: password)

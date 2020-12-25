@@ -11,16 +11,16 @@ import UIKit
 class EReentryViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
-    @IBOutlet weak var masterPasswordTextField: UITextField!
+    @IBOutlet weak var encryptionPasswordTextField: UITextField!
     @IBOutlet weak var incorrectLabel: UILabel!
     @IBOutlet weak var continueButton: ListeButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        masterPasswordTextField.delegate = self
+        encryptionPasswordTextField.delegate = self
         self.dismissKeyboardOnTap {
-            guard let password = self.masterPasswordTextField.text else { return }
+            guard let password = self.encryptionPasswordTextField.text else { return }
             if !password.isEmpty {
                 self.continueButton.isEnabled = true
                 UIView.animate(withDuration: 0.5) {
@@ -34,7 +34,7 @@ class EReentryViewController: UIViewController, UITextFieldDelegate {
             }
         }
 
-        if (UserDefaults.standard.string(forKey: "masterPassword")) != nil {
+        if (UserDefaults.standard.string(forKey: "encryptionPassword")) != nil {
             self.incorrectLabel.isHidden = false
         }
 
@@ -44,7 +44,7 @@ class EReentryViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Text Field Protocols
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let password = masterPasswordTextField.text else { return }
+        guard let password = encryptionPasswordTextField.text else { return }
         if !password.isEmpty {
             continueButton.isEnabled = true
             UIView.animate(withDuration: 0.5) {
@@ -65,8 +65,8 @@ class EReentryViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Actions
     @IBAction func continueButton(_ sender: Any) {
-        guard let password = masterPasswordTextField.text else { return }
-        UserDefaults.standard.set(password, forKey: "masterPassword")
+        guard let password = encryptionPasswordTextField.text else { return }
+        UserDefaults.standard.set(password, forKey: "encryptionPassword")
         self.performSegue(withIdentifier: "complete", sender: nil)
     }
 

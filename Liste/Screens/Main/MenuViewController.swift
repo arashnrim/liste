@@ -124,7 +124,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
      *      - data: A `[String:Any]` parameter, preferably the data retrieved from the Firestore database.
      */
     func readListName(data: [String: Any]) {
-        if let password = UserDefaults.standard.string(forKey: "masterPassword") {
+        if let password = UserDefaults.standard.string(forKey: "encryptionPassword") {
             if let listData = data["listName"] as? Data {
                 do {
                     let decryptedData = try RNCryptor.decrypt(data: listData, withPassword: password)
