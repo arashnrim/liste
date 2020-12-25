@@ -73,7 +73,7 @@ extension TasksViewController {
      */
     func readTasks(data: [String: Any], completion: (([Task]) -> Void)?) {
         if let tasks = data["tasks"] as? [String: [String: Any]] {
-            verifyEncryption(data: data)
+            self.verifyEncryption(data: data)
             let convertedTasks = self.convertJSONToTask(tasks: tasks)
             self.tasks += convertedTasks
             self.tasksTableView.reloadData()

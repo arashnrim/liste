@@ -52,6 +52,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
             // Reads the user's configuration status — if false, the user is directed to onboarding.
             self.readUserStatus(data: data)
+            self.verifyEncryption(data: data)
             // Read's the user's tasks and performs conditional actions based on the presence of the tasks.
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
@@ -293,6 +294,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.loadingView.alpha = 1.0
 
         retrieveDatabase { (data) in
+            self.readListName(data: data)
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
                     self.emptyView.isHidden = true

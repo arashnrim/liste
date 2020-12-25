@@ -12,6 +12,7 @@ class EReentryViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
     @IBOutlet weak var masterPasswordTextField: UITextField!
+    @IBOutlet weak var incorrectLabel: UILabel!
     @IBOutlet weak var continueButton: ListeButton!
 
     override func viewDidLoad() {
@@ -31,6 +32,10 @@ class EReentryViewController: UIViewController, UITextFieldDelegate {
                     self.continueButton.alpha = 0.5
                 }
             }
+        }
+
+        if (UserDefaults.standard.string(forKey: "masterPassword")) != nil {
+            self.incorrectLabel.isHidden = false
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
