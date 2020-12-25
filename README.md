@@ -34,7 +34,7 @@ The user interface prototype can be found on Figma. [Check it out](https://www.f
 If you need help with anything related to the project, I recommend opening a new issue in the Issue Tracker page. Following GitHub's [Open Source Guide](https://www.opensource.guide), it is strongly advised against privately communicating.
 
 ## What's Ahead
-Listé is an existing project, and subsequently a version 1.0 (latest 1.0.3) exists. While the App Store contains the app, the app is currently unusable at this point as I'm rewriting the code. Here's what I plan for the next few versions, starting from version 1.2.0:
+Listé is an existing project, and subsequently a version 1.0 (latest 1.1.0) exists. While the App Store contains the app, the app is currently unusable at this point as I'm rewriting the code. Here's what I plan for the next few versions, starting from version 1.2.0:
 
 **Listé 1.2.0**
 - Encryption. Secure tasks and be assured of your privacy; all data stored is encrypted and non-readable without a set master password.
