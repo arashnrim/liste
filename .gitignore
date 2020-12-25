@@ -6,6 +6,7 @@ GoogleService-Info.plist
 
 ## Xcode files ##
 xcuserdata/
+xcshareddata/
 *.xcscmblueprint
 *.xccheckout
 build/
@@ -23,5 +24,6 @@ DerivedData/
 *.ipa
 *.dSYM.zip
 *.dSYM
-/Liste/Liste.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
-Liste/Pods/Pods.xcodeproj/xcuserdata/
+
+## Cocoapods files ##
+Pods/
