@@ -81,7 +81,20 @@ class EPasswordViewController: UIViewController, UITextFieldDelegate {
                             if !(configured) {
                                 self.performSegue(withIdentifier: "onboard", sender: nil)
                             } else {
-                                self.performSegue(withIdentifier: "encrypt", sender: nil)
+                                let database = Firestore.firestore()
+                                guard let userID = Auth.auth().currentUser?.uid else {
+                                    print("Warning: No authenticated user is found; attempting to recover by redirection.")
+                                    self.showReauthenticationAlert()
+                                    return
+                                }
+
+                                database.document("users/\(userID)").updateData(["encrypted": true]) { (error) in
+                                    if let error = error {
+                                        self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
+                                    } else {
+                                        self.performSegue(withIdentifier: "encrypt", sender: nil)
+                                    }
+                                }
                             }
                         }
                     } else {
