@@ -14,12 +14,19 @@ class EEncryptingViewController: UIViewController {
 
     // MARK: Outlets
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
     // MARK: Properties
     var newPassword: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if #available(iOS 13.0, *) {
+            loadingView.style = .medium
+        } else {
+            loadingView.style = .gray
+        }
 
         if let newPassword = newPassword {
             UserDefaults.standard.setValue(newPassword, forKey: "masterPassword")
@@ -115,8 +122,8 @@ class EEncryptingViewController: UIViewController {
                         encryptedData["tasks"] = encryptedTasks
                     }
                 } else if item.key == "listName" {
-                    if let _ = item.value as? String {
-                        encryptedData[item.key] = item.value
+                    if let listName = item.value as? String {
+                        encryptedData["listName"] = listName
                     } else if let listData = item.value as? Data {
                         let previousPassword = UserDefaults.standard.string(forKey: "outdatedMasterPassword")!
                         var decryptedValue = Data()

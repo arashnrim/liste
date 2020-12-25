@@ -264,7 +264,7 @@
                                     <constraint firstItem="mKP-ZZ-fvU" firstAttribute="centerX" secondItem="w6t-df-q3G" secondAttribute="centerX" id="jU9-qA-1sr"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-en-4eW">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-en-4eW">
                                 <rect key="frame" x="197" y="774.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="gR3-Kq-5B4"/>
@@ -304,6 +304,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="slide(left)"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="loadingView" destination="6ve-en-4eW" id="vbg-C6-3qg"/>
                         <outlet property="statusLabel" destination="u4P-Fk-2Kq" id="p6C-wi-eUB"/>
                         <segue destination="jMH-R1-n6S" kind="unwind" identifier="complete" unwindAction="unwindFromReentry:" id="VFM-dP-bB1"/>
                     </connections>
