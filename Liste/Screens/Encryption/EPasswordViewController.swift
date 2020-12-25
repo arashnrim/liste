@@ -79,8 +79,6 @@ class EPasswordViewController: UIViewController, UITextFieldDelegate {
                     if let data = data {
                         if let configured = data["configured"] as? Bool {
                             if !(configured) {
-                                self.performSegue(withIdentifier: "onboard", sender: nil)
-                            } else {
                                 let database = Firestore.firestore()
                                 guard let userID = Auth.auth().currentUser?.uid else {
                                     print("Warning: No authenticated user is found; attempting to recover by redirection.")
@@ -92,9 +90,11 @@ class EPasswordViewController: UIViewController, UITextFieldDelegate {
                                     if let error = error {
                                         self.displayAlert(title: NSLocalizedString("errorOccurred", comment: "An error occurred."), message: error.localizedDescription, override: nil)
                                     } else {
-                                        self.performSegue(withIdentifier: "encrypt", sender: nil)
+                                        self.performSegue(withIdentifier: "onboard", sender: nil)
                                     }
                                 }
+                            } else {
+                                self.performSegue(withIdentifier: "encrypt", sender: nil)
                             }
                         }
                     } else {
