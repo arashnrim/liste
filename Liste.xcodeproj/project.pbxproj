@@ -95,6 +95,7 @@
 		49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPasswordViewController.swift; sourceTree = "<group>"; };
 		49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEncryptingViewController.swift; sourceTree = "<group>"; };
 		49C86212254A94A400630DD6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		49D1E51D25A59CBA00487046 /* Liste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Liste.entitlements; sourceTree = "<group>"; };
 		49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMInitialisationViewController.swift; sourceTree = "<group>"; };
 		49DFF318249DB1E20030D5AD /* ListeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeButton.swift; sourceTree = "<group>"; };
 		49E978D6253180D80027C6E5 /* FMTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMTimerViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +225,7 @@
 		497911BB2423A520001432F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49D1E51D25A59CBA00487046 /* Liste.entitlements */,
 				496F79FA2595B44C007F39BA /* Localizable.strings */,
 				4927522723432F4200FCFA6E /* AppDelegate.swift */,
 				4927522923432F4200FCFA6E /* SceneDelegate.swift */,
@@ -670,8 +672,9 @@
 			baseConfigurationReference = 74ED5CE3EDC516BC55368A0A /* Pods-Liste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Liste/Liste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.2.0+01";
+				CURRENT_PROJECT_VERSION = 02;
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				INFOPLIST_FILE = Liste/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -692,8 +695,9 @@
 			baseConfigurationReference = 55D8F4B67E36774477049986 /* Pods-Liste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Liste/Liste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.2.0+01";
+				CURRENT_PROJECT_VERSION = 02;
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				INFOPLIST_FILE = Liste/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
