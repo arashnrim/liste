@@ -120,6 +120,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else if segue.identifier == "menu" {
             let destination = segue.destination
             destination.hero.modalAnimationType = .selectBy(presenting: .cover(direction: .right), dismissing: .uncover(direction: .left))
+        } else if segue.identifier == "encrypt" {
+            let destination = segue.destination
+            destination.hero.modalAnimationType = .cover(direction: .up)
         }
     }
 
