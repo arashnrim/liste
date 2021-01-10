@@ -19,6 +19,8 @@ class SettingsViewController: UIViewController {
     @IBAction func signOutButton(_ sender: Any) {
         self.displayAlert(title: NSLocalizedString("signOutTitle", comment: "Are you sure you'd like to sign out?"), message: NSLocalizedString("signOutMessage", comment: "Your session will be reset and you'll need to sign in again.")) { (alert) in
             alert.addAction(UIAlertAction(title: NSLocalizedString("signOut", comment: "Sign out."), style: .destructive, handler: { (_) in
+                UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                UserDefaults.standard.synchronize()
                 do {
                     try Auth.auth().signOut()
                 } catch let error {

@@ -56,4 +56,51 @@ class AccountViewController: UIViewController {
             destination.userID = self.userID
         }
     }
+
+    // MARK: Actions
+    @IBAction func reset(_ sender: Any) {
+        let database = Firebase.Firestore.firestore()
+        guard let userID = Firebase.Auth.auth().currentUser?.uid else { return }
+
+        database.document("users/\(userID)").getDocument { (snapshot, error) in
+            if let error = error {
+                self.displayAlert(title: "Something went wrong.", message: error.localizedDescription, override: nil)
+            } else {
+                if let snapshot = snapshot {
+                    if let data = snapshot.data() {
+                        if let encrypted = data["encrypted"] as? Bool {
+                            let alert = UIAlertController(title: "Heads up!", message: "Managing your encryption is a potentially dangerous action. If you do so, you may lose access to your data.", preferredStyle: .actionSheet)
+                            if encrypted {
+                                alert.addAction(UIAlertAction(title: "Change master password", style: .default, handler: { (_) in
+                                    self.performSegue(withIdentifier: "change", sender: nil)
+                                }))
+                                alert.addAction(UIAlertAction(title: "Reset master password", style: .destructive, handler: { (_) in
+                                    let subAlert = UIAlertController(title: "Take note!", message: "This action will render all your existing tasks useless; therefore, they will be deleted. Continue?", preferredStyle: .alert)
+                                    subAlert.addAction(UIAlertAction(title: "Continue", style: .destructive, handler: { (_) in
+                                        UserDefaults.standard.removeObject(forKey: "encryptionPassword")
+
+                                        database.document("users/\(userID)").updateData(["tasks": [String: Any](), "listName": ""]) { (error) in
+                                            if error != nil {
+                                                self.displayAlert(title: "Something went wrong.", message: "Your action for managing encryption will be terminated.", override: nil)
+                                            } else {
+                                                self.performSegue(withIdentifier: "reset", sender: nil)
+                                            }
+                                        }
+                                    }))
+                                    subAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+                                    self.present(subAlert, animated: true, completion: nil)
+                                }))
+                            } else {
+                                alert.addAction(UIAlertAction(title: "Set up encryption", style: .default, handler: { (_) in
+                                    self.performSegue(withIdentifier: "reset", sender: nil)
+                                }))
+                            }
+                            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

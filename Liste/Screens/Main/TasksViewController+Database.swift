@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RNCryptor
 
 extension TasksViewController {
 
@@ -55,6 +56,11 @@ extension TasksViewController {
         if let configured = data["configured"] as? Bool {
             if !(configured) {
                 self.configureUser()
+            } else {
+                let encrypted = data["encrypted"] as? Bool
+                if encrypted == nil {
+                    self.performSegue(withIdentifier: "encrypt", sender: nil)
+                }
             }
         }
     }
@@ -67,6 +73,7 @@ extension TasksViewController {
      */
     func readTasks(data: [String: Any], completion: (([Task]) -> Void)?) {
         if let tasks = data["tasks"] as? [String: [String: Any]] {
+            self.verifyEncryption(data: data)
             let convertedTasks = self.convertJSONToTask(tasks: tasks)
             self.tasks += convertedTasks
             self.tasksTableView.reloadData()
@@ -74,6 +81,14 @@ extension TasksViewController {
 
             if let completion = completion {
                 completion(self.tasks)
+            }
+        }
+    }
+
+    func verifyEncryption(data: [String: Any]) {
+        if let encrypted = data["encrypted"] as? Bool {
+            if encrypted && UserDefaults.standard.string(forKey: "encryptionPassword") == nil {
+                self.performSegue(withIdentifier: "decrypt", sender: nil)
             }
         }
     }
@@ -86,6 +101,16 @@ extension TasksViewController {
      */
     func readListName(data: [String: Any]) {
         if let listName = data["listName"] as? String {
+            self.listNameTextField.text = listName
+        } else if let listData = data["listName"] as? Data {
+            guard let password = UserDefaults.standard.string(forKey: "encryptionPassword") else { return }
+            var listName = ""
+            do {
+                let listData = try RNCryptor.decrypt(data: listData, withPassword: password)
+                listName = String(decoding: listData, as: UTF8.self)
+            } catch {
+                self.performSegue(withIdentifier: "decrypt", sender: nil)
+            }
             self.listNameTextField.text = listName
         }
     }
@@ -114,12 +139,25 @@ extension TasksViewController {
         }
 
         let database = Firestore.firestore()
-        database.document("users/\(userID)").updateData(["listName": newName]) { (error) in
-            if let error = error {
-                print("Error (while updating list name): \(error.localizedDescription)")
-                self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
-            } else {
-                completion?()
+        if let password = UserDefaults.standard.string(forKey: "encryptionPassword") {
+            guard let newData = newName.data(using: .utf8) else { return }
+            let cipheredText = RNCryptor.encrypt(data: newData, withPassword: password)
+            database.document("users/\(userID)").updateData(["listName": cipheredText]) { (error) in
+                if let error = error {
+                    print("Error (while updating list name): \(error.localizedDescription)")
+                    self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+                } else {
+                    completion?()
+                }
+            }
+        } else {
+            database.document("users/\(userID)").updateData(["listName": newName]) { (error) in
+                if let error = error {
+                    print("Error (while updating list name): \(error.localizedDescription)")
+                    self.displayAlert(title: "Whoops.", message: error.localizedDescription, override: nil)
+                } else {
+                    completion?()
+                }
             }
         }
     }

@@ -52,6 +52,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
             // Reads the user's configuration status — if false, the user is directed to onboarding.
             self.readUserStatus(data: data)
+            self.verifyEncryption(data: data)
             // Read's the user's tasks and performs conditional actions based on the presence of the tasks.
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
@@ -119,6 +120,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else if segue.identifier == "menu" {
             let destination = segue.destination
             destination.hero.modalAnimationType = .selectBy(presenting: .cover(direction: .right), dismissing: .uncover(direction: .left))
+        } else if segue.identifier == "encrypt" {
+            let destination = segue.destination
+            destination.hero.modalAnimationType = .cover(direction: .up)
         }
     }
 
@@ -248,6 +252,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         retrieveDatabase { (data) in
+            self.verifyEncryption(data: data)
             self.readUserStatus(data: data)
             self.readTasks(data: data) { (tasks) in
                 if !(tasks.isEmpty) {
@@ -282,6 +287,37 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBAction func unwindFromDeletion(_ unwindSegue: UIStoryboardSegue) {
         self.listNameTextField.text = ""
+    }
+
+    @IBAction func unwindFromReentry(_ unwindSegue: UIStoryboardSegue) {
+        tasks = []
+
+        self.emptyView.isHidden = true
+        self.loadingView.isHidden = false
+        self.loadingView.alpha = 1.0
+
+        retrieveDatabase { (data) in
+            self.readListName(data: data)
+            self.readTasks(data: data) { (tasks) in
+                if !(tasks.isEmpty) {
+                    self.emptyView.isHidden = true
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
+                    }
+                } else {
+                    self.emptyView.isHidden = false
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.emptyView.alpha = 1.0
+                        self.loadingView.alpha = 0.0
+                    }) { (_) in
+                        self.loadingView.isHidden = true
+                    }
+                }
+            }
+        }
+        self.tasksTableView.reloadData()
     }
 
 }

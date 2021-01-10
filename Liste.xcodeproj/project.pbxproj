@@ -11,7 +11,8 @@
 		49109BA024A61C0F003310FB /* UIButton+Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49109B9F24A61C0F003310FB /* UIButton+Functionality.swift */; };
 		49109BA224A62E01003310FB /* UITextField+Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49109BA124A62E01003310FB /* UITextField+Functionality.swift */; };
 		49109BA424A63398003310FB /* UIViewController+Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49109BA324A63398003310FB /* UIViewController+Functionality.swift */; };
-		4915305125354DEA00445A10 /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4915305325354DEA00445A10 /* Focus.storyboard */; };
+		49119D05258F68BA008455FD /* EReentryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49119D04258F68BA008455FD /* EReentryViewController.swift */; };
+		49119D0A258F77A4008455FD /* EChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49119D09258F77A4008455FD /* EChangeViewController.swift */; };
 		4927522823432F4200FCFA6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927522723432F4200FCFA6E /* AppDelegate.swift */; };
 		4927522A23432F4200FCFA6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927522923432F4200FCFA6E /* SceneDelegate.swift */; };
 		4927522C23432F4200FCFA6E /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927522B23432F4200FCFA6E /* TasksViewController.swift */; };
@@ -19,13 +20,16 @@
 		4927523123432F4300FCFA6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4927523023432F4300FCFA6E /* Assets.xcassets */; };
 		4927523423432F4300FCFA6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4927523223432F4300FCFA6E /* LaunchScreen.storyboard */; };
 		492DFC2F24B8424A00D9D862 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DFC2E24B8424A00D9D862 /* Task.swift */; };
-		4947B03D253AADC700BA94DC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4947B03C253AADC700BA94DC /* Settings.storyboard */; };
 		49498E8324A897E400064238 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49498E8224A897E400064238 /* GoogleService-Info.plist */; };
 		494FC52A24B0152600BB9F90 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FC52924B0152600BB9F90 /* TaskTableViewCell.swift */; };
 		4952CDC124F9EE1800D6DDF7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952CDC024F9EE1800D6DDF7 /* InfoViewController.swift */; };
 		4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */; };
 		495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C3BAA24D4368F00B65CB6 /* AddViewController.swift */; };
 		495F6617253AE86800610163 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6616253AE86800610163 /* SettingsViewController.swift */; };
+		496F79E02595B0AA007F39BA /* Encryption.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496F79E22595B0AA007F39BA /* Encryption.storyboard */; };
+		496F79E42595B0B2007F39BA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496F79E62595B0B2007F39BA /* Settings.storyboard */; };
+		496F79F32595B289007F39BA /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496F79F12595B289007F39BA /* Focus.storyboard */; };
+		496F79F82595B44C007F39BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 496F79FA2595B44C007F39BA /* Localizable.strings */; };
 		4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A0952544304500FFABC7 /* AccountViewController.swift */; };
 		4970A09B254435DC00FFABC7 /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A09A254435DC00FFABC7 /* DeleteViewController.swift */; };
 		49781B1D253D34AE001C8093 /* SF-Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49781B1C253D34AE001C8093 /* SF-Mono.ttf */; };
@@ -33,11 +37,14 @@
 		499B42B624C29DF10069D739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B42B524C29DF10069D739 /* OnboardingViewController.swift */; };
 		499E20A4250CB8A600D98846 /* TasksViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */; };
 		499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E20A5250CB9F700D98846 /* AddViewController+Database.swift */; };
+		49ADEF9E25906876004F4759 /* BeforeEncryptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADEF9D25906876004F4759 /* BeforeEncryptViewController.swift */; };
 		49B9E2DA2546C9000094C599 /* ReauthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */; };
+		49BAE167258F361100AAF8B1 /* EIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */; };
+		49BAE16B258F361F00AAF8B1 /* EPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */; };
+		49BAE173258F419000AAF8B1 /* EEncryptingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */; };
 		49C86213254A94A400630DD6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C86212254A94A400630DD6 /* AboutViewController.swift */; };
 		49CC326925354E4400780A1D /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC326B25354E4400780A1D /* Auth.storyboard */; };
 		49CC326E25354E4F00780A1D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CC327025354E4F00780A1D /* Onboarding.storyboard */; };
-		49CC327925354EFF00780A1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49CC327B25354EFF00780A1D /* Localizable.strings */; };
 		49DC74D4251F13A500608F91 /* FMInitialisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */; };
 		49DFF319249DB1E20030D5AD /* ListeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF318249DB1E20030D5AD /* ListeButton.swift */; };
 		49E978D7253180D80027C6E5 /* FMTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E978D6253180D80027C6E5 /* FMTimerViewController.swift */; };
@@ -52,25 +59,29 @@
 		49109B9F24A61C0F003310FB /* UIButton+Functionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Functionality.swift"; sourceTree = "<group>"; };
 		49109BA124A62E01003310FB /* UITextField+Functionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Functionality.swift"; sourceTree = "<group>"; };
 		49109BA324A63398003310FB /* UIViewController+Functionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Functionality.swift"; sourceTree = "<group>"; };
-		4915304F25354DD800445A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		4915305225354DEA00445A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Focus.storyboard; sourceTree = "<group>"; };
-		4915305625354DF300445A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Focus.strings; sourceTree = "<group>"; };
+		49119D04258F68BA008455FD /* EReentryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EReentryViewController.swift; sourceTree = "<group>"; };
+		49119D09258F77A4008455FD /* EChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EChangeViewController.swift; sourceTree = "<group>"; };
 		4927522423432F4200FCFA6E /* Liste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927522723432F4200FCFA6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4927522923432F4200FCFA6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4927522B23432F4200FCFA6E /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		4927522E23432F4200FCFA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4927523023432F4300FCFA6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4927523323432F4300FCFA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4927523523432F4300FCFA6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492DFC2E24B8424A00D9D862 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		4947B03C253AADC700BA94DC /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		49498E8224A897E400064238 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		494FC52924B0152600BB9F90 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4952CDC024F9EE1800D6DDF7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4957EE552531C27E00FA21BE /* FMSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSuccessViewController.swift; sourceTree = "<group>"; };
 		495C3BAA24D4368F00B65CB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		495F6616253AE86800610163 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		496F79E92595B234007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
+		496F79EA2595B235007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Auth.storyboard; sourceTree = "<group>"; };
+		496F79EB2595B235007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		496F79EC2595B235007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		496F79ED2595B235007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		496F79EE2595B235007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Encryption.storyboard; sourceTree = "<group>"; };
+		496F79F22595B289007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Focus.storyboard; sourceTree = "<group>"; };
+		496F79F92595B44C007F39BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4970A0952544304500FFABC7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		4970A09A254435DC00FFABC7 /* DeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
 		49781B1C253D34AE001C8093 /* SF-Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono.ttf"; sourceTree = "<group>"; };
@@ -78,13 +89,13 @@
 		499B42B524C29DF10069D739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		499E20A3250CB8A600D98846 /* TasksViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksViewController+Database.swift"; sourceTree = "<group>"; };
 		499E20A5250CB9F700D98846 /* AddViewController+Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Database.swift"; sourceTree = "<group>"; };
+		49ADEF9D25906876004F4759 /* BeforeEncryptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeEncryptViewController.swift; sourceTree = "<group>"; };
 		49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationViewController.swift; sourceTree = "<group>"; };
+		49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EIntroductionViewController.swift; sourceTree = "<group>"; };
+		49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPasswordViewController.swift; sourceTree = "<group>"; };
+		49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEncryptingViewController.swift; sourceTree = "<group>"; };
 		49C86212254A94A400630DD6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		49CC326A25354E4400780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
-		49CC326D25354E4C00780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Auth.strings; sourceTree = "<group>"; };
-		49CC326F25354E4F00780A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
-		49CC327325354E5500780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Onboarding.strings; sourceTree = "<group>"; };
-		49CC327A25354EFF00780A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49D1E51D25A59CBA00487046 /* Liste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Liste.entitlements; sourceTree = "<group>"; };
 		49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMInitialisationViewController.swift; sourceTree = "<group>"; };
 		49DFF318249DB1E20030D5AD /* ListeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeButton.swift; sourceTree = "<group>"; };
 		49E978D6253180D80027C6E5 /* FMTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMTimerViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +125,19 @@
 				A6EAE577C331A812E3B32A9A /* Pods_Liste.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49119D08258F778B008455FD /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				496F79E22595B0AA007F39BA /* Encryption.storyboard */,
+				49119D09258F77A4008455FD /* EChangeViewController.swift */,
+				49BAE166258F361100AAF8B1 /* EIntroductionViewController.swift */,
+				49BAE172258F419000AAF8B1 /* EEncryptingViewController.swift */,
+				49BAE16A258F361F00AAF8B1 /* EPasswordViewController.swift */,
+				49119D04258F68BA008455FD /* EReentryViewController.swift */,
+			);
+			path = Encryption;
 			sourceTree = "<group>";
 		};
 		4927521B23432F4200FCFA6E = {
@@ -150,6 +174,7 @@
 			children = (
 				49CC327025354E4F00780A1D /* Onboarding.storyboard */,
 				499B42B524C29DF10069D739 /* OnboardingViewController.swift */,
+				49ADEF9D25906876004F4759 /* BeforeEncryptViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -157,7 +182,7 @@
 		4947B01A253A9B8500BA94DC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				4947B03C253AADC700BA94DC /* Settings.storyboard */,
+				496F79E62595B0B2007F39BA /* Settings.storyboard */,
 				49B9E2D92546C9000094C599 /* ReauthenticationViewController.swift */,
 				495F6616253AE86800610163 /* SettingsViewController.swift */,
 				4970A0952544304500FFABC7 /* AccountViewController.swift */,
@@ -181,6 +206,7 @@
 				49DFF314249DAFCE0030D5AD /* Main */,
 				49DC74CE251F133200608F91 /* Focus */,
 				4947B01A253A9B8500BA94DC /* Settings */,
+				49119D08258F778B008455FD /* Encryption */,
 				49DFF315249DB0B60030D5AD /* Auth */,
 				492DFC3024B84D5100D9D862 /* Onboarding */,
 			);
@@ -199,7 +225,8 @@
 		497911BB2423A520001432F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49CC327B25354EFF00780A1D /* Localizable.strings */,
+				49D1E51D25A59CBA00487046 /* Liste.entitlements */,
+				496F79FA2595B44C007F39BA /* Localizable.strings */,
 				4927522723432F4200FCFA6E /* AppDelegate.swift */,
 				4927522923432F4200FCFA6E /* SceneDelegate.swift */,
 				4927523223432F4300FCFA6E /* LaunchScreen.storyboard */,
@@ -221,7 +248,7 @@
 		49DC74CE251F133200608F91 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
-				4915305325354DEA00445A10 /* Focus.storyboard */,
+				496F79F12595B289007F39BA /* Focus.storyboard */,
 				49DC74D3251F13A500608F91 /* FMInitialisationViewController.swift */,
 				49E978DA253184750027C6E5 /* FMPreflightViewController.swift */,
 				49E978D6253180D80027C6E5 /* FMTimerViewController.swift */,
@@ -320,7 +347,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 4927521B23432F4200FCFA6E;
 			productRefGroup = 4927522523432F4200FCFA6E /* Products */;
@@ -338,15 +364,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4927523423432F4300FCFA6E /* LaunchScreen.storyboard in Resources */,
+				496F79F32595B289007F39BA /* Focus.storyboard in Resources */,
+				496F79F82595B44C007F39BA /* Localizable.strings in Resources */,
 				49CC326925354E4400780A1D /* Auth.storyboard in Resources */,
+				496F79E02595B0AA007F39BA /* Encryption.storyboard in Resources */,
 				49498E8324A897E400064238 /* GoogleService-Info.plist in Resources */,
 				49CC326E25354E4F00780A1D /* Onboarding.storyboard in Resources */,
 				4927523123432F4300FCFA6E /* Assets.xcassets in Resources */,
-				49CC327925354EFF00780A1D /* Localizable.strings in Resources */,
 				49781B1D253D34AE001C8093 /* SF-Mono.ttf in Resources */,
-				4947B03D253AADC700BA94DC /* Settings.storyboard in Resources */,
+				496F79E42595B0B2007F39BA /* Settings.storyboard in Resources */,
 				4927522F23432F4200FCFA6E /* Main.storyboard in Resources */,
-				4915305125354DEA00445A10 /* Focus.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,11 +444,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				49109BA424A63398003310FB /* UIViewController+Functionality.swift in Sources */,
+				49BAE16B258F361F00AAF8B1 /* EPasswordViewController.swift in Sources */,
 				4927522C23432F4200FCFA6E /* TasksViewController.swift in Sources */,
+				49119D05258F68BA008455FD /* EReentryViewController.swift in Sources */,
+				49ADEF9E25906876004F4759 /* BeforeEncryptViewController.swift in Sources */,
 				4970A0962544304500FFABC7 /* AccountViewController.swift in Sources */,
 				495C3BAB24D4368F00B65CB6 /* AddViewController.swift in Sources */,
 				4957EE562531C27E00FA21BE /* FMSuccessViewController.swift in Sources */,
 				49DC74D4251F13A500608F91 /* FMInitialisationViewController.swift in Sources */,
+				49119D0A258F77A4008455FD /* EChangeViewController.swift in Sources */,
+				49BAE173258F419000AAF8B1 /* EEncryptingViewController.swift in Sources */,
 				492DFC2F24B8424A00D9D862 /* Task.swift in Sources */,
 				494FC52A24B0152600BB9F90 /* TaskTableViewCell.swift in Sources */,
 				49109BA224A62E01003310FB /* UITextField+Functionality.swift in Sources */,
@@ -434,6 +466,7 @@
 				499E20A6250CB9F700D98846 /* AddViewController+Database.swift in Sources */,
 				49DFF319249DB1E20030D5AD /* ListeButton.swift in Sources */,
 				49109B9E24A61B0E003310FB /* AuthViewController.swift in Sources */,
+				49BAE167258F361100AAF8B1 /* EIntroductionViewController.swift in Sources */,
 				495F6617253AE86800610163 /* SettingsViewController.swift in Sources */,
 				4927522823432F4200FCFA6E /* AppDelegate.swift in Sources */,
 				4927522A23432F4200FCFA6E /* SceneDelegate.swift in Sources */,
@@ -449,20 +482,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4915305325354DEA00445A10 /* Focus.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4915305225354DEA00445A10 /* Base */,
-				4915305625354DF300445A10 /* en */,
-			);
-			name = Focus.storyboard;
-			sourceTree = "<group>";
-		};
 		4927522D23432F4200FCFA6E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4927522E23432F4200FCFA6E /* Base */,
-				4915304F25354DD800445A10 /* en */,
+				496F79EC2595B235007F39BA /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -470,16 +493,47 @@
 		4927523223432F4300FCFA6E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4927523323432F4300FCFA6E /* Base */,
+				496F79EB2595B235007F39BA /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		496F79E22595B0AA007F39BA /* Encryption.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				496F79EE2595B235007F39BA /* en */,
+			);
+			name = Encryption.storyboard;
+			sourceTree = "<group>";
+		};
+		496F79E62595B0B2007F39BA /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				496F79ED2595B235007F39BA /* en */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		496F79F12595B289007F39BA /* Focus.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				496F79F22595B289007F39BA /* en */,
+			);
+			name = Focus.storyboard;
+			sourceTree = "<group>";
+		};
+		496F79FA2595B44C007F39BA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				496F79F92595B44C007F39BA /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		49CC326B25354E4400780A1D /* Auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				49CC326A25354E4400780A1D /* Base */,
-				49CC326D25354E4C00780A1D /* en */,
+				496F79EA2595B235007F39BA /* en */,
 			);
 			name = Auth.storyboard;
 			sourceTree = "<group>";
@@ -487,18 +541,9 @@
 		49CC327025354E4F00780A1D /* Onboarding.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				49CC326F25354E4F00780A1D /* Base */,
-				49CC327325354E5500780A1D /* en */,
+				496F79E92595B234007F39BA /* en */,
 			);
 			name = Onboarding.storyboard;
-			sourceTree = "<group>";
-		};
-		49CC327B25354EFF00780A1D /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49CC327A25354EFF00780A1D /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -627,7 +672,9 @@
 			baseConfigurationReference = 74ED5CE3EDC516BC55368A0A /* Pods-Liste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Liste/Liste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 02;
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				INFOPLIST_FILE = Liste/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -635,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.Liste;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -648,7 +695,9 @@
 			baseConfigurationReference = 55D8F4B67E36774477049986 /* Pods-Liste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Liste/Liste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 02;
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				INFOPLIST_FILE = Liste/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -656,7 +705,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.Liste;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
